@@ -2,6 +2,7 @@
 Automatically translate specified item fields
 """
 import scrapy
+import types
 from .. import exceptions as execs
 from urllib.parse import quote as urlquote, unquote as urlunquote
 import requests
@@ -53,15 +54,28 @@ class AutoTranslationMiddlewareBase:
                         if item_cls_field.get('auto_translate'):
                             is_critical = item_cls_field.get('critical')
                             try:
-                                yield from self._handle_untranslated_item(item, field_name)
+                                yield from self.handle_untranslated_item(item, field_name)
                             except execs.TranslationError as e:
                                 if is_critical:
                                     raise e
                                 else:
                                     logger.warn("Translation Error: %s"%e.message)
                                     yield item
+                    yield item
 
-    def _handle_untranslated_item(self, item, target_field_name):
+    def handle_untranslated_item(self, item, target_field_name):
+        """
+        For synchronous translations, do the following:
+            - must be a function 
+            - modifies 'item' for translating its fields
+            - finishes the work very quickly
+            - returns [] at the end
+
+        for asynchronous translations, do the following:
+            - must be a generator
+            - yields a Request for all the fields of 'item' one by one
+
+        """
         raise NotImplementedError
             
 class SyncAutoTranslationMiddleware(AutoTranslationMiddlewareBase):
@@ -75,7 +89,7 @@ class SyncAutoTranslationMiddleware(AutoTranslationMiddlewareBase):
         return 'Text translated by SyncAutoTranslationMiddleware. If you see this, please rewrite the ' \
                'SyncAutoTranslationMiddleware.translate() method'
 
-    def _handle_untranslated_item(self, item, target_field_name):
+    def handle_untranslated_item(self, item, target_field_name):
         item_class = item.__class__
         target_field = item_class.fields[target_field_name]
 
@@ -88,7 +102,7 @@ class SyncAutoTranslationMiddleware(AutoTranslationMiddlewareBase):
         target_field_language = target_field.get('target_lang_code')
 
         logger.debug(
-            f"SyncAutoTranslationMiddleware._handle_untranslated_item:\n" \
+            f"SyncAutoTranslationMiddleware.handle_untranslated_item:\n" \
             f"item: {item_class}\n" \
             f"source_field: {source_field}\n" \
             f"source_field_language: {source_field_language}\n" \
@@ -98,14 +112,13 @@ class SyncAutoTranslationMiddleware(AutoTranslationMiddlewareBase):
             f"critical: {is_critical}\n"
         )
 
-        translated_item = item.copy()
-        translated_item[target_field_name] = self.translate(
+        item[target_field_name] = self.translate(
             source_lang_code = source_field_language,
             target_lang_code = target_field_language,
             text = source_field_value
         )
 
-        yield translated_item
+        return []
 
     def process_spider_input(self, response, spider):
         pass
@@ -115,7 +128,7 @@ class SyncAutoTranslationMiddleware(AutoTranslationMiddlewareBase):
 
 class AsyncAutoTranslationMiddleware(AutoTranslationMiddlewareBase):
 
-    def _handle_untranslated_item(self, item, target_field_name):
+    def handle_untranslated_item(self, item, target_field_name):
 
         item_class = item.__class__
         target_field = item_class.fields[target_field_name]
@@ -129,7 +142,7 @@ class AsyncAutoTranslationMiddleware(AutoTranslationMiddlewareBase):
         target_field_language = target_field.get('target_lang_code')
 
         logger.debug(
-            f"AsyncAutoTranslationMiddleware._handle_untranslated_item:\n" \
+            f"AsyncAutoTranslationMiddleware.handle_untranslated_item:\n" \
             f"item: {item_class}\n" \
             f"source_field: {source_field}\n" \
             f"source_field_language: {source_field_language}\n" \

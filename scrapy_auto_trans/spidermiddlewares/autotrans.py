@@ -14,6 +14,7 @@ logger = logging.getLogger(__name__)
 class AutoTranslationMiddlewareBase:
 
     META_KEY = 'scrapy-auto-translation-middleware'
+    TAG = 'auto_translate'
     DEFAULT_LANGUAGE= 'en'
 
     @classmethod
@@ -37,137 +38,75 @@ class AutoTranslationMiddlewareBase:
         return 'en'
 
     def process_spider_output(self, response, result, spider):
-        if self.META_KEY in response.request.meta:
-            """
-            We have somehow translated the item field. Send the result to the engine.
-            """
-            yield from result
-        else:
-            for x in result:
-                if not isinstance(x, scrapy.Item):
-                    yield x
-                else:
-                    item = x
-                    item_class = item.__class__
-                    for field_name in item.fields:
-                        item_cls_field = item_class.fields[field_name]
-                        if item_cls_field.get('auto_translate'):
-                            is_critical = item_cls_field.get('critical')
-                            try:
-                                yield from self.handle_untranslated_item(item, field_name)
-                            except execs.TranslationError as e:
-                                if is_critical:
-                                    raise e
-                                else:
-                                    logger.warn("Translation Error: %s"%e.message)
-                                    yield item
+
+        for x in result:
+            if isinstance(x, (dict, scrapy.Request)):
+                yield x
+            elif isinstance(x, scrapy.Item):
+                item = x
+                count_field_auto_trans = len([(k,v)for k,v in item.fields.items() if self.TAG in v ])
+                if count_field_auto_trans==0:
+                    """
+                    It's a brand new item but no fields are to be translated, let's yield it
+                    """
                     yield item
+                trans_result = self.handle_untranslated_item(item)
+                # hopefully trans_result is a new request containing item in its meta data
+                yield trans_result
+            else:
+                yield x
 
-    def handle_untranslated_item(self, item, target_field_name):
+    def handle_untranslated_item(self, item):
         """
-        For synchronous translations, do the following:
-            - must be a function 
-            - modifies 'item' for translating its fields
-            - finishes the work very quickly
-            - returns [] at the end
-
-        for asynchronous translations, do the following:
-            - must be a generator
-            - yields a Request for all the fields of 'item' one by one
-
+        Either returns the item or a new request that contains the item in its meta data
         """
+        new_item = item.copy()
+        for field_name in item.fields:
+            if field_name not in item and item.fields[field_name].get(self.TAG):
+                """
+                A new target field that's yet to be translated
+                """
+                target_field = item.fields[field_name]
+                source_field_name = target_field['source_field']
+                source_field_value = item[source_field_name]
+                source_language = self.get_source_language_code(item.fields[source_field_name])
+                field_translation = self.translate(source_language, target_field['target_lang_code'], item[source_field_name])
+
+                if (
+                    isinstance(field_translation, (list, tuple)) 
+                    and len(field_translation)==2 
+                    and isinstance(field_translation[0], scrapy.Request)
+                    and callable(field_translation[1])
+                ):
+                    """
+                    the translation ends up with a (request, callback_function) tuple or list, 
+                    this is an ASYNC transation, let's stop the work for the time being
+                    """
+                    request, callback = field_translation
+                    request.meta['handle_httpstatus_all'] = True
+                    request.meta[self.META_KEY] = {
+                        'item': new_item,
+                        'target_field': field_name,
+                        'callback': callback,
+                    }
+                    return request
+                elif isinstance(field_translation, scrapy.Request):
+                    logger.warn("translate() returns a Request without callback function, " \
+                                "we yield this request but nobody will take care of the translation response")
+                    return field_translation
+                elif isinstance(field_translation, (str, list, tuple)):
+                    new_item[field_name] = field_translation
+                else:
+                    raise execs.TranslationErrorGeneral(
+                        "Translation error, the 'translate()' method returns an unknown type: %s"%str(type(field_translation))
+                    )
+
+        # all fields are translated, now it's time to send the item to the engine (and more precesely, the exporter)
+        return new_item
+
+    def translate(self, source_lang_code, target_lang_code, text):
         raise NotImplementedError
             
-class SyncAutoTranslationMiddleware(AutoTranslationMiddlewareBase):
-    """
-    Translate "text" to the language specified by "target_lang_code".
-    You need to implement this function only when you choose to go with Synchronous translation.
-    Make sure this function is finished real quickly.
-    """
-
-    def translate(self, source_lang_code, target_lang_code, text, **kwargs):
-        return 'Text translated by SyncAutoTranslationMiddleware. If you see this, please rewrite the ' \
-               'SyncAutoTranslationMiddleware.translate() method'
-
-    def handle_untranslated_item(self, item, target_field_name):
-        item_class = item.__class__
-        target_field = item_class.fields[target_field_name]
-
-
-        is_critical = target_field.get('critical')
-        source_field = target_field['source_field']
-        source_field_value = item[source_field]
-        source_field_language = self.get_source_language_code(target_field)
-        target_field_name = target_field_name
-        target_field_language = target_field.get('target_lang_code')
-
-        logger.debug(
-            f"SyncAutoTranslationMiddleware.handle_untranslated_item:\n" \
-            f"item: {item_class}\n" \
-            f"source_field: {source_field}\n" \
-            f"source_field_language: {source_field_language}\n" \
-            f"source_field_value: {source_field_value}\n" \
-            f"target_field: {target_field_name}\n" \
-            f"target_field_language: {target_field_language}\n" \
-            f"critical: {is_critical}\n"
-        )
-
-        item[target_field_name] = self.translate(
-            source_lang_code = source_field_language,
-            target_lang_code = target_field_language,
-            text = source_field_value
-        )
-
-        return []
-
-    def process_spider_input(self, response, spider):
-        pass
-
-    def process_spider_exception(self, response, exception, spider):
-        pass
-
-class AsyncAutoTranslationMiddleware(AutoTranslationMiddlewareBase):
-
-    def handle_untranslated_item(self, item, target_field_name):
-
-        item_class = item.__class__
-        target_field = item_class.fields[target_field_name]
-
-
-        is_critical = target_field.get('critical')
-        source_field = target_field['source_field']
-        source_field_value = item[source_field]
-        source_field_language = self.get_source_language_code(target_field)
-        target_field_name = target_field_name
-        target_field_language = target_field.get('target_lang_code')
-
-        logger.debug(
-            f"AsyncAutoTranslationMiddleware.handle_untranslated_item:\n" \
-            f"item: {item_class}\n" \
-            f"source_field: {source_field}\n" \
-            f"source_field_language: {source_field_language}\n" \
-            f"source_field_value: {source_field_value}\n" \
-            f"target_field: {target_field_name}\n" \
-            f"target_field_language: {target_field_language}\n" \
-            f"critical: {is_critical}\n"
-        )
-
-        yield scrapy.Request(
-            url = self.get_translate_url(
-                source_lang_code = target_field.get('source_lang_code') or 'en',
-                target_lang_code = target_field.get('target_lang_code'),
-                text = item[source_field],
-            ),
-            meta = {
-                'handle_httpstatus_all': True,
-                self.META_KEY: {
-                    'item': item,
-                    'source_field': source_field,
-                    'target_field': target_field_name,
-                }
-            }
-        )
-
     def process_spider_input(self, response, spider):
         if self.META_KEY in response.request.meta:
             if response.status<300:
@@ -180,29 +119,44 @@ class AsyncAutoTranslationMiddleware(AutoTranslationMiddlewareBase):
             Don't be confused, it's not an error. Scrapy only allows us to get the translated result 
             by raising an Exception from process_spider_input()
             """
-            trans_result = self.get_translate_result(response)
+            callback = response.request.meta[self.META_KEY].get('callback')
+            if callback:
+                trans_result = callback(response)
+            else:
+                trans_result = self.get_translate_result(response)
             item = response.request.meta[self.META_KEY]['item']
-            source_field = response.request.meta[self.META_KEY]['source_field']
             target_field = response.request.meta[self.META_KEY]['target_field']
             item[target_field] = trans_result
-            logger.debug(
-                f"AsyncAutoTranslationMiddleware.process_spider_exception:\n" \
-                f"item: {item}\n" 
-                f"source_field: {source_field}\n" 
-                f"target_field: {target_field}\n" 
-            )
-            population = self.settings.get('ITEM_FIELD_POPULATION_MANNER')
-            if population=='CUMULATIVE':
-                yield item
-            elif population=='SINGLE_FIELD':
-                yield item.__class__(
-                    **{source_field: item[source_field], target_field: item[target_field]}
-                )
-            else:
-                yield item
+            trans_result = self.handle_untranslated_item(item)
+            yield trans_result
 
         elif isinstance(exception, execs.TranslationError):
             logger.warn(exception.warn())
+
+    def get_translate_result(self, response, **kwargs):
+        raise execs.TranslationErrorGeneral(
+            "Translation response has been recieved but I don't know how to interpret it. " \
+            "You need to either specify a callback function in the translate() method or implement "\
+            "get_translate_result() method of the middleware"
+        )
+
+class SyncAutoTranslationMiddleware(AutoTranslationMiddlewareBase):
+    """
+    Translate "text" to the language specified by "target_lang_code".
+    You need to implement this function only when you choose to go with Synchronous translation.
+    Make sure this function is finished real quickly.
+    """
+
+    def translate(self, source_lang_code, target_lang_code, text):
+        return 'Text translated by SyncAutoTranslationMiddleware. If you see this, please rewrite the ' \
+               'SyncAutoTranslationMiddleware.translate() method'
+
+class AsyncAutoTranslationMiddleware(AutoTranslationMiddlewareBase):
+
+    def translate(self, source_lang_code, target_lang_code, text):
+        return scrapy.Request(
+            url = self.get_translate_url( source_lang_code, target_lang_code, text)
+        ), self.get_translate_result
 
     def get_translate_url(self, source_lang_code, target_lang_code, text, **kwargs):
         raise NotImplementedError

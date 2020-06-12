@@ -128,7 +128,7 @@ class AutoTranslationMiddlewareBase:
             target_field = response.request.meta[self.META_KEY]['target_field']
             item[target_field] = trans_result
             trans_result = self.handle_untranslated_item(item)
-            yield trans_result
+            return [trans_result]
 
         elif isinstance(exception, execs.TranslationError):
             logger.warn(exception.warn())

@@ -3,7 +3,8 @@ Automatically translate specified item fields
 """
 import scrapy
 import types
-from .. import exceptions as execs
+from .. import exceptions as excs
+from .. import FailureAction
 from urllib.parse import quote as urlquote, unquote as urlunquote
 import requests
 import json
@@ -16,6 +17,7 @@ class AutoTranslationMiddlewareBase:
     META_KEY = 'scrapy-auto-translation-middleware'
     TAG = 'auto_translate'
     DEFAULT_LANGUAGE= 'en'
+    IN_FIELD_ERROR_MSG = '--- translation error ---'
 
     @classmethod
     def from_crawler(cls, crawler):
@@ -26,8 +28,8 @@ class AutoTranslationMiddlewareBase:
 
     def get_source_language_code(self, source_field):
 
-        if 'source_language' in source_field:
-            return source_field['source_language']
+        if 'language' in source_field:
+            return source_field['language']
 
         if self.DEFAULT_LANGUAGE is not None:
             return self.DEFAULT_LANGUAGE
@@ -67,10 +69,10 @@ class AutoTranslationMiddlewareBase:
                 A new target field that's yet to be translated
                 """
                 target_field = item.fields[field_name]
-                source_field_name = target_field['source_field']
+                source_field_name = target_field['source']
                 source_field_value = item[source_field_name]
                 source_language = self.get_source_language_code(item.fields[source_field_name])
-                field_translation = self.translate(source_language, target_field['target_lang_code'], item[source_field_name])
+                field_translation = self.translate(source_language, target_field['language'], item[source_field_name])
 
                 if (
                     isinstance(field_translation, (list, tuple)) 
@@ -97,7 +99,7 @@ class AutoTranslationMiddlewareBase:
                 elif isinstance(field_translation, (str, list, tuple)):
                     new_item[field_name] = field_translation
                 else:
-                    raise execs.TranslationErrorGeneral(
+                    raise excs.TranslationErrorGeneral(
                         "Translation error, the 'translate()' method returns an unknown type: %s"%str(type(field_translation))
                     )
 
@@ -110,31 +112,59 @@ class AutoTranslationMiddlewareBase:
     def process_spider_input(self, response, spider):
         if self.META_KEY in response.request.meta:
             if response.status<300:
-                raise execs.TranslationResult(response)
-            raise execs.TranslationErrorDueToInvalidResponseCode(response)
+                raise excs.TranslationResult(response)
+            raise excs.TranslationErrorDueToInvalidResponseCode(response)
 
     def process_spider_exception(self, response, exception, spider):
-        if isinstance(exception, execs.TranslationResult):
+        if isinstance(exception, excs.TranslationResult):
             """
             Don't be confused, it's not an error. Scrapy only allows us to get the translated result 
             by raising an Exception from process_spider_input()
             """
             callback = response.request.meta[self.META_KEY].get('callback')
+            target_field = response.request.meta[self.META_KEY]['target_field']
+            item = response.request.meta[self.META_KEY]['item']
             if callback:
                 trans_result = callback(response)
             else:
                 trans_result = self.get_translate_result(response)
-            item = response.request.meta[self.META_KEY]['item']
-            target_field = response.request.meta[self.META_KEY]['target_field']
             item[target_field] = trans_result
             trans_result = self.handle_untranslated_item(item)
             return [trans_result]
 
-        elif isinstance(exception, execs.TranslationError):
-            logger.warn(exception.warn())
+        elif isinstance(exception, excs.TranslationError):
+            item = response.request.meta[self.META_KEY]['item']
+            target_field_name = response.request.meta[self.META_KEY]['target_field']
+            target_field = item.fields[target_field_name]
+            if target_field.get('on_failure'):
+                action = target_field['on_failure']
+                if action==FailureAction.RAISE:
+                    raise excs.TranslationError
+                elif action==FailureAction.DROP_ITEM:
+                    return None
+                else:
+                    if action==FailureAction.REPORT_IN_FIELD:
+                        item[target_field_name] = self.IN_FIELD_ERROR_MSG
+                    elif action==FailureAction.COPY_SOURCE:
+                        source_field_name = target_field['source']
+                        source_field_value = item[source_field_name]
+                        item[target_field_name] = source_field_value
+                    elif action==FailureAction.SET_NULL:
+                        item[target_field_name] = None
+                    elif action==FailureAction.SET_EMPTY:
+                        item[target_field_name] = ''
+                    else:
+                        raise excs.TranslationErrorGeneral(f"unknown action: {action}")
+                    trans_result = self.handle_untranslated_item(item)
+                    return [trans_result]
+            else:
+                item[target_field_name] = self.IN_FIELD_ERROR_MSG
+                trans_result = self.handle_untranslated_item(item)
+                return [trans_result]
+                    
 
     def get_translate_result(self, response, **kwargs):
-        raise execs.TranslationErrorGeneral(
+        raise excs.TranslationErrorGeneral(
             "Translation response has been recieved but I don't know how to interpret it. " \
             "You need to either specify a callback function in the translate() method or implement "\
             "get_translate_result() method of the middleware"
@@ -196,7 +226,7 @@ class GoogleAutoTranslationMiddleware(AsyncAutoTranslationMiddleware):
         key = self.settings.get('GOOGLE_CLOUD_API_KEY')
         if key:
             return key
-        raise execs.TranslationErrorGeneral(
+        raise excs.TranslationErrorGeneral(
             "A Google Cloud API Key must be available. "
             + "You may either add an attribute 'api_key' to the class {cls} or its subclass, ".format(cls=self.__class__.__name__)
             + "add a variable 'GOOGLE_CLOUD_API_KEY' in your settings file, "

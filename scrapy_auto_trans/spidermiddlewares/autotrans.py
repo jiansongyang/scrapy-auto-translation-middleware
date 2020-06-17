@@ -147,7 +147,7 @@ class AutoTranslationMiddlewareBase:
                     elif action==FailureAction.SET_EMPTY:
                         item[target_field_name] = ''
                     else:
-                        raise excs.TranslationErrorGeneral(f"unknown action: {action}")
+                        raise excs.TranslationErrorGeneral("unknown action: {action}".format(action=action))
                     trans_result = self.handle_untranslated_item(item)
                     return [trans_result]
             else:

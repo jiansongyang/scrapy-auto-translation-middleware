@@ -26,19 +26,6 @@ class AutoTranslationMiddlewareBase:
     def __init__(self, settings):
         self.settings = settings
 
-    def get_source_language_code(self, source_field):
-
-        if 'language' in source_field:
-            return source_field['language']
-
-        if self.DEFAULT_LANGUAGE is not None:
-            return self.DEFAULT_LANGUAGE
-
-        if self.settings.get('DEFAULT_LANGUAGE') is not None:
-            return self.settings.get('DEFAULT_LANGUAGE')
-
-        return 'en'
-
     def process_spider_output(self, response, result, spider):
 
         for x in result:
@@ -70,10 +57,11 @@ class AutoTranslationMiddlewareBase:
                 """
                 target_field = item.fields[field_name]
                 source_field_name = target_field['source']
-                source_field_value = item[source_field_name]
-                source_language = self.get_source_language_code(item.fields[source_field_name])
-                field_translation = self.translate(source_language, target_field['language'], item[source_field_name])
-
+                if 'translate' in target_field or 1==2:
+                    translate_func = target_field['translate']
+                    field_translation = translate_func(source_field_name, field_name, item)
+                else:
+                    field_translation = self.translate(source_field_name, field_name, item)
                 if (
                     isinstance(field_translation, (list, tuple)) 
                     and len(field_translation)==2 
@@ -84,6 +72,7 @@ class AutoTranslationMiddlewareBase:
                     the translation ends up with a (request, callback_function) tuple or list, 
                     this is an ASYNC transation, let's stop the work for the time being
                     """
+
                     request, callback = field_translation
                     request.meta['handle_httpstatus_all'] = True
                     request.meta[self.META_KEY] = {
@@ -103,12 +92,13 @@ class AutoTranslationMiddlewareBase:
                         "Translation error, the 'translate()' method returns an unknown type: %s"%str(type(field_translation))
                     )
 
+        print(new_item)
         # all fields are translated, now it's time to send the item to the engine (and more precesely, the exporter)
         return new_item
 
-    def translate(self, source_lang_code, target_lang_code, text):
+    def translate(self, source_field_name, target_field_name, item):
         raise NotImplementedError
-            
+        
     def process_spider_input(self, response, spider):
         if self.META_KEY in response.request.meta:
             if response.status<300:
@@ -122,13 +112,16 @@ class AutoTranslationMiddlewareBase:
             by raising an Exception from process_spider_input()
             """
             callback = response.request.meta[self.META_KEY].get('callback')
-            target_field = response.request.meta[self.META_KEY]['target_field']
+            target_field_name = response.request.meta[self.META_KEY]['target_field']
             item = response.request.meta[self.META_KEY]['item']
+            target_field = item.fields[target_field_name]
+            source_field_name = target_field['source']
+
             if callback:
-                trans_result = callback(response)
+                trans_result = callback(response, source_field_name, target_field_name, item)
             else:
-                trans_result = self.get_translate_result(response)
-            item[target_field] = trans_result
+                trans_result = self.get_translate_result(response, source_field_name, target_field_name, item)
+            item[target_field_name] = trans_result
             trans_result = self.handle_untranslated_item(item)
             return [trans_result]
 
@@ -163,27 +156,53 @@ class AutoTranslationMiddlewareBase:
                 return [trans_result]
                     
 
-    def get_translate_result(self, response, **kwargs):
+    def get_translate_result(self, response, source_field_name, target_field_name, item):
+        """
+        Default translation callback
+        """
         raise excs.TranslationErrorGeneral(
             "Translation response has been recieved but I don't know how to interpret it. " \
             "You need to either specify a callback function in the translate() method or implement "\
             "get_translate_result() method of the middleware"
         )
 
-class SyncAutoTranslationMiddleware(AutoTranslationMiddlewareBase):
+class LanguageTranslationMiddleware(AutoTranslationMiddlewareBase):
+
+    def get_source_language_code(self, source_field):
+
+        if 'language' in source_field:
+            return source_field['language']
+
+        if self.DEFAULT_LANGUAGE is not None:
+            return self.DEFAULT_LANGUAGE
+
+        if self.settings.get('DEFAULT_LANGUAGE') is not None:
+            return self.settings.get('DEFAULT_LANGUAGE')
+
+        return 'en'
+
+    def translate(self, source_field_name, target_field_name, item):
+        source_language = self.get_source_language_code(item.fields[source_field_name])
+        target_field = item.fields[target_field_name]
+        return self.language_translate(source_language, target_field['language'], item[source_field_name])
+
+    def language_translate(self, source_lang_code, target_lang_code, text):
+        raise NotImplementedError
+
+class SyncAutoTranslationMiddleware(LanguageTranslationMiddleware):
     """
     Translate "text" to the language specified by "target_lang_code".
     You need to implement this function only when you choose to go with Synchronous translation.
     Make sure this function is finished real quickly.
     """
 
-    def translate(self, source_lang_code, target_lang_code, text):
+    def language_translate(self, source_lang_code, target_lang_code, text):
         return 'Text translated by SyncAutoTranslationMiddleware. If you see this, please rewrite the ' \
                'SyncAutoTranslationMiddleware.translate() method'
 
-class AsyncAutoTranslationMiddleware(AutoTranslationMiddlewareBase):
+class AsyncAutoTranslationMiddleware(LanguageTranslationMiddleware):
 
-    def translate(self, source_lang_code, target_lang_code, text):
+    def language_translate(self, source_lang_code, target_lang_code, text):
         return scrapy.Request(
             url = self.get_translate_url( source_lang_code, target_lang_code, text)
         ), self.get_translate_result
@@ -191,7 +210,7 @@ class AsyncAutoTranslationMiddleware(AutoTranslationMiddlewareBase):
     def get_translate_url(self, source_lang_code, target_lang_code, text, **kwargs):
         raise NotImplementedError
 
-    def get_translate_result(self, response, **kwargs):
+    def get_translate_result(self, response, source_field_name, target_field_name, item):
         raise NotImplementedError
 
 class GoogleAutoTranslationMiddleware(AsyncAutoTranslationMiddleware):
@@ -216,7 +235,7 @@ class GoogleAutoTranslationMiddleware(AsyncAutoTranslationMiddleware):
             f'&target={target_lang_code}' \
             f'&source={source_lang_code}'
 
-    def get_translate_result(self, response, **kwargs):
+    def get_translate_result(self, response, source_field_name, target_field_name, item):
         return urlunquote(json.loads(response.text)['data']['translations'][0]['translatedText'])
 
     def get_api_key(self):

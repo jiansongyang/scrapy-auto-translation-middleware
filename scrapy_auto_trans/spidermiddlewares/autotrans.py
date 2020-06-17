@@ -230,10 +230,15 @@ class GoogleAutoTranslationMiddleware(AsyncAutoTranslationMiddleware):
         quoted_text = urlquote(text.encode('utf8'))
         key = self.get_api_key()
         return \
-            f'https://translation.googleapis.com/language/translate/v2?key={key}' \
-            f'&q={quoted_text}' \
-            f'&target={target_lang_code}' \
-            f'&source={source_lang_code}'
+            'https://translation.googleapis.com/language/translate/v2?key={key}' \
+            '&q={quoted_text}' \
+            '&target={target_lang_code}' \
+            '&source={source_lang_code}'.format(
+                key=key, 
+                quoted_text=quoted_text, 
+                target_lang_code=target_lang_code, 
+                source_lang_code=source_lang_code
+            )
 
     def get_translate_result(self, response, source_field_name, target_field_name, item):
         return urlunquote(json.loads(response.text)['data']['translations'][0]['translatedText'])

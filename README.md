@@ -3,10 +3,11 @@ In many circumstances you may want to automatically translate an Item field into
 
     class Country(scrapy.Item):
 	    name = scrapy.Field()
+	    total_area = scrapy.Field()
 	    
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTk4NzkyMTczLC0yMTAzMTU4MTM3LC04OD
-U0ODkyNl19
+eyJoaXN0b3J5IjpbNzAzNTMyNywtOTg3OTIxNzMsLTIxMDMxNT
+gxMzcsLTg4NTQ4OTI2XX0=
 -->

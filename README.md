@@ -1,7 +1,7 @@
 # scrapy-auto-translation-middleware
-A spider-middleware that automatically translates specified Item Fields when you are crawling your spider.
-In many circumstances you may want to 
+In many circumstances you may want to automatically translate an Item field into another language, and write it into another field. For example, you have defined an Item:
+
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNjA5NTY2OTI1XX0=
+eyJoaXN0b3J5IjpbNjkwNTI4NDA0XX0=
 -->

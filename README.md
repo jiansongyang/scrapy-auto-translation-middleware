@@ -3,9 +3,10 @@ In many circumstances you may want to automatically translate an Item field into
 
     class Country(scrapy.Item):
 	    name = scrapy.Field()
+	    
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTk1MTQxMTA3NSwtMjEwMzE1ODEzNywtOD
-g1NDg5MjZdfQ==
+eyJoaXN0b3J5IjpbLTk4NzkyMTczLC0yMTAzMTU4MTM3LC04OD
+U0ODkyNl19
 -->

@@ -65,16 +65,16 @@ Scrapy-auto-translation-middleware provides built-in support for Google Translat
     SPIDER_MIDDLEWARES = {
         scrapy_auto_trans.spidermiddlewares.autotrans.GoogleAutoTranslationMiddleware': 701
     }
-
+Google Translation requires an API Key 
 
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIxNTE1MDQ5MCwxNzM5NjA1NzE3LC0xMj
-M4MTkxNDI5LDY2OTg5NzU0LDE3MjE0MzM5MDAsMTQyNzc2NDk0
-MiwxNTQ4NTgxNzQyLC02ODQwNzU0NjksNjE2MjQxODc5LDU2MD
-kwNDU5LC0yMDI2OTk3NTg1LC0yMzAwOTE4NDcsLTExODIzMTU5
-OTksLTg5OTA5MjM4OCwxMDA1OTE5MzgyLC0xNDYzMDY3ODI5LD
-cwMzUzMjcsLTk4NzkyMTczLC0yMTAzMTU4MTM3LC04ODU0ODky
-Nl19
+eyJoaXN0b3J5IjpbLTE5MDIxMDUzNzIsMTczOTYwNTcxNywtMT
+IzODE5MTQyOSw2Njk4OTc1NCwxNzIxNDMzOTAwLDE0Mjc3NjQ5
+NDIsMTU0ODU4MTc0MiwtNjg0MDc1NDY5LDYxNjI0MTg3OSw1Nj
+A5MDQ1OSwtMjAyNjk5NzU4NSwtMjMwMDkxODQ3LC0xMTgyMzE1
+OTk5LC04OTkwOTIzODgsMTAwNTkxOTM4MiwtMTQ2MzA2NzgyOS
+w3MDM1MzI3LC05ODc5MjE3MywtMjEwMzE1ODEzNywtODg1NDg5
+MjZdfQ==
 -->

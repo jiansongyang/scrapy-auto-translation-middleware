@@ -12,6 +12,7 @@ The meanings are pretty straight forward. Let's assume you want the name field t
 ### option 1:  do the translation in the spider (the worst approach)
 For example, in your spider:
 
+    from some.google.translation.lib import Translator
     Class CitySpider(scrapy.Spider):
 	    name = "cities"
 	    start_url = ["http://some.citydata.website",]
@@ -21,7 +22,8 @@ For example, in your spider:
 
  
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIzMDA5MTg0NywtMTE4MjMxNTk5OSwtOD
-k5MDkyMzg4LDEwMDU5MTkzODIsLTE0NjMwNjc4MjksNzAzNTMy
-NywtOTg3OTIxNzMsLTIxMDMxNTgxMzcsLTg4NTQ4OTI2XX0=
+eyJoaXN0b3J5IjpbMzAwNzE1MjIzLC0yMzAwOTE4NDcsLTExOD
+IzMTU5OTksLTg5OTA5MjM4OCwxMDA1OTE5MzgyLC0xNDYzMDY3
+ODI5LDcwMzUzMjcsLTk4NzkyMTczLC0yMTAzMTU4MTM3LC04OD
+U0ODkyNl19
 -->

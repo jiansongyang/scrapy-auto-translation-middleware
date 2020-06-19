@@ -43,13 +43,16 @@ This a apparently much more in tune with Scrapy's design rules but it would be t
  By making use of a translation middleware you are allowed to do this in the item definition:
  
 
+    import scrapy
     class CityItem(scrapy.Item):
+	    name = scrapy.Fi
 
  
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTcyMTQzMzkwMCwxNDI3NzY0OTQyLDE1ND
-g1ODE3NDIsLTY4NDA3NTQ2OSw2MTYyNDE4NzksNTYwOTA0NTks
-LTIwMjY5OTc1ODUsLTIzMDA5MTg0NywtMTE4MjMxNTk5OSwtOD
-k5MDkyMzg4LDEwMDU5MTkzODIsLTE0NjMwNjc4MjksNzAzNTMy
-NywtOTg3OTIxNzMsLTIxMDMxNTgxMzcsLTg4NTQ4OTI2XX0=
+eyJoaXN0b3J5IjpbMTQ1NzE0OTkzNiwxNzIxNDMzOTAwLDE0Mj
+c3NjQ5NDIsMTU0ODU4MTc0MiwtNjg0MDc1NDY5LDYxNjI0MTg3
+OSw1NjA5MDQ1OSwtMjAyNjk5NzU4NSwtMjMwMDkxODQ3LC0xMT
+gyMzE1OTk5LC04OTkwOTIzODgsMTAwNTkxOTM4MiwtMTQ2MzA2
+NzgyOSw3MDM1MzI3LC05ODc5MjE3MywtMjEwMzE1ODEzNywtOD
+g1NDg5MjZdfQ==
 -->

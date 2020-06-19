@@ -56,12 +56,15 @@ In your spider, you just need to populate the original information (the field "n
 	    ......
 	    yield items.CityItem(name="city_name_crawled_from_web")
 ## installation
+To install scrapy-auto-translation-middleware, run:
+
+    pip install scrapy-auto-translation-middleware
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE1Nzc5MjE1OTYsLTEyMzgxOTE0MjksNj
-Y5ODk3NTQsMTcyMTQzMzkwMCwxNDI3NzY0OTQyLDE1NDg1ODE3
-NDIsLTY4NDA3NTQ2OSw2MTYyNDE4NzksNTYwOTA0NTksLTIwMj
-Y5OTc1ODUsLTIzMDA5MTg0NywtMTE4MjMxNTk5OSwtODk5MDky
-Mzg4LDEwMDU5MTkzODIsLTE0NjMwNjc4MjksNzAzNTMyNywtOT
-g3OTIxNzMsLTIxMDMxNTgxMzcsLTg4NTQ4OTI2XX0=
+eyJoaXN0b3J5IjpbLTg1Mjc0MDg0NywtMTIzODE5MTQyOSw2Nj
+k4OTc1NCwxNzIxNDMzOTAwLDE0Mjc3NjQ5NDIsMTU0ODU4MTc0
+MiwtNjg0MDc1NDY5LDYxNjI0MTg3OSw1NjA5MDQ1OSwtMjAyNj
+k5NzU4NSwtMjMwMDkxODQ3LC0xMTgyMzE1OTk5LC04OTkwOTIz
+ODgsMTAwNTkxOTM4MiwtMTQ2MzA2NzgyOSw3MDM1MzI3LC05OD
+c5MjE3MywtMjEwMzE1ODEzNywtODg1NDg5MjZdfQ==
 -->

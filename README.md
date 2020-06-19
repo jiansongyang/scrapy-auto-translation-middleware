@@ -7,9 +7,9 @@ In many circumstances you may want to automatically translate an Item field into
 	    per_capita_gdp = scrapy.Field()
 	    time_zone = scrapy.Field()
 
-The meaning of 
+The meanings are pretty str
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTExODIzMTU5OTksLTg5OTA5MjM4OCwxMD
-A1OTE5MzgyLC0xNDYzMDY3ODI5LDcwMzUzMjcsLTk4NzkyMTcz
-LC0yMTAzMTU4MTM3LC04ODU0ODkyNl19
+eyJoaXN0b3J5IjpbMTg5ODIyODU4NiwtMTE4MjMxNTk5OSwtOD
+k5MDkyMzg4LDEwMDU5MTkzODIsLTE0NjMwNjc4MjksNzAzNTMy
+NywtOTg3OTIxNzMsLTIxMDMxNTgxMzcsLTg4NTQ4OTI2XX0=
 -->

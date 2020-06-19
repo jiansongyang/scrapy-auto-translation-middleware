@@ -7,9 +7,10 @@ In many circumstances you may want to automatically translate an Item field into
 	    per_capita_gdp = scrapy.Field()
 	    time_zone = scrapy.Field()
 
-The meanings are pretty straight forward. Let's assume you want the name field to be translated into some other languages, say, French, Simplfied Chinese, Japanese, by sending translation requests to Google Translation service. Basically you have 
+The meanings are pretty straight forward. Let's assume you want the name field to be translated into some other languages, say, French, Simplfied Chinese, Japanese, by sending translation requests to Google Translation service. You obviously have an option to do this:
+ 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjc3NTQ3Nzc2LC0xMTgyMzE1OTk5LC04OT
-kwOTIzODgsMTAwNTkxOTM4MiwtMTQ2MzA2NzgyOSw3MDM1MzI3
-LC05ODc5MjE3MywtMjEwMzE1ODEzNywtODg1NDg5MjZdfQ==
+eyJoaXN0b3J5IjpbLTQ0OTA1NDc5MiwtMTE4MjMxNTk5OSwtOD
+k5MDkyMzg4LDEwMDU5MTkzODIsLTE0NjMwNjc4MjksNzAzNTMy
+NywtOTg3OTIxNzMsLTIxMDMxNTgxMzcsLTg4NTQ4OTI2XX0=
 -->

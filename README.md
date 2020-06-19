@@ -25,10 +25,15 @@ This is a bad idea as you are making a synchronous request to Google when you ar
 * As you are doing a synchronous work that may take unpredictable length of time, the spider will suffer from low performance (keep in mind that there's only one thread running in the Twisted framework).
 * The downloader will not take care of the translation work so the states data will become inaccurate.
 ### option 2: send a dedicated request to Google to finish the translation (much better, but tedious)
+Consider the following:
+
+    enter code here
+
  
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNjE2MjQxODc5LDU2MDkwNDU5LC0yMDI2OT
-k3NTg1LC0yMzAwOTE4NDcsLTExODIzMTU5OTksLTg5OTA5MjM4
-OCwxMDA1OTE5MzgyLC0xNDYzMDY3ODI5LDcwMzUzMjcsLTk4Nz
-kyMTczLC0yMTAzMTU4MTM3LC04ODU0ODkyNl19
+eyJoaXN0b3J5IjpbLTY4NDA3NTQ2OSw2MTYyNDE4NzksNTYwOT
+A0NTksLTIwMjY5OTc1ODUsLTIzMDA5MTg0NywtMTE4MjMxNTk5
+OSwtODk5MDkyMzg4LDEwMDU5MTkzODIsLTE0NjMwNjc4MjksNz
+AzNTMyNywtOTg3OTIxNzMsLTIxMDMxNTgxMzcsLTg4NTQ4OTI2
+XX0=
 -->

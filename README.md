@@ -71,16 +71,18 @@ Google Translation requires an API Key for each translation service request so y
 If you don't feel comfortable to hard-code your API key in settings.py, another option is to specify the key as a command line option when you run the spider:
 
     scrapy crawl cities -s GOOGLE_CLOUD_API_KEY="<api.key.you.got.from.google.cloud>"
+## Define your items
+
 ## Write your own translation middleware
 
  
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE2NTQ4NjY1NjMsMTczOTYwNTcxNywtMT
-IzODE5MTQyOSw2Njk4OTc1NCwxNzIxNDMzOTAwLDE0Mjc3NjQ5
-NDIsMTU0ODU4MTc0MiwtNjg0MDc1NDY5LDYxNjI0MTg3OSw1Nj
-A5MDQ1OSwtMjAyNjk5NzU4NSwtMjMwMDkxODQ3LC0xMTgyMzE1
-OTk5LC04OTkwOTIzODgsMTAwNTkxOTM4MiwtMTQ2MzA2NzgyOS
-w3MDM1MzI3LC05ODc5MjE3MywtMjEwMzE1ODEzNywtODg1NDg5
-MjZdfQ==
+eyJoaXN0b3J5IjpbMTk2MTQ2NTE3NywtMTY1NDg2NjU2MywxNz
+M5NjA1NzE3LC0xMjM4MTkxNDI5LDY2OTg5NzU0LDE3MjE0MzM5
+MDAsMTQyNzc2NDk0MiwxNTQ4NTgxNzQyLC02ODQwNzU0NjksNj
+E2MjQxODc5LDU2MDkwNDU5LC0yMDI2OTk3NTg1LC0yMzAwOTE4
+NDcsLTExODIzMTU5OTksLTg5OTA5MjM4OCwxMDA1OTE5MzgyLC
+0xNDYzMDY3ODI5LDcwMzUzMjcsLTk4NzkyMTczLC0yMTAzMTU4
+MTM3XX0=
 -->

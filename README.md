@@ -23,11 +23,11 @@ For example, in your spider:
 This is a bad idea as you are making a synchronous request to Google when you are working in an asynchronous framework (in the case of Scrapy for specific, twisted).  A number of bad things will be resulted:
 * The failure of Google Translation work will stop the entire crawling process, thus your spider will be much more vulnerable to unexpected events.
 * As you are doing a synchronous work that may take unpredictable length of time, the spider will suffer from low performance (keep in mind that there's only one thread running in the Twisted framework).
-* The downloader will not take care of 
-* 
+* The downloader will not take care of the translation work so the states data will become inaccurate.
+### option 2: send 
  
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTMwNDI2ODIzNCw1NjA5MDQ1OSwtMjAyNj
+eyJoaXN0b3J5IjpbMjEyNTA2MTE2Niw1NjA5MDQ1OSwtMjAyNj
 k5NzU4NSwtMjMwMDkxODQ3LC0xMTgyMzE1OTk5LC04OTkwOTIz
 ODgsMTAwNTkxOTM4MiwtMTQ2MzA2NzgyOSw3MDM1MzI3LC05OD
 c5MjE3MywtMjEwMzE1ODEzNywtODg1NDg5MjZdfQ==

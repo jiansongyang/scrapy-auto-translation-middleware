@@ -33,15 +33,16 @@ Consider the following:
 	    start_url = ["http://some.citydata.website",]
 	    def parse(self, response, **kwargs):
 		    name = response.xpath("path.to.city.name").get()
-		    yield scrapy.Request(url="google.translation
+		    yield scrapy.Request(url="google.translation.url", cb_kwargs={"name":name})
 		def translate(self, response, **kwargs)
-		    name_zh=translator.translate(name, source="en", dest="zh-CN")
+		    name = kwargs["name"]
+		    name_zh=response.xpath
 
  
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTg2NjY5ODM1LC02ODQwNzU0NjksNjE2Mj
-QxODc5LDU2MDkwNDU5LC0yMDI2OTk3NTg1LC0yMzAwOTE4NDcs
-LTExODIzMTU5OTksLTg5OTA5MjM4OCwxMDA1OTE5MzgyLC0xND
-YzMDY3ODI5LDcwMzUzMjcsLTk4NzkyMTczLC0yMTAzMTU4MTM3
-LC04ODU0ODkyNl19
+eyJoaXN0b3J5IjpbMTcxOTcwMzQwOSwtNjg0MDc1NDY5LDYxNj
+I0MTg3OSw1NjA5MDQ1OSwtMjAyNjk5NzU4NSwtMjMwMDkxODQ3
+LC0xMTgyMzE1OTk5LC04OTkwOTIzODgsMTAwNTkxOTM4MiwtMT
+Q2MzA2NzgyOSw3MDM1MzI3LC05ODc5MjE3MywtMjEwMzE1ODEz
+NywtODg1NDg5MjZdfQ==
 -->

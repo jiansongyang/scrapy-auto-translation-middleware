@@ -45,14 +45,17 @@ This a apparently much more in tune with Scrapy's design rules but it would be t
 
     import scrapy
     class CityItem(scrapy.Item):
-	    name = scrapy.Fi
+	    name = scrapy.Field()
+	    name_zh = scrapy.Field(auto_translate=True, source="name", language="zh")
+	    name_zh = scrapy.Field(auto_translate=True, source="name", language="fr") 
+	    
 
  
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTQ1NzE0OTkzNiwxNzIxNDMzOTAwLDE0Mj
-c3NjQ5NDIsMTU0ODU4MTc0MiwtNjg0MDc1NDY5LDYxNjI0MTg3
-OSw1NjA5MDQ1OSwtMjAyNjk5NzU4NSwtMjMwMDkxODQ3LC0xMT
-gyMzE1OTk5LC04OTkwOTIzODgsMTAwNTkxOTM4MiwtMTQ2MzA2
-NzgyOSw3MDM1MzI3LC05ODc5MjE3MywtMjEwMzE1ODEzNywtOD
-g1NDg5MjZdfQ==
+eyJoaXN0b3J5IjpbLTE4MTI1MTA4ODYsMTcyMTQzMzkwMCwxND
+I3NzY0OTQyLDE1NDg1ODE3NDIsLTY4NDA3NTQ2OSw2MTYyNDE4
+NzksNTYwOTA0NTksLTIwMjY5OTc1ODUsLTIzMDA5MTg0NywtMT
+E4MjMxNTk5OSwtODk5MDkyMzg4LDEwMDU5MTkzODIsLTE0NjMw
+Njc4MjksNzAzNTMyNywtOTg3OTIxNzMsLTIxMDMxNTgxMzcsLT
+g4NTQ4OTI2XX0=
 -->

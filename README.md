@@ -20,11 +20,11 @@ For example, in your spider:
 		    name = response.xpath("path.to.city.name").get()
 		    translator=Translator()
 		    name_zh=translator.translate(name, source="en", dest="zh-CN")
-This is a bad idea as you are making a synchronous request to Google when you are  asynchronous 
+This is a bad idea as you are making a synchronous request to Google when you are working in an asynchronous framework (in the case of Scrapy for specific, twisted).  
  
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTI4MTQ4NTgyOSwtMjMwMDkxODQ3LC0xMT
-gyMzE1OTk5LC04OTkwOTIzODgsMTAwNTkxOTM4MiwtMTQ2MzA2
-NzgyOSw3MDM1MzI3LC05ODc5MjE3MywtMjEwMzE1ODEzNywtOD
-g1NDg5MjZdfQ==
+eyJoaXN0b3J5IjpbLTIwMjY5OTc1ODUsLTIzMDA5MTg0NywtMT
+E4MjMxNTk5OSwtODk5MDkyMzg4LDEwMDU5MTkzODIsLTE0NjMw
+Njc4MjksNzAzNTMyNywtOTg3OTIxNzMsLTIxMDMxNTgxMzcsLT
+g4NTQ4OTI2XX0=
 -->

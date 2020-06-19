@@ -77,7 +77,7 @@ scrapy-auto-translation-middleware will be triggered if you set `auto_translatio
     class CityItem(scrapy.Item):
         name = scrapy.Field()
         name_zh = scrapy.Field(auto_translation=True, source='name', language='zh')
-        
+You must specify **source** and **language** in the field definition. They are p        
 
 
 ## Write your own translation middleware
@@ -85,11 +85,11 @@ scrapy-auto-translation-middleware will be triggered if you set `auto_translatio
  
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEzNDEyOTM4OTMsLTE2NTQ4NjY1NjMsMT
-czOTYwNTcxNywtMTIzODE5MTQyOSw2Njk4OTc1NCwxNzIxNDMz
-OTAwLDE0Mjc3NjQ5NDIsMTU0ODU4MTc0MiwtNjg0MDc1NDY5LD
-YxNjI0MTg3OSw1NjA5MDQ1OSwtMjAyNjk5NzU4NSwtMjMwMDkx
-ODQ3LC0xMTgyMzE1OTk5LC04OTkwOTIzODgsMTAwNTkxOTM4Mi
-wtMTQ2MzA2NzgyOSw3MDM1MzI3LC05ODc5MjE3MywtMjEwMzE1
-ODEzN119
+eyJoaXN0b3J5IjpbLTg2NDU4OTk1LC0xMzQxMjkzODkzLC0xNj
+U0ODY2NTYzLDE3Mzk2MDU3MTcsLTEyMzgxOTE0MjksNjY5ODk3
+NTQsMTcyMTQzMzkwMCwxNDI3NzY0OTQyLDE1NDg1ODE3NDIsLT
+Y4NDA3NTQ2OSw2MTYyNDE4NzksNTYwOTA0NTksLTIwMjY5OTc1
+ODUsLTIzMDA5MTg0NywtMTE4MjMxNTk5OSwtODk5MDkyMzg4LD
+EwMDU5MTkzODIsLTE0NjMwNjc4MjksNzAzNTMyNywtOTg3OTIx
+NzNdfQ==
 -->

@@ -38,10 +38,12 @@ Consider the following:
 		    name = kwargs["name"]
 		    name_zh=response.xpath("path.to.name_zh").get()
 		    yield items.CityItem(name=name, name_zh=name_zh)
-This a apparently much more in tune with Scrapy's design rules but it would be tiresome to introduce extra callback functions just for doing the  translation. Moreover, it would lower down the maint
+This a apparently much more in tune with Scrapy's design rules but it would be tiresome to introduce extra callback functions just for doing the  translation. Moreover, it would lower down the maintainability and readability of the code.
+### option 3: use a translation middleware (best one)
+ Think about this:
  
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE2NDE3NDI0NiwtNjg0MDc1NDY5LDYxNj
+eyJoaXN0b3J5IjpbMTU0ODU4MTc0MiwtNjg0MDc1NDY5LDYxNj
 I0MTg3OSw1NjA5MDQ1OSwtMjAyNjk5NzU4NSwtMjMwMDkxODQ3
 LC0xMTgyMzE1OTk5LC04OTkwOTIzODgsMTAwNTkxOTM4MiwtMT
 Q2MzA2NzgyOSw3MDM1MzI3LC05ODc5MjE3MywtMjEwMzE1ODEz

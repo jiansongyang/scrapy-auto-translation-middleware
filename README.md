@@ -28,7 +28,7 @@ This is a bad idea as you are making a synchronous request to Google when you ar
 Consider the following:
 
     import scrapy
-    Class CitySpider(scrapy.Spider):
+    class CitySpider(scrapy.Spider):
 	    name = "cities"
 	    start_url = ["http://some.citydata.website",]
 	    def parse(self, response, **kwargs):
@@ -42,11 +42,14 @@ This a apparently much more in tune with Scrapy's design rules but it would be t
 ### option 3: use a translation middleware (best one)
  By making use of a translation middleware you are allowed to do this in the item definition:
  
+
+    class CityItem(scrapy.Item):
+
  
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTQyNzc2NDk0MiwxNTQ4NTgxNzQyLC02OD
-QwNzU0NjksNjE2MjQxODc5LDU2MDkwNDU5LC0yMDI2OTk3NTg1
-LC0yMzAwOTE4NDcsLTExODIzMTU5OTksLTg5OTA5MjM4OCwxMD
-A1OTE5MzgyLC0xNDYzMDY3ODI5LDcwMzUzMjcsLTk4NzkyMTcz
-LC0yMTAzMTU4MTM3LC04ODU0ODkyNl19
+eyJoaXN0b3J5IjpbMTcyMTQzMzkwMCwxNDI3NzY0OTQyLDE1ND
+g1ODE3NDIsLTY4NDA3NTQ2OSw2MTYyNDE4NzksNTYwOTA0NTks
+LTIwMjY5OTc1ODUsLTIzMDA5MTg0NywtMTE4MjMxNTk5OSwtOD
+k5MDkyMzg4LDEwMDU5MTkzODIsLTE0NjMwNjc4MjksNzAzNTMy
+NywtOTg3OTIxNzMsLTIxMDMxNTgxMzcsLTg4NTQ4OTI2XX0=
 -->

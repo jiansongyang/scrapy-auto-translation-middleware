@@ -39,7 +39,7 @@ Consider the following:
 		    name_zh=response.xpath("path.to.name_zh").get()
 		    yield items.CityItem(name=name, name_zh=name_zh)
 This a apparently much more in tune with Scrapy's design rules but it would be tiresome to introduce extra callback functions just for doing the  translation. Moreover, it would lower down the maintainability and readability of the code.
-### option 3: use a translation middleware (best one)
+### Option 3: use a translation middleware (best one)
  By making use of a translation middleware you are allowed to do this in the item definition:
  
     import scrapy
@@ -59,7 +59,7 @@ In your spider, you just need to populate the original information (the field "n
 To install scrapy-auto-translation-middleware, run:
 
     pip install scrapy-auto-translation-middleware
-## settings
+## Settings
 Scrapy-auto-translation-middleware provides built-in support for Google Translation. If you are happy with it, add the following code into your project's settings.py file:
 
     SPIDER_MIDDLEWARES = {
@@ -71,16 +71,16 @@ Google Translation requires an API Key for each translation service request so y
 If you don't feel comfortable to hard-code your API key in settings.py, you have an other option to specify the key as a command line option when you run the spider:
 
     scrapy crawl cities -s GOOGLE_CLOUD_API_KEY="<api.key.you.got.from.google.cloud>"
-
+## Write your own
  
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjUzNjUwNjUxLDE3Mzk2MDU3MTcsLTEyMz
-gxOTE0MjksNjY5ODk3NTQsMTcyMTQzMzkwMCwxNDI3NzY0OTQy
-LDE1NDg1ODE3NDIsLTY4NDA3NTQ2OSw2MTYyNDE4NzksNTYwOT
-A0NTksLTIwMjY5OTc1ODUsLTIzMDA5MTg0NywtMTE4MjMxNTk5
-OSwtODk5MDkyMzg4LDEwMDU5MTkzODIsLTE0NjMwNjc4MjksNz
-AzNTMyNywtOTg3OTIxNzMsLTIxMDMxNTgxMzcsLTg4NTQ4OTI2
-XX0=
+eyJoaXN0b3J5IjpbLTE4NDYzMjQ1MjksMTczOTYwNTcxNywtMT
+IzODE5MTQyOSw2Njk4OTc1NCwxNzIxNDMzOTAwLDE0Mjc3NjQ5
+NDIsMTU0ODU4MTc0MiwtNjg0MDc1NDY5LDYxNjI0MTg3OSw1Nj
+A5MDQ1OSwtMjAyNjk5NzU4NSwtMjMwMDkxODQ3LC0xMTgyMzE1
+OTk5LC04OTkwOTIzODgsMTAwNTkxOTM4MiwtMTQ2MzA2NzgyOS
+w3MDM1MzI3LC05ODc5MjE3MywtMjEwMzE1ODEzNywtODg1NDg5
+MjZdfQ==
 -->

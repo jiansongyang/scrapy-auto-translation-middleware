@@ -74,18 +74,22 @@ If you don't feel comfortable to hard-code your API key in settings.py, another 
 ## Define your items
 scrapy-auto-translation-middleware will be triggered if you set `auto_translation=True` in the item field definition:
 
-    class CityItem
+    class CityItem(scrapy.Item):
+        name = scrapy.Field()
+        name_zh = scrapy.Field(auto_translation=True, source='name', language='zh')
+        
+
 
 ## Write your own translation middleware
 
  
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbODMxMDIzOTg0LC0xNjU0ODY2NTYzLDE3Mz
-k2MDU3MTcsLTEyMzgxOTE0MjksNjY5ODk3NTQsMTcyMTQzMzkw
-MCwxNDI3NzY0OTQyLDE1NDg1ODE3NDIsLTY4NDA3NTQ2OSw2MT
-YyNDE4NzksNTYwOTA0NTksLTIwMjY5OTc1ODUsLTIzMDA5MTg0
-NywtMTE4MjMxNTk5OSwtODk5MDkyMzg4LDEwMDU5MTkzODIsLT
-E0NjMwNjc4MjksNzAzNTMyNywtOTg3OTIxNzMsLTIxMDMxNTgx
-MzddfQ==
+eyJoaXN0b3J5IjpbLTEzNDEyOTM4OTMsLTE2NTQ4NjY1NjMsMT
+czOTYwNTcxNywtMTIzODE5MTQyOSw2Njk4OTc1NCwxNzIxNDMz
+OTAwLDE0Mjc3NjQ5NDIsMTU0ODU4MTc0MiwtNjg0MDc1NDY5LD
+YxNjI0MTg3OSw1NjA5MDQ1OSwtMjAyNjk5NzU4NSwtMjMwMDkx
+ODQ3LC0xMTgyMzE1OTk5LC04OTkwOTIzODgsMTAwNTkxOTM4Mi
+wtMTQ2MzA2NzgyOSw3MDM1MzI3LC05ODc5MjE3MywtMjEwMzE1
+ODEzN119
 -->

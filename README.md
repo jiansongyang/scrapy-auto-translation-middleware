@@ -60,9 +60,12 @@ To install scrapy-auto-translation-middleware, run:
 
     pip install scrapy-auto-translation-middleware
 ## settings
+Add the following code into your project's settings.py file:
+
+    enter code here
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbODQ5NjI2NzAyLC0xMjM4MTkxNDI5LDY2OT
+eyJoaXN0b3J5IjpbMTgyMDEzMzI5LC0xMjM4MTkxNDI5LDY2OT
 g5NzU0LDE3MjE0MzM5MDAsMTQyNzc2NDk0MiwxNTQ4NTgxNzQy
 LC02ODQwNzU0NjksNjE2MjQxODc5LDU2MDkwNDU5LC0yMDI2OT
 k3NTg1LC0yMzAwOTE4NDcsLTExODIzMTU5OTksLTg5OTA5MjM4

@@ -27,13 +27,19 @@ This is a bad idea as you are making a synchronous request to Google when you ar
 ### option 2: send a dedicated request to Google to finish the translation (much better, but tedious)
 Consider the following:
 
-    enter code here
+    Class CitySpider(scrapy.Spider):
+	    name = "cities"
+	    start_url = ["http://some.citydata.website",]
+	    def parse(self, response, **kwargs):
+		    name = response.xpath("path.to.city.name").get()
+		    translator=Translator()
+		    name_zh=translator.translate(name, source="en", dest="zh-CN")
 
  
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTY4NDA3NTQ2OSw2MTYyNDE4NzksNTYwOT
-A0NTksLTIwMjY5OTc1ODUsLTIzMDA5MTg0NywtMTE4MjMxNTk5
-OSwtODk5MDkyMzg4LDEwMDU5MTkzODIsLTE0NjMwNjc4MjksNz
-AzNTMyNywtOTg3OTIxNzMsLTIxMDMxNTgxMzcsLTg4NTQ4OTI2
-XX0=
+eyJoaXN0b3J5IjpbLTkwMjM1MjA0OCwtNjg0MDc1NDY5LDYxNj
+I0MTg3OSw1NjA5MDQ1OSwtMjAyNjk5NzU4NSwtMjMwMDkxODQ3
+LC0xMTgyMzE1OTk5LC04OTkwOTIzODgsMTAwNTkxOTM4MiwtMT
+Q2MzA2NzgyOSw3MDM1MzI3LC05ODc5MjE3MywtMjEwMzE1ODEz
+NywtODg1NDg5MjZdfQ==
 -->

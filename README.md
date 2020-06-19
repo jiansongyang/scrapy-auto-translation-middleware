@@ -51,19 +51,17 @@ This a apparently much more in tune with Scrapy's design rules but it would be t
 	    name_ja = scrapy.Field(auto_translate=True, source="name", language="ja")
 	    
 In your spider, you just need to populate the original information (the field "name") and the middleware will automatically handle others that are marked as `auto_translate=True`:
- 
-
-    
+     
     ......
     def parse(self, response, **kwargs):
 	    ......
 	    yield items.CityItem(name="city_name_crawled_from_web")
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNjY5ODk3NTQsMTcyMTQzMzkwMCwxNDI3Nz
-Y0OTQyLDE1NDg1ODE3NDIsLTY4NDA3NTQ2OSw2MTYyNDE4Nzks
-NTYwOTA0NTksLTIwMjY5OTc1ODUsLTIzMDA5MTg0NywtMTE4Mj
-MxNTk5OSwtODk5MDkyMzg4LDEwMDU5MTkzODIsLTE0NjMwNjc4
-MjksNzAzNTMyNywtOTg3OTIxNzMsLTIxMDMxNTgxMzcsLTg4NT
-Q4OTI2XX0=
+eyJoaXN0b3J5IjpbNTAwNDAzNjA2LDY2OTg5NzU0LDE3MjE0Mz
+M5MDAsMTQyNzc2NDk0MiwxNTQ4NTgxNzQyLC02ODQwNzU0Njks
+NjE2MjQxODc5LDU2MDkwNDU5LC0yMDI2OTk3NTg1LC0yMzAwOT
+E4NDcsLTExODIzMTU5OTksLTg5OTA5MjM4OCwxMDA1OTE5Mzgy
+LC0xNDYzMDY3ODI5LDcwMzUzMjcsLTk4NzkyMTczLC0yMTAzMT
+U4MTM3LC04ODU0ODkyNl19
 -->

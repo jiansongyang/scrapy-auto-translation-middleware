@@ -68,7 +68,7 @@ Scrapy-auto-translation-middleware provides built-in support for Google Translat
 Google Translation requires an API Key for each translation service request so you need to specify the key in the settings.py as well:
 
     GOOGLE_CLOUD_API_KEY="<api.key.you.got.from.google.cloud>"
-If you don't feel comfortable to hard-code your API key in settings.py, you have an other option to specify the key as a command line option when you run the spider:
+If you don't feel comfortable to hard-code your API key in settings.py, another option is to specify the key as a command line option when you run the spider:
 
     scrapy crawl cities -s GOOGLE_CLOUD_API_KEY="<api.key.you.got.from.google.cloud>"
 ## Write your own translation middleware
@@ -76,7 +76,7 @@ If you don't feel comfortable to hard-code your API key in settings.py, you have
  
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIwNjAwOTYyODIsMTczOTYwNTcxNywtMT
+eyJoaXN0b3J5IjpbLTE2NTQ4NjY1NjMsMTczOTYwNTcxNywtMT
 IzODE5MTQyOSw2Njk4OTc1NCwxNzIxNDMzOTAwLDE0Mjc3NjQ5
 NDIsMTU0ODU4MTc0MiwtNjg0MDc1NDY5LDYxNjI0MTg3OSw1Nj
 A5MDQ1OSwtMjAyNjk5NzU4NSwtMjMwMDkxODQ3LC0xMTgyMzE1

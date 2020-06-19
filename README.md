@@ -72,12 +72,11 @@ If you don't feel comfortable to hard-code your API key in settings.py, you have
 
     scrapy crawl cities -s GOOGLE_CLOUD_API_KEY="<api.key.you.got.from.google.cloud>"
 ## Write your own translation middleware
-
+To a great extent the aforementioned 
  
 
-
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIwMzM5ODUxMzIsMTczOTYwNTcxNywtMT
+eyJoaXN0b3J5IjpbLTIwOTY4NTg2NjgsMTczOTYwNTcxNywtMT
 IzODE5MTQyOSw2Njk4OTc1NCwxNzIxNDMzOTAwLDE0Mjc3NjQ5
 NDIsMTU0ODU4MTc0MiwtNjg0MDc1NDY5LDYxNjI0MTg3OSw1Nj
 A5MDQ1OSwtMjAyNjk5NzU4NSwtMjMwMDkxODQ3LC0xMTgyMzE1

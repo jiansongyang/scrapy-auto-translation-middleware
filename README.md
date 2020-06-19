@@ -22,12 +22,12 @@ For example, in your spider:
 		    name_zh=translator.translate(name, source="en", dest="zh-CN")
 This is a bad idea as you are making a synchronous request to Google when you are working in an asynchronous framework (in the case of Scrapy for specific, twisted).  A number of bad things will be resulted:
 * The failure of Google Translation work will stop the entire crawling process, thus your spider will be much more vulnerable to unexpected events.
-* You are breaking the rule 
+* As you are doing a 
 * 
  
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNTYwOTA0NTksLTIwMjY5OTc1ODUsLTIzMD
-A5MTg0NywtMTE4MjMxNTk5OSwtODk5MDkyMzg4LDEwMDU5MTkz
-ODIsLTE0NjMwNjc4MjksNzAzNTMyNywtOTg3OTIxNzMsLTIxMD
-MxNTgxMzcsLTg4NTQ4OTI2XX0=
+eyJoaXN0b3J5IjpbLTEyMjgyNTY3NSw1NjA5MDQ1OSwtMjAyNj
+k5NzU4NSwtMjMwMDkxODQ3LC0xMTgyMzE1OTk5LC04OTkwOTIz
+ODgsMTAwNTkxOTM4MiwtMTQ2MzA2NzgyOSw3MDM1MzI3LC05OD
+c5MjE3MywtMjEwMzE1ODEzNywtODg1NDg5MjZdfQ==
 -->

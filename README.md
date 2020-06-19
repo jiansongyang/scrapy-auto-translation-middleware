@@ -77,7 +77,8 @@ scrapy-auto-translation-middleware will be triggered if you set `auto_translatio
     class CityItem(scrapy.Item):
         name = scrapy.Field()
         name_zh = scrapy.Field(auto_translation=True, source='name', language='zh')
-You must specify **source** and **language** in the field definition. They are p        
+You must specify **source** and **language** in the field definition. They are pretty straight forward in their meanings.
+Optionally,         
 
 
 ## Write your own translation middleware
@@ -85,7 +86,7 @@ You must specify **source** and **language** in the field definition. They are p
  
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTg2NDU4OTk1LC0xMzQxMjkzODkzLC0xNj
+eyJoaXN0b3J5IjpbODAwMTI5ODQ2LC0xMzQxMjkzODkzLC0xNj
 U0ODY2NTYzLDE3Mzk2MDU3MTcsLTEyMzgxOTE0MjksNjY5ODk3
 NTQsMTcyMTQzMzkwMCwxNDI3NzY0OTQyLDE1NDg1ODE3NDIsLT
 Y4NDA3NTQ2OSw2MTYyNDE4NzksNTYwOTA0NTksLTIwMjY5OTc1

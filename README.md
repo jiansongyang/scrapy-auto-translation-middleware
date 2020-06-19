@@ -55,13 +55,13 @@ In your spider, you just need to populate the original information (the field "n
     def parse(self, response, **kwargs):
 	    ......
 	    yield items.CityItem(name="city_name_crawled_from_web")
-## settings
+## installation
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEyMzgxOTE0MjksNjY5ODk3NTQsMTcyMT
-QzMzkwMCwxNDI3NzY0OTQyLDE1NDg1ODE3NDIsLTY4NDA3NTQ2
-OSw2MTYyNDE4NzksNTYwOTA0NTksLTIwMjY5OTc1ODUsLTIzMD
-A5MTg0NywtMTE4MjMxNTk5OSwtODk5MDkyMzg4LDEwMDU5MTkz
-ODIsLTE0NjMwNjc4MjksNzAzNTMyNywtOTg3OTIxNzMsLTIxMD
-MxNTgxMzcsLTg4NTQ4OTI2XX0=
+eyJoaXN0b3J5IjpbLTE1Nzc5MjE1OTYsLTEyMzgxOTE0MjksNj
+Y5ODk3NTQsMTcyMTQzMzkwMCwxNDI3NzY0OTQyLDE1NDg1ODE3
+NDIsLTY4NDA3NTQ2OSw2MTYyNDE4NzksNTYwOTA0NTksLTIwMj
+Y5OTc1ODUsLTIzMDA5MTg0NywtMTE4MjMxNTk5OSwtODk5MDky
+Mzg4LDEwMDU5MTkzODIsLTE0NjMwNjc4MjksNzAzNTMyNywtOT
+g3OTIxNzMsLTIxMDMxNTgxMzcsLTg4NTQ4OTI2XX0=
 -->

@@ -9,7 +9,7 @@ In many circumstances you may want to automatically translate an Item field into
 	    time_zone = scrapy.Field()
 
 The meanings are pretty straight forward. Let's assume you want the name field to be translated into some other languages, say, French, Simplfied Chinese, Japanese, by sending translation requests to Google Translation service. You obviously have an option to do this:
-### option 1:  do the translation in the spider (the worst approach)
+### Option 1:  do the translation in the spider (the worst approach)
 For example, in your spider:
 
     from some.google.translation.lib import Translator
@@ -24,7 +24,7 @@ This is a bad idea as you are making a synchronous request to Google when you ar
 * The failure of Google Translation work will stop the entire crawling process, thus your spider will be much more vulnerable to unexpected events.
 * As you are doing a synchronous work that may take unpredictable length of time, the spider will suffer from low performance (keep in mind that there's only one thread running in the Twisted framework).
 * The downloader will not take care of the translation work so the states data will become inaccurate.
-### option 2: send a dedicated request to Google to finish the translation (much better, but tedious)
+### Option 2: send a dedicated request to Google to finish the translation (much better, but tedious)
 Consider the following:
 
     import scrapy
@@ -71,12 +71,13 @@ Google Translation requires an API Key for each translation service request so y
 If you don't feel comfortable to hard-code your API key in settings.py, you have an other option to specify the key as a command line option when you run the spider:
 
     scrapy crawl cities -s GOOGLE_CLOUD_API_KEY="<api.key.you.got.from.google.cloud>"
-## Write your own
+## Write your own translation middleware
+
  
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE4NDYzMjQ1MjksMTczOTYwNTcxNywtMT
+eyJoaXN0b3J5IjpbLTIwMzM5ODUxMzIsMTczOTYwNTcxNywtMT
 IzODE5MTQyOSw2Njk4OTc1NCwxNzIxNDMzOTAwLDE0Mjc3NjQ5
 NDIsMTU0ODU4MTc0MiwtNjg0MDc1NDY5LDYxNjI0MTg3OSw1Nj
 A5MDQ1OSwtMjAyNjk5NzU4NSwtMjMwMDkxODQ3LC0xMTgyMzE1

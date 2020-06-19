@@ -72,13 +72,16 @@ If you don't feel comfortable to hard-code your API key in settings.py, another 
 
     scrapy crawl cities -s GOOGLE_CLOUD_API_KEY="<api.key.you.got.from.google.cloud>"
 ## Define your items
-scrapy-auto-translation-middleware will be triggered if you set `auto_translation=True` in 
+scrapy-auto-translation-middleware will be triggered if you set `auto_translation=True` in the item field definition:
+
+    class CityItem
+
 ## Write your own translation middleware
 
  
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbOTQ1Mzc2MDQ5LC0xNjU0ODY2NTYzLDE3Mz
+eyJoaXN0b3J5IjpbODMxMDIzOTg0LC0xNjU0ODY2NTYzLDE3Mz
 k2MDU3MTcsLTEyMzgxOTE0MjksNjY5ODk3NTQsMTcyMTQzMzkw
 MCwxNDI3NzY0OTQyLDE1NDg1ODE3NDIsLTY4NDA3NTQ2OSw2MT
 YyNDE4NzksNTYwOTA0NTksLTIwMjY5OTc1ODUsLTIzMDA5MTg0

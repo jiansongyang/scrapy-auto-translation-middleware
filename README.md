@@ -18,12 +18,13 @@ For example, in your spider:
 	    start_url = ["http://some.citydata.website",]
 	    def parse(self, response, **kwargs):
 		    name = response.xpath("path.to.city.name").get()
-		    
-
+		    translator=Translator()
+		    name_zh=translator.translate(name, source="en", dest="zh-CN")
+This is a bad idea 
  
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMzAwNzE1MjIzLC0yMzAwOTE4NDcsLTExOD
-IzMTU5OTksLTg5OTA5MjM4OCwxMDA1OTE5MzgyLC0xNDYzMDY3
-ODI5LDcwMzUzMjcsLTk4NzkyMTczLC0yMTAzMTU4MTM3LC04OD
-U0ODkyNl19
+eyJoaXN0b3J5IjpbLTU3ODY1MDQwNSwtMjMwMDkxODQ3LC0xMT
+gyMzE1OTk5LC04OTkwOTIzODgsMTAwNTkxOTM4MiwtMTQ2MzA2
+NzgyOSw3MDM1MzI3LC05ODc5MjE3MywtMjEwMzE1ODEzNywtOD
+g1NDg5MjZdfQ==
 -->

@@ -38,12 +38,12 @@ Consider the following:
 		    name = kwargs["name"]
 		    name_zh=response.xpath("path.to.name_zh").get()
 		    yield items.CityItem(name=name, name_zh=name_zh)
-This a apparently much more in tune with Scrapy's design rules but think bou
+This a apparently much more in tune with Scrapy's design rules but it would be tiresome to introduce a new callback function f
  
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE2MjAwMDU5MjcsLTY4NDA3NTQ2OSw2MT
-YyNDE4NzksNTYwOTA0NTksLTIwMjY5OTc1ODUsLTIzMDA5MTg0
-NywtMTE4MjMxNTk5OSwtODk5MDkyMzg4LDEwMDU5MTkzODIsLT
-E0NjMwNjc4MjksNzAzNTMyNywtOTg3OTIxNzMsLTIxMDMxNTgx
-MzcsLTg4NTQ4OTI2XX0=
+eyJoaXN0b3J5IjpbMTUxMzc4NTM3MCwtNjg0MDc1NDY5LDYxNj
+I0MTg3OSw1NjA5MDQ1OSwtMjAyNjk5NzU4NSwtMjMwMDkxODQ3
+LC0xMTgyMzE1OTk5LC04OTkwOTIzODgsMTAwNTkxOTM4MiwtMT
+Q2MzA2NzgyOSw3MDM1MzI3LC05ODc5MjE3MywtMjEwMzE1ODEz
+NywtODg1NDg5MjZdfQ==
 -->

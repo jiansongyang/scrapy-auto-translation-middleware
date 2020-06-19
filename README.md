@@ -20,10 +20,10 @@ For example, in your spider:
 		    name = response.xpath("path.to.city.name").get()
 		    translator=Translator()
 		    name_zh=translator.translate(name, source="en", dest="zh-CN")
-This is a bad idea as you are making a synchronous request to 
+This is a bad idea as you are making a synchronous request to Google when you are  asynchronous 
  
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTMyOTExMzQwOSwtMjMwMDkxODQ3LC0xMT
+eyJoaXN0b3J5IjpbMTI4MTQ4NTgyOSwtMjMwMDkxODQ3LC0xMT
 gyMzE1OTk5LC04OTkwOTIzODgsMTAwNTkxOTM4MiwtMTQ2MzA2
 NzgyOSw3MDM1MzI3LC05ODc5MjE3MywtMjEwMzE1ODEzNywtOD
 g1NDg5MjZdfQ==

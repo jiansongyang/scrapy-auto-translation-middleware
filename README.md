@@ -62,13 +62,18 @@ To install scrapy-auto-translation-middleware, run:
 ## settings
 Add the following code into your project's settings.py file:
 
-    enter code here
+    SPIDER_MIDDLEWARES = {
+        'scrapy_auto_trans.spidermiddlewares.autotrans.GoogleAutoTranslationMiddleware': 701
+    }
+
+
+
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTgyMDEzMzI5LC0xMjM4MTkxNDI5LDY2OT
-g5NzU0LDE3MjE0MzM5MDAsMTQyNzc2NDk0MiwxNTQ4NTgxNzQy
-LC02ODQwNzU0NjksNjE2MjQxODc5LDU2MDkwNDU5LC0yMDI2OT
-k3NTg1LC0yMzAwOTE4NDcsLTExODIzMTU5OTksLTg5OTA5MjM4
-OCwxMDA1OTE5MzgyLC0xNDYzMDY3ODI5LDcwMzUzMjcsLTk4Nz
-kyMTczLC0yMTAzMTU4MTM3LC04ODU0ODkyNl19
+eyJoaXN0b3J5IjpbMTczOTYwNTcxNywtMTIzODE5MTQyOSw2Nj
+k4OTc1NCwxNzIxNDMzOTAwLDE0Mjc3NjQ5NDIsMTU0ODU4MTc0
+MiwtNjg0MDc1NDY5LDYxNjI0MTg3OSw1NjA5MDQ1OSwtMjAyNj
+k5NzU4NSwtMjMwMDkxODQ3LC0xMTgyMzE1OTk5LC04OTkwOTIz
+ODgsMTAwNTkxOTM4MiwtMTQ2MzA2NzgyOSw3MDM1MzI3LC05OD
+c5MjE3MywtMjEwMzE1ODEzNywtODg1NDg5MjZdfQ==
 -->

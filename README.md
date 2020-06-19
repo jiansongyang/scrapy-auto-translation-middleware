@@ -14,11 +14,14 @@ For example, in your spider:
 
     Class CitySpider(scrapy.Spider):
 	    name = "cities"
-	    start_url = "http://my.citydata.website"
+	    start_url = ["http://some.citydata.website",]
+	    def parse(self, response, **kwargs):
+		    name = response.xpath("path.to.city.name").get()
+		    
 
  
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE3MjY2NjEzMTQsLTExODIzMTU5OTksLT
-g5OTA5MjM4OCwxMDA1OTE5MzgyLC0xNDYzMDY3ODI5LDcwMzUz
-MjcsLTk4NzkyMTczLC0yMTAzMTU4MTM3LC04ODU0ODkyNl19
+eyJoaXN0b3J5IjpbLTIzMDA5MTg0NywtMTE4MjMxNTk5OSwtOD
+k5MDkyMzg4LDEwMDU5MTkzODIsLTE0NjMwNjc4MjksNzAzNTMy
+NywtOTg3OTIxNzMsLTIxMDMxNTgxMzcsLTg4NTQ4OTI2XX0=
 -->

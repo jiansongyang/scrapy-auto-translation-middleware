@@ -13,10 +13,12 @@ The meanings are pretty straight forward. Let's assume you want the name field t
 For example, in your spider:
 
     Class CitySpider(scrapy.Spider):
+	    name = "cities"
+	    start_url = "http://my.citydata.website"
 
  
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE5Njc0MDA2NDYsLTExODIzMTU5OTksLT
+eyJoaXN0b3J5IjpbLTE3MjY2NjEzMTQsLTExODIzMTU5OTksLT
 g5OTA5MjM4OCwxMDA1OTE5MzgyLC0xNDYzMDY3ODI5LDcwMzUz
 MjcsLTk4NzkyMTczLC0yMTAzMTU4MTM3LC04ODU0ODkyNl19
 -->

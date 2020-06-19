@@ -42,7 +42,6 @@ This a apparently much more in tune with Scrapy's design rules but it would be t
 ### option 3: use a translation middleware (best one)
  By making use of a translation middleware you are allowed to do this in the item definition:
  
-
     import scrapy
     class CityItem(scrapy.Item):
 	    name = scrapy.Field()
@@ -56,12 +55,13 @@ In your spider, you just need to populate the original information (the field "n
     def parse(self, response, **kwargs):
 	    ......
 	    yield items.CityItem(name="city_name_crawled_from_web")
+## settings
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNTAwNDAzNjA2LDY2OTg5NzU0LDE3MjE0Mz
-M5MDAsMTQyNzc2NDk0MiwxNTQ4NTgxNzQyLC02ODQwNzU0Njks
-NjE2MjQxODc5LDU2MDkwNDU5LC0yMDI2OTk3NTg1LC0yMzAwOT
-E4NDcsLTExODIzMTU5OTksLTg5OTA5MjM4OCwxMDA1OTE5Mzgy
-LC0xNDYzMDY3ODI5LDcwMzUzMjcsLTk4NzkyMTczLC0yMTAzMT
-U4MTM3LC04ODU0ODkyNl19
+eyJoaXN0b3J5IjpbLTEyMzgxOTE0MjksNjY5ODk3NTQsMTcyMT
+QzMzkwMCwxNDI3NzY0OTQyLDE1NDg1ODE3NDIsLTY4NDA3NTQ2
+OSw2MTYyNDE4NzksNTYwOTA0NTksLTIwMjY5OTc1ODUsLTIzMD
+A5MTg0NywtMTE4MjMxNTk5OSwtODk5MDkyMzg4LDEwMDU5MTkz
+ODIsLTE0NjMwNjc4MjksNzAzNTMyNywtOTg3OTIxNzMsLTIxMD
+MxNTgxMzcsLTg4NTQ4OTI2XX0=
 -->

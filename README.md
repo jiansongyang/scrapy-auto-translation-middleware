@@ -40,12 +40,13 @@ Consider the following:
 		    yield items.CityItem(name=name, name_zh=name_zh)
 This a apparently much more in tune with Scrapy's design rules but it would be tiresome to introduce extra callback functions just for doing the  translation. Moreover, it would lower down the maintainability and readability of the code.
 ### option 3: use a translation middleware (best one)
- Think about this:
+ By making use of a translation middleware you are allowed to do this in the item definition:
+ 
  
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTU0ODU4MTc0MiwtNjg0MDc1NDY5LDYxNj
-I0MTg3OSw1NjA5MDQ1OSwtMjAyNjk5NzU4NSwtMjMwMDkxODQ3
-LC0xMTgyMzE1OTk5LC04OTkwOTIzODgsMTAwNTkxOTM4MiwtMT
-Q2MzA2NzgyOSw3MDM1MzI3LC05ODc5MjE3MywtMjEwMzE1ODEz
-NywtODg1NDg5MjZdfQ==
+eyJoaXN0b3J5IjpbMTQyNzc2NDk0MiwxNTQ4NTgxNzQyLC02OD
+QwNzU0NjksNjE2MjQxODc5LDU2MDkwNDU5LC0yMDI2OTk3NTg1
+LC0yMzAwOTE4NDcsLTExODIzMTU5OTksLTg5OTA5MjM4OCwxMD
+A1OTE5MzgyLC0xNDYzMDY3ODI5LDcwMzUzMjcsLTk4NzkyMTcz
+LC0yMTAzMTU4MTM3LC04ODU0ODkyNl19
 -->

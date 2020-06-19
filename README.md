@@ -50,10 +50,17 @@ This a apparently much more in tune with Scrapy's design rules but it would be t
 	    name_fr = scrapy.Field(auto_translate=True, source="name", language="fr") 
 	    name_ja = scrapy.Field(auto_translate=True, source="name", language="ja")
 	    
-In your spider, you just need to populate the original information (the field "name") and the middleware will automatically handle others that are marked as `auto_translate=True`.
+In your spider, you just need to populate the original information (the field "name") and the middleware will automatically handle others that are marked as `auto_translate=True`:
  
+
+    
+    ......
+    def parse(self, response, **kwargs):
+	    ......
+	    y
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTMzMjYwNzczOSwxNzIxNDMzOTAwLDE0Mj
+eyJoaXN0b3J5IjpbLTkyMDM2MDI5MSwxNzIxNDMzOTAwLDE0Mj
 c3NjQ5NDIsMTU0ODU4MTc0MiwtNjg0MDc1NDY5LDYxNjI0MTg3
 OSw1NjA5MDQ1OSwtMjAyNjk5NzU4NSwtMjMwMDkxODQ3LC0xMT
 gyMzE1OTk5LC04OTkwOTIzODgsMTAwNTkxOTM4MiwtMTQ2MzA2

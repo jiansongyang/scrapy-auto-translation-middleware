@@ -67,16 +67,16 @@ Scrapy-auto-translation-middleware provides built-in support for Google Translat
     }
 Google Translation requires an API Key for each translation service request so you need to specify the key in the settings.py as well:
 
-    GOOGLE
-
+    GOOGLE_CLOUD_API_KEY="<api.key.you.got.from.google.cloud>"
+If you don't feel
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTc3NDMyMzM0MywxNzM5NjA1NzE3LC0xMj
-M4MTkxNDI5LDY2OTg5NzU0LDE3MjE0MzM5MDAsMTQyNzc2NDk0
-MiwxNTQ4NTgxNzQyLC02ODQwNzU0NjksNjE2MjQxODc5LDU2MD
-kwNDU5LC0yMDI2OTk3NTg1LC0yMzAwOTE4NDcsLTExODIzMTU5
-OTksLTg5OTA5MjM4OCwxMDA1OTE5MzgyLC0xNDYzMDY3ODI5LD
-cwMzUzMjcsLTk4NzkyMTczLC0yMTAzMTU4MTM3LC04ODU0ODky
-Nl19
+eyJoaXN0b3J5IjpbLTE5MzY2NzI2MDcsMTczOTYwNTcxNywtMT
+IzODE5MTQyOSw2Njk4OTc1NCwxNzIxNDMzOTAwLDE0Mjc3NjQ5
+NDIsMTU0ODU4MTc0MiwtNjg0MDc1NDY5LDYxNjI0MTg3OSw1Nj
+A5MDQ1OSwtMjAyNjk5NzU4NSwtMjMwMDkxODQ3LC0xMTgyMzE1
+OTk5LC04OTkwOTIzODgsMTAwNTkxOTM4MiwtMTQ2MzA2NzgyOS
+w3MDM1MzI3LC05ODc5MjE3MywtMjEwMzE1ODEzNywtODg1NDg5
+MjZdfQ==
 -->

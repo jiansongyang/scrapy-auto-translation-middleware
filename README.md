@@ -74,8 +74,12 @@ If you don't feel comfortable to hard-code your API key in settings.py, another 
 ## Class hierarchy
 
 ```mermaid
-graph TD
-    Start --> Stop
+classDiagram
+    class BankAccount
+    BankAccount : +String owner
+    BankAccount : +Bigdecimal balance
+    BankAccount : +deposit(amount)
+    BankAccount : +withdrawl(amount)
 ```
 ## Define your items
 scrapy-auto-translation-middleware will be triggered if you set `auto_translation=True` in the item field definition:
@@ -92,11 +96,11 @@ Optionally,
  
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTU5Nzc4NjQzMiwxNjA4ODcyMDYxLDgwMD
-EyOTg0NiwtMTM0MTI5Mzg5MywtMTY1NDg2NjU2MywxNzM5NjA1
-NzE3LC0xMjM4MTkxNDI5LDY2OTg5NzU0LDE3MjE0MzM5MDAsMT
-QyNzc2NDk0MiwxNTQ4NTgxNzQyLC02ODQwNzU0NjksNjE2MjQx
-ODc5LDU2MDkwNDU5LC0yMDI2OTk3NTg1LC0yMzAwOTE4NDcsLT
-ExODIzMTU5OTksLTg5OTA5MjM4OCwxMDA1OTE5MzgyLC0xNDYz
-MDY3ODI5XX0=
+eyJoaXN0b3J5IjpbMTI2MjQyNTAxMSwtNTk3Nzg2NDMyLDE2MD
+g4NzIwNjEsODAwMTI5ODQ2LC0xMzQxMjkzODkzLC0xNjU0ODY2
+NTYzLDE3Mzk2MDU3MTcsLTEyMzgxOTE0MjksNjY5ODk3NTQsMT
+cyMTQzMzkwMCwxNDI3NzY0OTQyLDE1NDg1ODE3NDIsLTY4NDA3
+NTQ2OSw2MTYyNDE4NzksNTYwOTA0NTksLTIwMjY5OTc1ODUsLT
+IzMDA5MTg0NywtMTE4MjMxNTk5OSwtODk5MDkyMzg4LDEwMDU5
+MTkzODJdfQ==
 -->

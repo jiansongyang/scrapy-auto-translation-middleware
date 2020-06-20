@@ -78,26 +78,7 @@ classDiagram
       Animal <|-- Duck
       Animal <|-- Fish
       Animal <|-- Zebra
-      Animal : +int age
-      Animal : +String gender
-      Animal: +isMammal()
-      Animal: +mate()
-      class Duck{
-          +String beakColor
-          +swim()
-          +quack()
-      }
-      class Fish{
-          -int sizeInFeet
-          -canEat()
-      }
-      class Zebra{
-          +bool is_wild
-          +run()
-      }
-
 ```
-
 ## Define your items
 scrapy-auto-translation-middleware will be triggered if you set `auto_translation=True` in the item field definition:
 
@@ -113,11 +94,11 @@ Optionally,
  
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTYwODg3MjA2MSw4MDAxMjk4NDYsLTEzND
-EyOTM4OTMsLTE2NTQ4NjY1NjMsMTczOTYwNTcxNywtMTIzODE5
-MTQyOSw2Njk4OTc1NCwxNzIxNDMzOTAwLDE0Mjc3NjQ5NDIsMT
-U0ODU4MTc0MiwtNjg0MDc1NDY5LDYxNjI0MTg3OSw1NjA5MDQ1
-OSwtMjAyNjk5NzU4NSwtMjMwMDkxODQ3LC0xMTgyMzE1OTk5LC
-04OTkwOTIzODgsMTAwNTkxOTM4MiwtMTQ2MzA2NzgyOSw3MDM1
-MzI3XX0=
+eyJoaXN0b3J5IjpbMTAxNjg2NjQxOCwxNjA4ODcyMDYxLDgwMD
+EyOTg0NiwtMTM0MTI5Mzg5MywtMTY1NDg2NjU2MywxNzM5NjA1
+NzE3LC0xMjM4MTkxNDI5LDY2OTg5NzU0LDE3MjE0MzM5MDAsMT
+QyNzc2NDk0MiwxNTQ4NTgxNzQyLC02ODQwNzU0NjksNjE2MjQx
+ODc5LDU2MDkwNDU5LC0yMDI2OTk3NTg1LC0yMzAwOTE4NDcsLT
+ExODIzMTU5OTksLTg5OTA5MjM4OCwxMDA1OTE5MzgyLC0xNDYz
+MDY3ODI5XX0=
 -->

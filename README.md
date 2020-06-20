@@ -171,13 +171,11 @@ Use this option to specify a **translator function**. If specified, it will over
 The translator function will be called when an item is being translated for a field. For example:
 
     def a_very_quick_translator(field_name, item, **kwargs):
-	    """
-	    Translator function. Returns either a translated result or a (request, callback) tuple.
-	    """
 	    source_field = kwargs["source"]
-	    return "this is a quick translation for %s"%source_field}"
+	    return "this is a quick translation for %s"%source_field
+
 	def a_slow_translator(field_name, item, **kwargs):
-    
+		source_field = kwargs["source"]    
 
 
 ## Write your own translation middleware
@@ -186,11 +184,11 @@ The translator function will be called when an item is being translated for a fi
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbOTE2NjU5MTcyLC0xMzU4Mzk1ODAzLC0xMT
-Q3NzMxOTY3LDE2NzU5OTU4NTUsLTE0NDA1NzQwNjksLTE4NjQx
-Njg3NDYsLTM1NjU4OTQzMCwtMTgyMjQzOTM1MSwtMTU5NTU2NT
-M2NSwtMTY5MzAwNTkzMywtMTUwMzIyNDM5OSwyMTM2MzMzOTg1
-LC01OTc3ODY0MzIsMTYwODg3MjA2MSw4MDAxMjk4NDYsLTEzND
-EyOTM4OTMsLTE2NTQ4NjY1NjMsMTczOTYwNTcxNywtMTIzODE5
-MTQyOSw2Njk4OTc1NF19
+eyJoaXN0b3J5IjpbMjAzNzUzODgwOSwtMTM1ODM5NTgwMywtMT
+E0NzczMTk2NywxNjc1OTk1ODU1LC0xNDQwNTc0MDY5LC0xODY0
+MTY4NzQ2LC0zNTY1ODk0MzAsLTE4MjI0MzkzNTEsLTE1OTU1Nj
+UzNjUsLTE2OTMwMDU5MzMsLTE1MDMyMjQzOTksMjEzNjMzMzk4
+NSwtNTk3Nzg2NDMyLDE2MDg4NzIwNjEsODAwMTI5ODQ2LC0xMz
+QxMjkzODkzLC0xNjU0ODY2NTYzLDE3Mzk2MDU3MTcsLTEyMzgx
+OTE0MjksNjY5ODk3NTRdfQ==
 -->

@@ -74,9 +74,42 @@ If you don't feel comfortable to hard-code your API key in settings.py, another 
 ## Class hierarchy
 
 <!---
-
-    enter code here
-
+classDiagram
+  AutoTranslationMiddlewareBase <|-- LanguageTranslationMiddleware
+  LanguageTranslationMiddleware <|-- SyncAutoTranslationMiddleware
+  LanguageTranslationMiddleware <|-- AsyncAutoTranslationMiddleware
+  AsyncAutoTranslationMiddleware<|-- GoogleAutoTranslationMiddleware
+	
+  class AutoTranslationMiddlewareBase{
+    +META_KEY
+    +TAG
+    +DEFAULT_LANGUAGE
+    +IN_FIELD_ERROR_MSG
+    
+    +process_spider_output()
+    +handle_untranslated_item()
+    +translate()
+    +process_spider_input()
+    +process_spider_exception()
+  }
+  class LanguageTranslationMiddleware{
+    +get_source_language_code()
+    +translate()
+    +language_translate()
+  }
+  class SyncAutoTranslationMiddleware{
+    +language_translate()
+  }
+  class AsyncAutoTranslationMiddleware{
+    +language_translate()
+    +get_translate_url()
+    +get_translate_result()
+  }
+  class GoogleAutoTranslationMiddleware{
+    +get_translate_url()
+    +get_translate_result()
+    +get_api_key()
+  }
 -->
 
 ## Define your items
@@ -94,11 +127,11 @@ Optionally,
  
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTI0MTQwNjE0NCwtMTY5MzAwNTkzMywtMT
-UwMzIyNDM5OSwyMTM2MzMzOTg1LC01OTc3ODY0MzIsMTYwODg3
-MjA2MSw4MDAxMjk4NDYsLTEzNDEyOTM4OTMsLTE2NTQ4NjY1Nj
-MsMTczOTYwNTcxNywtMTIzODE5MTQyOSw2Njk4OTc1NCwxNzIx
-NDMzOTAwLDE0Mjc3NjQ5NDIsMTU0ODU4MTc0MiwtNjg0MDc1ND
-Y5LDYxNjI0MTg3OSw1NjA5MDQ1OSwtMjAyNjk5NzU4NSwtMjMw
-MDkxODQ3XX0=
+eyJoaXN0b3J5IjpbLTE1OTU1NjUzNjUsLTE2OTMwMDU5MzMsLT
+E1MDMyMjQzOTksMjEzNjMzMzk4NSwtNTk3Nzg2NDMyLDE2MDg4
+NzIwNjEsODAwMTI5ODQ2LC0xMzQxMjkzODkzLC0xNjU0ODY2NT
+YzLDE3Mzk2MDU3MTcsLTEyMzgxOTE0MjksNjY5ODk3NTQsMTcy
+MTQzMzkwMCwxNDI3NzY0OTQyLDE1NDg1ODE3NDIsLTY4NDA3NT
+Q2OSw2MTYyNDE4NzksNTYwOTA0NTksLTIwMjY5OTc1ODUsLTIz
+MDA5MTg0N119
 -->

@@ -176,9 +176,12 @@ The translator function will be called when an item is being translated for a fi
 
 	def a_slow_translator(field_name, item, **kwargs):
 		def callback(response, _field_name, _item, **cb_kwargs):
-			return response.xpath("path.to.translation.result").get()
+			return response.xpath("xpath.to.translation.result").get()
 		source_field = kwargs["source"]
-		return scrapy.Request(url="http://some.translation.service/?text=%s"%item[source_field]), callback    
+		return scrapy.Request(url="http://some.translation.service/?text=%s"%item[source_field]), callback
+	
+	class MyItem(scrapy.Item):
+	
 
 
 ## Write your own translation middleware
@@ -187,11 +190,11 @@ The translator function will be called when an item is being translated for a fi
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTY2OTUxMjU4NiwtMTM1ODM5NTgwMywtMT
-E0NzczMTk2NywxNjc1OTk1ODU1LC0xNDQwNTc0MDY5LC0xODY0
-MTY4NzQ2LC0zNTY1ODk0MzAsLTE4MjI0MzkzNTEsLTE1OTU1Nj
-UzNjUsLTE2OTMwMDU5MzMsLTE1MDMyMjQzOTksMjEzNjMzMzk4
-NSwtNTk3Nzg2NDMyLDE2MDg4NzIwNjEsODAwMTI5ODQ2LC0xMz
-QxMjkzODkzLC0xNjU0ODY2NTYzLDE3Mzk2MDU3MTcsLTEyMzgx
-OTE0MjksNjY5ODk3NTRdfQ==
+eyJoaXN0b3J5IjpbNzk1Njg3NDQzLC0xMzU4Mzk1ODAzLC0xMT
+Q3NzMxOTY3LDE2NzU5OTU4NTUsLTE0NDA1NzQwNjksLTE4NjQx
+Njg3NDYsLTM1NjU4OTQzMCwtMTgyMjQzOTM1MSwtMTU5NTU2NT
+M2NSwtMTY5MzAwNTkzMywtMTUwMzIyNDM5OSwyMTM2MzMzOTg1
+LC01OTc3ODY0MzIsMTYwODg3MjA2MSw4MDAxMjk4NDYsLTEzND
+EyOTM4OTMsLTE2NTQ4NjY1NjMsMTczOTYwNTcxNywtMTIzODE5
+MTQyOSw2Njk4OTc1NF19
 -->

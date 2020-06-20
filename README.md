@@ -74,8 +74,15 @@ If you don't feel comfortable to hard-code your API key in settings.py, another 
 ## Class hierarchy
 
 ```mermaid
-classDiagram
+sequenceDiagram
+Alice ->> Bob: Hello Bob, how are you?
+Bob-->>John: How about you John?
+Bob--x Alice: I am good thanks!
+Bob-x John: I am good thanks!
+Note right of John: Bob thinks a long<br/>long time, so long<br/>that the text does<br/>not fit on a row.
 
+Bob-->Alice: Checking with John...
+Alice->John: Yes... John, how are you?
 ```
 
 ## Define your items
@@ -93,11 +100,11 @@ Optionally,
  
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNjk0MzAxMzksODAwMTI5ODQ2LC0xMzQxMj
-kzODkzLC0xNjU0ODY2NTYzLDE3Mzk2MDU3MTcsLTEyMzgxOTE0
-MjksNjY5ODk3NTQsMTcyMTQzMzkwMCwxNDI3NzY0OTQyLDE1ND
-g1ODE3NDIsLTY4NDA3NTQ2OSw2MTYyNDE4NzksNTYwOTA0NTks
-LTIwMjY5OTc1ODUsLTIzMDA5MTg0NywtMTE4MjMxNTk5OSwtOD
-k5MDkyMzg4LDEwMDU5MTkzODIsLTE0NjMwNjc4MjksNzAzNTMy
-N119
+eyJoaXN0b3J5IjpbOTk3NjEwNjUwLDgwMDEyOTg0NiwtMTM0MT
+I5Mzg5MywtMTY1NDg2NjU2MywxNzM5NjA1NzE3LC0xMjM4MTkx
+NDI5LDY2OTg5NzU0LDE3MjE0MzM5MDAsMTQyNzc2NDk0MiwxNT
+Q4NTgxNzQyLC02ODQwNzU0NjksNjE2MjQxODc5LDU2MDkwNDU5
+LC0yMDI2OTk3NTg1LC0yMzAwOTE4NDcsLTExODIzMTU5OTksLT
+g5OTA5MjM4OCwxMDA1OTE5MzgyLC0xNDYzMDY3ODI5LDcwMzUz
+MjddfQ==
 -->

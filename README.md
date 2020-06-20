@@ -122,7 +122,8 @@ The most intuitive way of using the translation middleware is to subclass `AutoT
 		    """
 		def get_translate_result(self, response, field_name, item, **kwargs):
 		    """
-		    This method is response
+		    This method is responsible to interpret the response from the translation service website (e.g. Google Translate).
+		    Returns either the translate result, or a (request, callback) tuple.
 		    """
 
 
@@ -142,7 +143,7 @@ Optionally,
  
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE0NjEzMjA5OTQsLTM1NjU4OTQzMCwtMT
+eyJoaXN0b3J5IjpbLTExNTcyMTAzNDgsLTM1NjU4OTQzMCwtMT
 gyMjQzOTM1MSwtMTU5NTU2NTM2NSwtMTY5MzAwNTkzMywtMTUw
 MzIyNDM5OSwyMTM2MzMzOTg1LC01OTc3ODY0MzIsMTYwODg3Mj
 A2MSw4MDAxMjk4NDYsLTEzNDEyOTM4OTMsLTE2NTQ4NjY1NjMs

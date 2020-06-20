@@ -168,9 +168,9 @@ Example:
   ### translate
   
 Use this option to specify a **translator function**. If specified, it will override the middleware's `translate()` method. 
-The translator function will be called when an item is being translated for a field. It takes the following arguments:
+The translator function will be called when an item is being translated for a field. For example:
 
-    def translator
+    def my_translator(field_name, item, **kwargs)
     
 
 
@@ -180,11 +180,11 @@ The translator function will be called when an item is being translated for a fi
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbODg5NTk3OTgsLTEzNTgzOTU4MDMsLTExND
-c3MzE5NjcsMTY3NTk5NTg1NSwtMTQ0MDU3NDA2OSwtMTg2NDE2
-ODc0NiwtMzU2NTg5NDMwLC0xODIyNDM5MzUxLC0xNTk1NTY1Mz
-Y1LC0xNjkzMDA1OTMzLC0xNTAzMjI0Mzk5LDIxMzYzMzM5ODUs
-LTU5Nzc4NjQzMiwxNjA4ODcyMDYxLDgwMDEyOTg0NiwtMTM0MT
-I5Mzg5MywtMTY1NDg2NjU2MywxNzM5NjA1NzE3LC0xMjM4MTkx
-NDI5LDY2OTg5NzU0XX0=
+eyJoaXN0b3J5IjpbLTE4OTE4Mzk1NzgsLTEzNTgzOTU4MDMsLT
+ExNDc3MzE5NjcsMTY3NTk5NTg1NSwtMTQ0MDU3NDA2OSwtMTg2
+NDE2ODc0NiwtMzU2NTg5NDMwLC0xODIyNDM5MzUxLC0xNTk1NT
+Y1MzY1LC0xNjkzMDA1OTMzLC0xNTAzMjI0Mzk5LDIxMzYzMzM5
+ODUsLTU5Nzc4NjQzMiwxNjA4ODcyMDYxLDgwMDEyOTg0NiwtMT
+M0MTI5Mzg5MywtMTY1NDg2NjU2MywxNzM5NjA1NzE3LC0xMjM4
+MTkxNDI5LDY2OTg5NzU0XX0=
 -->

@@ -154,7 +154,11 @@ Example:
     from scrapy_auto_trans import FailureAction
     class CityItem(scrapy.Item):
         name = scrapy.Field()
-        name_zh = scrapy.Field(auto_translation=True, source='name', on_failure=FailureAction.DROP_ITEM, language='zh') # drop the item
+        name_zh = scrapy.Field(
+	        auto_translation=True, 
+	        source='name', 
+	        on_failure=FailureAction.DROP_ITEM, language='zh', # drop the item on translation 
+	    )
 
     
 
@@ -167,11 +171,11 @@ Example:
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNjQ2Mjg3NzQ5LC0xODY0MTY4NzQ2LC0zNT
-Y1ODk0MzAsLTE4MjI0MzkzNTEsLTE1OTU1NjUzNjUsLTE2OTMw
-MDU5MzMsLTE1MDMyMjQzOTksMjEzNjMzMzk4NSwtNTk3Nzg2ND
-MyLDE2MDg4NzIwNjEsODAwMTI5ODQ2LC0xMzQxMjkzODkzLC0x
-NjU0ODY2NTYzLDE3Mzk2MDU3MTcsLTEyMzgxOTE0MjksNjY5OD
-k3NTQsMTcyMTQzMzkwMCwxNDI3NzY0OTQyLDE1NDg1ODE3NDIs
-LTY4NDA3NTQ2OV19
+eyJoaXN0b3J5IjpbNTI5NDU5NzksLTE4NjQxNjg3NDYsLTM1Nj
+U4OTQzMCwtMTgyMjQzOTM1MSwtMTU5NTU2NTM2NSwtMTY5MzAw
+NTkzMywtMTUwMzIyNDM5OSwyMTM2MzMzOTg1LC01OTc3ODY0Mz
+IsMTYwODg3MjA2MSw4MDAxMjk4NDYsLTEzNDEyOTM4OTMsLTE2
+NTQ4NjY1NjMsMTczOTYwNTcxNywtMTIzODE5MTQyOSw2Njk4OT
+c1NCwxNzIxNDMzOTAwLDE0Mjc3NjQ5NDIsMTU0ODU4MTc0Miwt
+Njg0MDc1NDY5XX0=
 -->

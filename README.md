@@ -74,7 +74,7 @@ If you don't feel comfortable to hard-code your API key in settings.py, another 
 ## Class hierarchy
 
 ```mermaid
-   classDiagram
+classDiagram
       Animal <|-- Duck
       Animal <|-- Fish
       Animal <|-- Zebra
@@ -94,11 +94,11 @@ Optionally,
  
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE2MTkxODY4MTAsMTYwODg3MjA2MSw4MD
-AxMjk4NDYsLTEzNDEyOTM4OTMsLTE2NTQ4NjY1NjMsMTczOTYw
-NTcxNywtMTIzODE5MTQyOSw2Njk4OTc1NCwxNzIxNDMzOTAwLD
-E0Mjc3NjQ5NDIsMTU0ODU4MTc0MiwtNjg0MDc1NDY5LDYxNjI0
-MTg3OSw1NjA5MDQ1OSwtMjAyNjk5NzU4NSwtMjMwMDkxODQ3LC
-0xMTgyMzE1OTk5LC04OTkwOTIzODgsMTAwNTkxOTM4MiwtMTQ2
-MzA2NzgyOV19
+eyJoaXN0b3J5IjpbMTAxNjg2NjQxOCwxNjA4ODcyMDYxLDgwMD
+EyOTg0NiwtMTM0MTI5Mzg5MywtMTY1NDg2NjU2MywxNzM5NjA1
+NzE3LC0xMjM4MTkxNDI5LDY2OTg5NzU0LDE3MjE0MzM5MDAsMT
+QyNzc2NDk0MiwxNTQ4NTgxNzQyLC02ODQwNzU0NjksNjE2MjQx
+ODc5LDU2MDkwNDU5LC0yMDI2OTk3NTg1LC0yMzAwOTE4NDcsLT
+ExODIzMTU5OTksLTg5OTA5MjM4OCwxMDA1OTE5MzgyLC0xNDYz
+MDY3ODI5XX0=
 -->

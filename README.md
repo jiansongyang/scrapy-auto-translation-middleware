@@ -112,7 +112,10 @@ classDiagram
   }
 ```
 ## Usage
-The most intuitive way of using the translation middleware is to subclass `AutoTranslationMiddlewareBase` and re-write a number of methods, an
+The most intuitive way of using the translation middleware is to subclass `AutoTranslationMiddlewareBase` and re-write a number of methods, and specify the middleware on `settings.py` file:
+
+    class MyTranslationMiddleware(AutoTranslationMiddlewareBase):
+	    def 
 
 ## Define your items
 scrapy-auto-translation-middleware will be triggered if you set `auto_translation=True` in the item field definition:
@@ -129,11 +132,11 @@ Optionally,
  
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNTA1NTUyMTE2LC0xODIyNDM5MzUxLC0xNT
-k1NTY1MzY1LC0xNjkzMDA1OTMzLC0xNTAzMjI0Mzk5LDIxMzYz
-MzM5ODUsLTU5Nzc4NjQzMiwxNjA4ODcyMDYxLDgwMDEyOTg0Ni
-wtMTM0MTI5Mzg5MywtMTY1NDg2NjU2MywxNzM5NjA1NzE3LC0x
-MjM4MTkxNDI5LDY2OTg5NzU0LDE3MjE0MzM5MDAsMTQyNzc2ND
-k0MiwxNTQ4NTgxNzQyLC02ODQwNzU0NjksNjE2MjQxODc5LDU2
-MDkwNDU5XX0=
+eyJoaXN0b3J5IjpbLTIxNTA1OTYxMSwtMTgyMjQzOTM1MSwtMT
+U5NTU2NTM2NSwtMTY5MzAwNTkzMywtMTUwMzIyNDM5OSwyMTM2
+MzMzOTg1LC01OTc3ODY0MzIsMTYwODg3MjA2MSw4MDAxMjk4ND
+YsLTEzNDEyOTM4OTMsLTE2NTQ4NjY1NjMsMTczOTYwNTcxNywt
+MTIzODE5MTQyOSw2Njk4OTc1NCwxNzIxNDMzOTAwLDE0Mjc3Nj
+Q5NDIsMTU0ODU4MTc0MiwtNjg0MDc1NDY5LDYxNjI0MTg3OSw1
+NjA5MDQ1OV19
 -->

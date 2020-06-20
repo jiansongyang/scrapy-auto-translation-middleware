@@ -74,7 +74,10 @@ If you don't feel comfortable to hard-code your API key in settings.py, another 
 ## Class hierarchy
 
 
-```
+[comment]: <> (This is a comment, it will not be included)
+[comment]: <> (in  the output file unless you use it in)
+[comment]: <> (a reference style link.)
+
 classDiagram
   AutoTranslationMiddlewareBase <|-- LanguageTranslationMiddleware
   LanguageTranslationMiddleware <|-- SyncAutoTranslationMiddleware
@@ -111,7 +114,7 @@ classDiagram
     +get_translate_result()
     +get_api_key()
   }
-```
+
 
 ## Define your items
 scrapy-auto-translation-middleware will be triggered if you set `auto_translation=True` in the item field definition:
@@ -128,11 +131,11 @@ Optionally,
  
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE2OTMwMDU5MzMsLTE1MDMyMjQzOTksMj
-EzNjMzMzk4NSwtNTk3Nzg2NDMyLDE2MDg4NzIwNjEsODAwMTI5
-ODQ2LC0xMzQxMjkzODkzLC0xNjU0ODY2NTYzLDE3Mzk2MDU3MT
-csLTEyMzgxOTE0MjksNjY5ODk3NTQsMTcyMTQzMzkwMCwxNDI3
-NzY0OTQyLDE1NDg1ODE3NDIsLTY4NDA3NTQ2OSw2MTYyNDE4Nz
-ksNTYwOTA0NTksLTIwMjY5OTc1ODUsLTIzMDA5MTg0NywtMTE4
-MjMxNTk5OV19
+eyJoaXN0b3J5IjpbODcxOTc4NTI4LC0xNjkzMDA1OTMzLC0xNT
+AzMjI0Mzk5LDIxMzYzMzM5ODUsLTU5Nzc4NjQzMiwxNjA4ODcy
+MDYxLDgwMDEyOTg0NiwtMTM0MTI5Mzg5MywtMTY1NDg2NjU2My
+wxNzM5NjA1NzE3LC0xMjM4MTkxNDI5LDY2OTg5NzU0LDE3MjE0
+MzM5MDAsMTQyNzc2NDk0MiwxNTQ4NTgxNzQyLC02ODQwNzU0Nj
+ksNjE2MjQxODc5LDU2MDkwNDU5LC0yMDI2OTk3NTg1LC0yMzAw
+OTE4NDddfQ==
 -->

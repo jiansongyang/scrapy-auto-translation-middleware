@@ -73,7 +73,7 @@ If you don't feel comfortable to hard-code your API key in settings.py, another 
     scrapy crawl cities -s GOOGLE_CLOUD_API_KEY="<api.key.you.got.from.google.cloud>"
 ## Class hierarchy
 
-```
+```mermaid
 classDiagram
   AutoTranslationMiddlewareBase <|-- LanguageTranslationMiddleware
   LanguageTranslationMiddleware <|-- SyncAutoTranslationMiddleware
@@ -110,7 +110,9 @@ classDiagram
     +get_translate_result()
     +get_api_key()
   }
--->
+```
+
+##Usage
 
 
 ## Define your items
@@ -128,11 +130,11 @@ Optionally,
  
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbODE1OTg0MDUzLC0xNTk1NTY1MzY1LC0xNj
-kzMDA1OTMzLC0xNTAzMjI0Mzk5LDIxMzYzMzM5ODUsLTU5Nzc4
-NjQzMiwxNjA4ODcyMDYxLDgwMDEyOTg0NiwtMTM0MTI5Mzg5My
-wtMTY1NDg2NjU2MywxNzM5NjA1NzE3LC0xMjM4MTkxNDI5LDY2
-OTg5NzU0LDE3MjE0MzM5MDAsMTQyNzc2NDk0MiwxNTQ4NTgxNz
-QyLC02ODQwNzU0NjksNjE2MjQxODc5LDU2MDkwNDU5LC0yMDI2
-OTk3NTg1XX0=
+eyJoaXN0b3J5IjpbMTMwODA3NDY2NywtMTU5NTU2NTM2NSwtMT
+Y5MzAwNTkzMywtMTUwMzIyNDM5OSwyMTM2MzMzOTg1LC01OTc3
+ODY0MzIsMTYwODg3MjA2MSw4MDAxMjk4NDYsLTEzNDEyOTM4OT
+MsLTE2NTQ4NjY1NjMsMTczOTYwNTcxNywtMTIzODE5MTQyOSw2
+Njk4OTc1NCwxNzIxNDMzOTAwLDE0Mjc3NjQ5NDIsMTU0ODU4MT
+c0MiwtNjg0MDc1NDY5LDYxNjI0MTg3OSw1NjA5MDQ1OSwtMjAy
+Njk5NzU4NV19
 -->

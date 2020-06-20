@@ -75,26 +75,7 @@ If you don't feel comfortable to hard-code your API key in settings.py, another 
 
 
 ```
-Animal <|-- Duck
-Animal <|-- Fish
-Animal <|-- Zebra
-Animal : +int age
-Animal : +String gender
-Animal: +isMammal()
-Animal: +mate()
-class Duck{
-+String beakColor
-+swim()
-+quack()
-}
-class Fish{
--int sizeInFeet
--canEat()
-}
-class Zebra{
-+bool is_wild
-+run()
-}
+
 ```
 
 ## Define your items
@@ -112,11 +93,11 @@ Optionally,
  
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE1MDMyMjQzOTksMjEzNjMzMzk4NSwtNT
-k3Nzg2NDMyLDE2MDg4NzIwNjEsODAwMTI5ODQ2LC0xMzQxMjkz
-ODkzLC0xNjU0ODY2NTYzLDE3Mzk2MDU3MTcsLTEyMzgxOTE0Mj
-ksNjY5ODk3NTQsMTcyMTQzMzkwMCwxNDI3NzY0OTQyLDE1NDg1
-ODE3NDIsLTY4NDA3NTQ2OSw2MTYyNDE4NzksNTYwOTA0NTksLT
-IwMjY5OTc1ODUsLTIzMDA5MTg0NywtMTE4MjMxNTk5OSwtODk5
-MDkyMzg4XX0=
+eyJoaXN0b3J5IjpbLTM1NjkyNTgzLC0xNTAzMjI0Mzk5LDIxMz
+YzMzM5ODUsLTU5Nzc4NjQzMiwxNjA4ODcyMDYxLDgwMDEyOTg0
+NiwtMTM0MTI5Mzg5MywtMTY1NDg2NjU2MywxNzM5NjA1NzE3LC
+0xMjM4MTkxNDI5LDY2OTg5NzU0LDE3MjE0MzM5MDAsMTQyNzc2
+NDk0MiwxNTQ4NTgxNzQyLC02ODQwNzU0NjksNjE2MjQxODc5LD
+U2MDkwNDU5LC0yMDI2OTk3NTg1LC0yMzAwOTE4NDcsLTExODIz
+MTU5OTldfQ==
 -->

@@ -174,7 +174,8 @@ The translator function will be called when an item is being translated for a fi
 	    """
 	    Translator function. Returns either a translated result or a (request, callback) tuple.
 	    """
-	    return "quick translation for 
+	    return "this is a quick translation"
+	def a_slow_translator(field_name, item, **kwargs):
     
 
 
@@ -184,7 +185,7 @@ The translator function will be called when an item is being translated for a fi
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTYyNTM5MDgwOCwtMTM1ODM5NTgwMywtMT
+eyJoaXN0b3J5IjpbLTgxMjQ0MjUwMCwtMTM1ODM5NTgwMywtMT
 E0NzczMTk2NywxNjc1OTk1ODU1LC0xNDQwNTc0MDY5LC0xODY0
 MTY4NzQ2LC0zNTY1ODk0MzAsLTE4MjI0MzkzNTEsLTE1OTU1Nj
 UzNjUsLTE2OTMwMDU5MzMsLTE1MDMyMjQzOTksMjEzNjMzMzk4

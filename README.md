@@ -112,7 +112,7 @@ classDiagram
   }
 ```
 ## Usage
-The most intuitive way of using the translation middleware is to
+The most intuitive way of using the translation middleware is to subclass `AutoTranslationMiddlewareBase` and re-write a number of methods, an
 
 ## Define your items
 scrapy-auto-translation-middleware will be triggered if you set `auto_translation=True` in the item field definition:
@@ -129,7 +129,7 @@ Optionally,
  
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTg1NzA0NDM5LC0xODIyNDM5MzUxLC0xNT
+eyJoaXN0b3J5IjpbNTA1NTUyMTE2LC0xODIyNDM5MzUxLC0xNT
 k1NTY1MzY1LC0xNjkzMDA1OTMzLC0xNTAzMjI0Mzk5LDIxMzYz
 MzM5ODUsLTU5Nzc4NjQzMiwxNjA4ODcyMDYxLDgwMDEyOTg0Ni
 wtMTM0MTI5Mzg5MywtMTY1NDg2NjU2MywxNzM5NjA1NzE3LC0x

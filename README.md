@@ -175,7 +175,8 @@ The translator function will be called when an item is being translated for a fi
 	    return "this is a quick translation for %s"%source_field
 
 	def a_slow_translator(field_name, item, **kwargs):
-		source_field = kwargs["source"]    
+		source_field = kwargs["source"]
+		return scrapy.Request(url="http://some.translation.service/?text=%s"%    
 
 
 ## Write your own translation middleware
@@ -184,7 +185,7 @@ The translator function will be called when an item is being translated for a fi
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjAzNzUzODgwOSwtMTM1ODM5NTgwMywtMT
+eyJoaXN0b3J5IjpbMTM5MTYzMDk2MSwtMTM1ODM5NTgwMywtMT
 E0NzczMTk2NywxNjc1OTk1ODU1LC0xNDQwNTc0MDY5LC0xODY0
 MTY4NzQ2LC0zNTY1ODk0MzAsLTE4MjI0MzkzNTEsLTE1OTU1Nj
 UzNjUsLTE2OTMwMDU5MzMsLTE1MDMyMjQzOTksMjEzNjMzMzk4

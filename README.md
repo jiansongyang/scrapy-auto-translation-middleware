@@ -73,48 +73,11 @@ If you don't feel comfortable to hard-code your API key in settings.py, another 
     scrapy crawl cities -s GOOGLE_CLOUD_API_KEY="<api.key.you.got.from.google.cloud>"
 ## Class hierarchy
 
+<!---
 
-[comment]: <> (This is a comment, it will not be included)
-[comment]: <> (in  the output file unless you use it in)
-[comment]: <> (a reference style link.)
+    enter code here
 
-classDiagram
-  AutoTranslationMiddlewareBase <|-- LanguageTranslationMiddleware
-  LanguageTranslationMiddleware <|-- SyncAutoTranslationMiddleware
-  LanguageTranslationMiddleware <|-- AsyncAutoTranslationMiddleware
-  AsyncAutoTranslationMiddleware<|-- GoogleAutoTranslationMiddleware
-	
-  class AutoTranslationMiddlewareBase{
-    +META_KEY
-    +TAG
-    +DEFAULT_LANGUAGE
-    +IN_FIELD_ERROR_MSG
-    
-    +process_spider_output()
-    +handle_untranslated_item()
-    +translate()
-    +process_spider_input()
-    +process_spider_exception()
-  }
-  class LanguageTranslationMiddleware{
-    +get_source_language_code()
-    +translate()
-    +language_translate()
-  }
-  class SyncAutoTranslationMiddleware{
-    +language_translate()
-  }
-  class AsyncAutoTranslationMiddleware{
-    +language_translate()
-    +get_translate_url()
-    +get_translate_result()
-  }
-  class GoogleAutoTranslationMiddleware{
-    +get_translate_url()
-    +get_translate_result()
-    +get_api_key()
-  }
-
+-->
 
 ## Define your items
 scrapy-auto-translation-middleware will be triggered if you set `auto_translation=True` in the item field definition:
@@ -131,11 +94,11 @@ Optionally,
  
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbODcxOTc4NTI4LC0xNjkzMDA1OTMzLC0xNT
-AzMjI0Mzk5LDIxMzYzMzM5ODUsLTU5Nzc4NjQzMiwxNjA4ODcy
-MDYxLDgwMDEyOTg0NiwtMTM0MTI5Mzg5MywtMTY1NDg2NjU2My
-wxNzM5NjA1NzE3LC0xMjM4MTkxNDI5LDY2OTg5NzU0LDE3MjE0
-MzM5MDAsMTQyNzc2NDk0MiwxNTQ4NTgxNzQyLC02ODQwNzU0Nj
-ksNjE2MjQxODc5LDU2MDkwNDU5LC0yMDI2OTk3NTg1LC0yMzAw
-OTE4NDddfQ==
+eyJoaXN0b3J5IjpbLTI0MTQwNjE0NCwtMTY5MzAwNTkzMywtMT
+UwMzIyNDM5OSwyMTM2MzMzOTg1LC01OTc3ODY0MzIsMTYwODg3
+MjA2MSw4MDAxMjk4NDYsLTEzNDEyOTM4OTMsLTE2NTQ4NjY1Nj
+MsMTczOTYwNTcxNywtMTIzODE5MTQyOSw2Njk4OTc1NCwxNzIx
+NDMzOTAwLDE0Mjc3NjQ5NDIsMTU0ODU4MTc0MiwtNjg0MDc1ND
+Y5LDYxNjI0MTg3OSw1NjA5MDQ1OSwtMjAyNjk5NzU4NSwtMjMw
+MDkxODQ3XX0=
 -->

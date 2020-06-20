@@ -74,11 +74,28 @@ If you don't feel comfortable to hard-code your API key in settings.py, another 
 ## Class hierarchy
 
 ```mermaid
-sequenceDiagram
-    Alice->>+John: Hello John, how are you?
-    Alice->>+John: John, can you hear me?
-    John-->>-Alice: Hi Alice, I can hear you!
-    John-->>-Alice: I feel great!
+classDiagram
+      Animal <|-- Duck
+      Animal <|-- Fish
+      Animal <|-- Zebra
+      Animal : +int age
+      Animal : +String gender
+      Animal: +isMammal()
+      Animal: +mate()
+      class Duck{
+          +String beakColor
+          +swim()
+          +quack()
+      }
+      class Fish{
+          -int sizeInFeet
+          -canEat()
+      }
+      class Zebra{
+          +bool is_wild
+          +run()
+      }
+
 ```
 
 ## Define your items
@@ -96,7 +113,7 @@ Optionally,
  
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTQxNDc1MDA3Myw4MDAxMjk4NDYsLTEzND
+eyJoaXN0b3J5IjpbMTYwODg3MjA2MSw4MDAxMjk4NDYsLTEzND
 EyOTM4OTMsLTE2NTQ4NjY1NjMsMTczOTYwNTcxNywtMTIzODE5
 MTQyOSw2Njk4OTc1NCwxNzIxNDMzOTAwLDE0Mjc3NjQ5NDIsMT
 U0ODU4MTc0MiwtNjg0MDc1NDY5LDYxNjI0MTg3OSw1NjA5MDQ1

@@ -156,7 +156,8 @@ Example:
         name = scrapy.Field()
         name_zh = scrapy.Field(
 	        auto_translation=True, 
-	        on_failure=FailureAction.DROP_ITEM, language='zh', # drop the item on translation failure,
+	        on_failure=FailureAction.DROP_ITEM, # drop the item on translation failure,
+	        language='zh', 
 	        source="name",
 	    )
 
@@ -171,11 +172,11 @@ Example:
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE0NDA1NzQwNjksLTE4NjQxNjg3NDYsLT
-M1NjU4OTQzMCwtMTgyMjQzOTM1MSwtMTU5NTU2NTM2NSwtMTY5
-MzAwNTkzMywtMTUwMzIyNDM5OSwyMTM2MzMzOTg1LC01OTc3OD
-Y0MzIsMTYwODg3MjA2MSw4MDAxMjk4NDYsLTEzNDEyOTM4OTMs
-LTE2NTQ4NjY1NjMsMTczOTYwNTcxNywtMTIzODE5MTQyOSw2Nj
-k4OTc1NCwxNzIxNDMzOTAwLDE0Mjc3NjQ5NDIsMTU0ODU4MTc0
-MiwtNjg0MDc1NDY5XX0=
+eyJoaXN0b3J5IjpbMTY3NTk5NTg1NSwtMTQ0MDU3NDA2OSwtMT
+g2NDE2ODc0NiwtMzU2NTg5NDMwLC0xODIyNDM5MzUxLC0xNTk1
+NTY1MzY1LC0xNjkzMDA1OTMzLC0xNTAzMjI0Mzk5LDIxMzYzMz
+M5ODUsLTU5Nzc4NjQzMiwxNjA4ODcyMDYxLDgwMDEyOTg0Niwt
+MTM0MTI5Mzg5MywtMTY1NDg2NjU2MywxNzM5NjA1NzE3LC0xMj
+M4MTkxNDI5LDY2OTg5NzU0LDE3MjE0MzM5MDAsMTQyNzc2NDk0
+MiwxNTQ4NTgxNzQyXX0=
 -->

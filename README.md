@@ -74,7 +74,10 @@ If you don't feel comfortable to hard-code your API key in settings.py, another 
 ## Class hierarchy
 
 ```mermaid
-classDiagram Class01 <|-- AveryLongClass : Cool Class03 *-- Class04 Class05 o-- Class06 Class07 .. Class08 Class09 --> C2 : Where am i? Class09 --* C3 Class09 --|> Class07 Class07 : equals() Class07 : Object[] elementData Class01 : size() Class01 : int chimp Class01 : int gorilla Class08 <--> C2: Cool label
+classDiagram
+Class01
+ <|-- AveryLongClass : Cool Class03 *-- Class04 Class05 o-- Class06 Class07 .. Class08 Class09 --> C2 : Where am i? Class09 --* C3 Class09 --|> Class07 Class07 : equals() Class07 : Object[] elementData Class01 : size() Class01 : int chimp Class01 : int gorilla Class08 <--> C2: Cool label
+```
 
 ## Define your items
 scrapy-auto-translation-middleware will be triggered if you set `auto_translation=True` in the item field definition:
@@ -91,11 +94,11 @@ Optionally,
  
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIwOTI2NDk2MTEsODAwMTI5ODQ2LC0xMz
-QxMjkzODkzLC0xNjU0ODY2NTYzLDE3Mzk2MDU3MTcsLTEyMzgx
-OTE0MjksNjY5ODk3NTQsMTcyMTQzMzkwMCwxNDI3NzY0OTQyLD
-E1NDg1ODE3NDIsLTY4NDA3NTQ2OSw2MTYyNDE4NzksNTYwOTA0
-NTksLTIwMjY5OTc1ODUsLTIzMDA5MTg0NywtMTE4MjMxNTk5OS
-wtODk5MDkyMzg4LDEwMDU5MTkzODIsLTE0NjMwNjc4MjksNzAz
-NTMyN119
+eyJoaXN0b3J5IjpbNTcwOTYyMjM1LDgwMDEyOTg0NiwtMTM0MT
+I5Mzg5MywtMTY1NDg2NjU2MywxNzM5NjA1NzE3LC0xMjM4MTkx
+NDI5LDY2OTg5NzU0LDE3MjE0MzM5MDAsMTQyNzc2NDk0MiwxNT
+Q4NTgxNzQyLC02ODQwNzU0NjksNjE2MjQxODc5LDU2MDkwNDU5
+LC0yMDI2OTk3NTg1LC0yMzAwOTE4NDcsLTExODIzMTU5OTksLT
+g5OTA5MjM4OCwxMDA1OTE5MzgyLC0xNDYzMDY3ODI5LDcwMzUz
+MjddfQ==
 -->

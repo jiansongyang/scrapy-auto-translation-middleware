@@ -127,7 +127,9 @@ The most intuitive way of using the translation middleware is to subclass `AutoT
 		    """
 Add the following in the file `settings.py`:
 
-    enter code here
+    SPIDER_MIDDLEWARES = {
+        scrapy_auto_trans.spidermiddlewares.autotrans.MyTranslationMiddleware': 701
+    }
 
 
 ## Define your items
@@ -145,7 +147,7 @@ Optionally,
  
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTU3NTUzNzQzOCwtMzU2NTg5NDMwLC0xOD
+eyJoaXN0b3J5IjpbLTQyNTM2NTI4MywtMzU2NTg5NDMwLC0xOD
 IyNDM5MzUxLC0xNTk1NTY1MzY1LC0xNjkzMDA1OTMzLC0xNTAz
 MjI0Mzk5LDIxMzYzMzM5ODUsLTU5Nzc4NjQzMiwxNjA4ODcyMD
 YxLDgwMDEyOTg0NiwtMTM0MTI5Mzg5MywtMTY1NDg2NjU2Mywx

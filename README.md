@@ -140,19 +140,22 @@ scrapy-auto-translation-middleware will be triggered if you set `auto_translatio
         name_zh = scrapy.Field(auto_translation=True, source='name', language='zh')
 You must specify **source** and **language** in the field definition. They are pretty straight forward in their meanings.
 The following options are supported:
- on_failure
+### on_failure
+
+    
 
 
 ## Write your own translation middleware
 
  
 
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNTAxMTUwMDcwLC0zNTY1ODk0MzAsLTE4Mj
-I0MzkzNTEsLTE1OTU1NjUzNjUsLTE2OTMwMDU5MzMsLTE1MDMy
-MjQzOTksMjEzNjMzMzk4NSwtNTk3Nzg2NDMyLDE2MDg4NzIwNj
-EsODAwMTI5ODQ2LC0xMzQxMjkzODkzLC0xNjU0ODY2NTYzLDE3
-Mzk2MDU3MTcsLTEyMzgxOTE0MjksNjY5ODk3NTQsMTcyMTQzMz
-kwMCwxNDI3NzY0OTQyLDE1NDg1ODE3NDIsLTY4NDA3NTQ2OSw2
-MTYyNDE4NzldfQ==
+eyJoaXN0b3J5IjpbLTEzNzE3NzE3NDUsLTM1NjU4OTQzMCwtMT
+gyMjQzOTM1MSwtMTU5NTU2NTM2NSwtMTY5MzAwNTkzMywtMTUw
+MzIyNDM5OSwyMTM2MzMzOTg1LC01OTc3ODY0MzIsMTYwODg3Mj
+A2MSw4MDAxMjk4NDYsLTEzNDEyOTM4OTMsLTE2NTQ4NjY1NjMs
+MTczOTYwNTcxNywtMTIzODE5MTQyOSw2Njk4OTc1NCwxNzIxND
+MzOTAwLDE0Mjc3NjQ5NDIsMTU0ODU4MTc0MiwtNjg0MDc1NDY5
+LDYxNjI0MTg3OV19
 -->

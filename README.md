@@ -73,14 +73,24 @@ If you don't feel comfortable to hard-code your API key in settings.py, another 
     scrapy crawl cities -s GOOGLE_CLOUD_API_KEY="<api.key.you.got.from.google.cloud>"
 ## Class hierarchy
 
+
 ```mermaid
 classDiagram
-    class BankAccount
-    BankAccount : +String owner
-    BankAccount : +Bigdecimal balance
-    BankAccount : +deposit(amount)
-    BankAccount : +withdrawl(amount)
+Class01 <|-- AveryLongClass : Cool
+Class03 *-- Class04
+Class05 o-- Class06
+Class07 .. Class08
+Class09 --> C2 : Where am i?
+Class09 --* C3
+Class09 --|> Class07
+Class07 : equals()
+Class07 : Object[] elementData
+Class01 : size()
+Class01 : int chimp
+Class01 : int gorilla
+Class08 <--> C2: Cool label
 ```
+
 ## Define your items
 scrapy-auto-translation-middleware will be triggered if you set `auto_translation=True` in the item field definition:
 
@@ -96,11 +106,11 @@ Optionally,
  
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTI2MjQyNTAxMSwtNTk3Nzg2NDMyLDE2MD
-g4NzIwNjEsODAwMTI5ODQ2LC0xMzQxMjkzODkzLC0xNjU0ODY2
-NTYzLDE3Mzk2MDU3MTcsLTEyMzgxOTE0MjksNjY5ODk3NTQsMT
-cyMTQzMzkwMCwxNDI3NzY0OTQyLDE1NDg1ODE3NDIsLTY4NDA3
-NTQ2OSw2MTYyNDE4NzksNTYwOTA0NTksLTIwMjY5OTc1ODUsLT
-IzMDA5MTg0NywtMTE4MjMxNTk5OSwtODk5MDkyMzg4LDEwMDU5
-MTkzODJdfQ==
+eyJoaXN0b3J5IjpbLTEzMzExNzc0NTksLTU5Nzc4NjQzMiwxNj
+A4ODcyMDYxLDgwMDEyOTg0NiwtMTM0MTI5Mzg5MywtMTY1NDg2
+NjU2MywxNzM5NjA1NzE3LC0xMjM4MTkxNDI5LDY2OTg5NzU0LD
+E3MjE0MzM5MDAsMTQyNzc2NDk0MiwxNTQ4NTgxNzQyLC02ODQw
+NzU0NjksNjE2MjQxODc5LDU2MDkwNDU5LC0yMDI2OTk3NTg1LC
+0yMzAwOTE4NDcsLTExODIzMTU5OTksLTg5OTA5MjM4OCwxMDA1
+OTE5MzgyXX0=
 -->

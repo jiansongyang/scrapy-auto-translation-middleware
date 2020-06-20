@@ -168,7 +168,9 @@ Example:
   ### translate
   
 Use this option to specify a **translator function**. If specified, it will override the middleware's `translate()` method. 
-The translator function will be called when an item is being translated for a field. 
+The translator function will be called when an item is being translated for a field. It takes the following arguments:
+
+    def translator
     
 
 
@@ -178,11 +180,11 @@ The translator function will be called when an item is being translated for a fi
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTY2NDI1NTA0MCwtMTM1ODM5NTgwMywtMT
-E0NzczMTk2NywxNjc1OTk1ODU1LC0xNDQwNTc0MDY5LC0xODY0
-MTY4NzQ2LC0zNTY1ODk0MzAsLTE4MjI0MzkzNTEsLTE1OTU1Nj
-UzNjUsLTE2OTMwMDU5MzMsLTE1MDMyMjQzOTksMjEzNjMzMzk4
-NSwtNTk3Nzg2NDMyLDE2MDg4NzIwNjEsODAwMTI5ODQ2LC0xMz
-QxMjkzODkzLC0xNjU0ODY2NTYzLDE3Mzk2MDU3MTcsLTEyMzgx
-OTE0MjksNjY5ODk3NTRdfQ==
+eyJoaXN0b3J5IjpbODg5NTk3OTgsLTEzNTgzOTU4MDMsLTExND
+c3MzE5NjcsMTY3NTk5NTg1NSwtMTQ0MDU3NDA2OSwtMTg2NDE2
+ODc0NiwtMzU2NTg5NDMwLC0xODIyNDM5MzUxLC0xNTk1NTY1Mz
+Y1LC0xNjkzMDA1OTMzLC0xNTAzMjI0Mzk5LDIxMzYzMzM5ODUs
+LTU5Nzc4NjQzMiwxNjA4ODcyMDYxLDgwMDEyOTg0NiwtMTM0MT
+I5Mzg5MywtMTY1NDg2NjU2MywxNzM5NjA1NzE3LC0xMjM4MTkx
+NDI5LDY2OTg5NzU0XX0=
 -->

@@ -141,7 +141,10 @@ scrapy-auto-translation-middleware will be triggered if you set `auto_translatio
 You must specify **source** and **language** in the field definition. They are pretty straight forward in their meanings.
 The following options are supported:
 ### on_failure
-Use this option to specify what you want to happen if a translation fails. For e
+Use this option to specify what you want to happen if a translation fails.
+* RAISE: raise the failure and let the exception handler to handle it.
+* DROP_ITEM: silently drop the item.
+* 
 example: 
 
     
@@ -153,11 +156,11 @@ example:
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjA1MTk4OTM3LC0zNTY1ODk0MzAsLTE4Mj
-I0MzkzNTEsLTE1OTU1NjUzNjUsLTE2OTMwMDU5MzMsLTE1MDMy
-MjQzOTksMjEzNjMzMzk4NSwtNTk3Nzg2NDMyLDE2MDg4NzIwNj
-EsODAwMTI5ODQ2LC0xMzQxMjkzODkzLC0xNjU0ODY2NTYzLDE3
-Mzk2MDU3MTcsLTEyMzgxOTE0MjksNjY5ODk3NTQsMTcyMTQzMz
-kwMCwxNDI3NzY0OTQyLDE1NDg1ODE3NDIsLTY4NDA3NTQ2OSw2
-MTYyNDE4NzldfQ==
+eyJoaXN0b3J5IjpbLTU2MjA0NjI0MiwtMzU2NTg5NDMwLC0xOD
+IyNDM5MzUxLC0xNTk1NTY1MzY1LC0xNjkzMDA1OTMzLC0xNTAz
+MjI0Mzk5LDIxMzYzMzM5ODUsLTU5Nzc4NjQzMiwxNjA4ODcyMD
+YxLDgwMDEyOTg0NiwtMTM0MTI5Mzg5MywtMTY1NDg2NjU2Mywx
+NzM5NjA1NzE3LC0xMjM4MTkxNDI5LDY2OTg5NzU0LDE3MjE0Mz
+M5MDAsMTQyNzc2NDk0MiwxNTQ4NTgxNzQyLC02ODQwNzU0Njks
+NjE2MjQxODc5XX0=
 -->

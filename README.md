@@ -75,8 +75,7 @@ If you don't feel comfortable to hard-code your API key in settings.py, another 
 
 ```mermaid
 classDiagram
-Class01
- <|-- AveryLongClass : Cool Class03 *-- Class04 Class05 o-- Class06 Class07 .. Class08 Class09 --> C2 : Where am i? Class09 --* C3 Class09 --|> Class07 Class07 : equals() Class07 : Object[] elementData Class01 : size() Class01 : int chimp Class01 : int gorilla Class08 <--> C2: Cool label
+
 ```
 
 ## Define your items
@@ -94,11 +93,11 @@ Optionally,
  
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNTcwOTYyMjM1LDgwMDEyOTg0NiwtMTM0MT
-I5Mzg5MywtMTY1NDg2NjU2MywxNzM5NjA1NzE3LC0xMjM4MTkx
-NDI5LDY2OTg5NzU0LDE3MjE0MzM5MDAsMTQyNzc2NDk0MiwxNT
-Q4NTgxNzQyLC02ODQwNzU0NjksNjE2MjQxODc5LDU2MDkwNDU5
-LC0yMDI2OTk3NTg1LC0yMzAwOTE4NDcsLTExODIzMTU5OTksLT
-g5OTA5MjM4OCwxMDA1OTE5MzgyLC0xNDYzMDY3ODI5LDcwMzUz
-MjddfQ==
+eyJoaXN0b3J5IjpbNjk0MzAxMzksODAwMTI5ODQ2LC0xMzQxMj
+kzODkzLC0xNjU0ODY2NTYzLDE3Mzk2MDU3MTcsLTEyMzgxOTE0
+MjksNjY5ODk3NTQsMTcyMTQzMzkwMCwxNDI3NzY0OTQyLDE1ND
+g1ODE3NDIsLTY4NDA3NTQ2OSw2MTYyNDE4NzksNTYwOTA0NTks
+LTIwMjY5OTc1ODUsLTIzMDA5MTg0NywtMTE4MjMxNTk5OSwtOD
+k5MDkyMzg4LDEwMDU5MTkzODIsLTE0NjMwNjc4MjksNzAzNTMy
+N119
 -->

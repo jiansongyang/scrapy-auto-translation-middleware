@@ -74,10 +74,8 @@ If you don't feel comfortable to hard-code your API key in settings.py, another 
 ## Class hierarchy
 
 ```mermaid
-classDiagram
-      Animal <|-- Duck
-      Animal <|-- Fish
-      Animal <|-- Zebra
+graph TD
+    Start --> Stop
 ```
 ## Define your items
 scrapy-auto-translation-middleware will be triggered if you set `auto_translation=True` in the item field definition:
@@ -94,7 +92,7 @@ Optionally,
  
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTAxNjg2NjQxOCwxNjA4ODcyMDYxLDgwMD
+eyJoaXN0b3J5IjpbLTU5Nzc4NjQzMiwxNjA4ODcyMDYxLDgwMD
 EyOTg0NiwtMTM0MTI5Mzg5MywtMTY1NDg2NjU2MywxNzM5NjA1
 NzE3LC0xMjM4MTkxNDI5LDY2OTg5NzU0LDE3MjE0MzM5MDAsMT
 QyNzc2NDk0MiwxNTQ4NTgxNzQyLC02ODQwNzU0NjksNjE2MjQx

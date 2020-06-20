@@ -144,7 +144,7 @@ The following options are supported:
 Use this option to specify what you want to happen if a translation fails.
 * RAISE: raise the failure and let the exception handler to handle it.
 * DROP_ITEM: silently drop the item.
-* 
+* REPORT_IN_FIELD: write an error message into the target field ("-- trans
 example: 
 
     
@@ -156,11 +156,11 @@ example:
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTU2MjA0NjI0MiwtMzU2NTg5NDMwLC0xOD
-IyNDM5MzUxLC0xNTk1NTY1MzY1LC0xNjkzMDA1OTMzLC0xNTAz
-MjI0Mzk5LDIxMzYzMzM5ODUsLTU5Nzc4NjQzMiwxNjA4ODcyMD
-YxLDgwMDEyOTg0NiwtMTM0MTI5Mzg5MywtMTY1NDg2NjU2Mywx
-NzM5NjA1NzE3LC0xMjM4MTkxNDI5LDY2OTg5NzU0LDE3MjE0Mz
-M5MDAsMTQyNzc2NDk0MiwxNTQ4NTgxNzQyLC02ODQwNzU0Njks
-NjE2MjQxODc5XX0=
+eyJoaXN0b3J5IjpbLTE4NjQxNjg3NDYsLTM1NjU4OTQzMCwtMT
+gyMjQzOTM1MSwtMTU5NTU2NTM2NSwtMTY5MzAwNTkzMywtMTUw
+MzIyNDM5OSwyMTM2MzMzOTg1LC01OTc3ODY0MzIsMTYwODg3Mj
+A2MSw4MDAxMjk4NDYsLTEzNDEyOTM4OTMsLTE2NTQ4NjY1NjMs
+MTczOTYwNTcxNywtMTIzODE5MTQyOSw2Njk4OTc1NCwxNzIxND
+MzOTAwLDE0Mjc3NjQ5NDIsMTU0ODU4MTc0MiwtNjg0MDc1NDY5
+LDYxNjI0MTg3OV19
 -->

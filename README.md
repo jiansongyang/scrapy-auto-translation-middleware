@@ -145,6 +145,8 @@ Use this option to specify what you want to happen if a translation fails.
 * RAISE: raise the failure and let the exception handler to handle it.
 * DROP_ITEM: silently drop the item.
 * REPORT_IN_FIELD: write an error message into the target field, `"--- translation error ---"` by default.
+* COPY_SOURCE: copy the source into the target field.
+* SET
 example: 
 
     
@@ -156,7 +158,7 @@ example:
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTE3ODU0NDI0NywtMTg2NDE2ODc0NiwtMz
+eyJoaXN0b3J5IjpbLTQ5NTYxNDUyOSwtMTg2NDE2ODc0NiwtMz
 U2NTg5NDMwLC0xODIyNDM5MzUxLC0xNTk1NTY1MzY1LC0xNjkz
 MDA1OTMzLC0xNTAzMjI0Mzk5LDIxMzYzMzM5ODUsLTU5Nzc4Nj
 QzMiwxNjA4ODcyMDYxLDgwMDEyOTg0NiwtMTM0MTI5Mzg5Mywt

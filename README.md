@@ -115,7 +115,12 @@ classDiagram
 The most intuitive way of using the translation middleware is to subclass `AutoTranslationMiddlewareBase` and re-write a number of methods, and specify the middleware on `settings.py` file:
 
     class MyTranslationMiddleware(AutoTranslationMiddlewareBase):
-	    def 
+	    def translate(self, field_name, item, **kwargs):
+		    ...
+		def get_translate_result(self, response, field_name, item, **kwargs):
+		    ...
+
+
 
 ## Define your items
 scrapy-auto-translation-middleware will be triggered if you set `auto_translation=True` in the item field definition:
@@ -132,7 +137,7 @@ Optionally,
  
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIxNTA1OTYxMSwtMTgyMjQzOTM1MSwtMT
+eyJoaXN0b3J5IjpbLTM1NjU4OTQzMCwtMTgyMjQzOTM1MSwtMT
 U5NTU2NTM2NSwtMTY5MzAwNTkzMywtMTUwMzIyNDM5OSwyMTM2
 MzMzOTg1LC01OTc3ODY0MzIsMTYwODg3MjA2MSw4MDAxMjk4ND
 YsLTEzNDEyOTM4OTMsLTE2NTQ4NjY1NjMsMTczOTYwNTcxNywt

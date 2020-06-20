@@ -146,8 +146,11 @@ Use this option to specify what you want to happen if a translation fails.
 * DROP_ITEM: silently drop the item.
 * REPORT_IN_FIELD: write an error message into the target field, `"--- translation error ---"` by default.
 * COPY_SOURCE: copy the source into the target field.
-* SET
-example: 
+* SET_NULL: set the target field to be None (null in json).
+* SET_EMPTY: set the target field to be an empty string.
+
+Example: 
+
 
     
 
@@ -158,11 +161,11 @@ example:
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTQ5NTYxNDUyOSwtMTg2NDE2ODc0NiwtMz
-U2NTg5NDMwLC0xODIyNDM5MzUxLC0xNTk1NTY1MzY1LC0xNjkz
-MDA1OTMzLC0xNTAzMjI0Mzk5LDIxMzYzMzM5ODUsLTU5Nzc4Nj
-QzMiwxNjA4ODcyMDYxLDgwMDEyOTg0NiwtMTM0MTI5Mzg5Mywt
-MTY1NDg2NjU2MywxNzM5NjA1NzE3LC0xMjM4MTkxNDI5LDY2OT
-g5NzU0LDE3MjE0MzM5MDAsMTQyNzc2NDk0MiwxNTQ4NTgxNzQy
-LC02ODQwNzU0NjldfQ==
+eyJoaXN0b3J5IjpbNTYxMjE4MDY3LC0xODY0MTY4NzQ2LC0zNT
+Y1ODk0MzAsLTE4MjI0MzkzNTEsLTE1OTU1NjUzNjUsLTE2OTMw
+MDU5MzMsLTE1MDMyMjQzOTksMjEzNjMzMzk4NSwtNTk3Nzg2ND
+MyLDE2MDg4NzIwNjEsODAwMTI5ODQ2LC0xMzQxMjkzODkzLC0x
+NjU0ODY2NTYzLDE3Mzk2MDU3MTcsLTEyMzgxOTE0MjksNjY5OD
+k3NTQsMTcyMTQzMzkwMCwxNDI3NzY0OTQyLDE1NDg1ODE3NDIs
+LTY4NDA3NTQ2OV19
 -->

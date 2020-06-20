@@ -116,7 +116,10 @@ The most intuitive way of using the translation middleware is to subclass `AutoT
 
     class MyTranslationMiddleware(AutoTranslationMiddlewareBase):
 	    def translate(self, field_name, item, **kwargs):
-		    ...
+		    """
+		    This method is called for each field with auto_translate=True.
+		    Returns ei
+		    """
 		def get_translate_result(self, response, field_name, item, **kwargs):
 		    ...
 
@@ -137,11 +140,11 @@ Optionally,
  
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTM1NjU4OTQzMCwtMTgyMjQzOTM1MSwtMT
-U5NTU2NTM2NSwtMTY5MzAwNTkzMywtMTUwMzIyNDM5OSwyMTM2
-MzMzOTg1LC01OTc3ODY0MzIsMTYwODg3MjA2MSw4MDAxMjk4ND
-YsLTEzNDEyOTM4OTMsLTE2NTQ4NjY1NjMsMTczOTYwNTcxNywt
-MTIzODE5MTQyOSw2Njk4OTc1NCwxNzIxNDMzOTAwLDE0Mjc3Nj
-Q5NDIsMTU0ODU4MTc0MiwtNjg0MDc1NDY5LDYxNjI0MTg3OSw1
-NjA5MDQ1OV19
+eyJoaXN0b3J5IjpbMTYzNTQ1OTIxMCwtMzU2NTg5NDMwLC0xOD
+IyNDM5MzUxLC0xNTk1NTY1MzY1LC0xNjkzMDA1OTMzLC0xNTAz
+MjI0Mzk5LDIxMzYzMzM5ODUsLTU5Nzc4NjQzMiwxNjA4ODcyMD
+YxLDgwMDEyOTg0NiwtMTM0MTI5Mzg5MywtMTY1NDg2NjU2Mywx
+NzM5NjA1NzE3LC0xMjM4MTkxNDI5LDY2OTg5NzU0LDE3MjE0Mz
+M5MDAsMTQyNzc2NDk0MiwxNTQ4NTgxNzQyLC02ODQwNzU0Njks
+NjE2MjQxODc5XX0=
 -->

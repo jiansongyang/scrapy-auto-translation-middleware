@@ -73,6 +73,9 @@ If you don't feel comfortable to hard-code your API key in settings.py, another 
     scrapy crawl cities -s GOOGLE_CLOUD_API_KEY="<api.key.you.got.from.google.cloud>"
 ## Class hierarchy
 
+```mermaid
+classDiagram Class01 <|-- AveryLongClass : Cool Class03 *-- Class04 Class05 o-- Class06 Class07 .. Class08 Class09 --> C2 : Where am i? Class09 --* C3 Class09 --|> Class07 Class07 : equals() Class07 : Object[] elementData Class01 : size() Class01 : int chimp Class01 : int gorilla Class08 <--> C2: Cool label
+
 ## Define your items
 scrapy-auto-translation-middleware will be triggered if you set `auto_translation=True` in the item field definition:
 
@@ -88,7 +91,7 @@ Optionally,
  
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEzMTYwMTk3NjksODAwMTI5ODQ2LC0xMz
+eyJoaXN0b3J5IjpbLTIwOTI2NDk2MTEsODAwMTI5ODQ2LC0xMz
 QxMjkzODkzLC0xNjU0ODY2NTYzLDE3Mzk2MDU3MTcsLTEyMzgx
 OTE0MjksNjY5ODk3NTQsMTcyMTQzMzkwMCwxNDI3NzY0OTQyLD
 E1NDg1ODE3NDIsLTY4NDA3NTQ2OSw2MTYyNDE4NzksNTYwOTA0

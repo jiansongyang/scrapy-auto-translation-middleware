@@ -165,8 +165,10 @@ Example:
 	        source="name",
 	    )
 
-    
-
+  ### translate
+  
+Use this option to specify a **translator function**. If specified, it will override the middleware's `translate()` method. 
+The translator function 
     
 
 
@@ -176,11 +178,11 @@ Example:
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE5MjAyOTY4NjcsLTEzNTgzOTU4MDMsLT
-ExNDc3MzE5NjcsMTY3NTk5NTg1NSwtMTQ0MDU3NDA2OSwtMTg2
-NDE2ODc0NiwtMzU2NTg5NDMwLC0xODIyNDM5MzUxLC0xNTk1NT
-Y1MzY1LC0xNjkzMDA1OTMzLC0xNTAzMjI0Mzk5LDIxMzYzMzM5
-ODUsLTU5Nzc4NjQzMiwxNjA4ODcyMDYxLDgwMDEyOTg0NiwtMT
-M0MTI5Mzg5MywtMTY1NDg2NjU2MywxNzM5NjA1NzE3LC0xMjM4
-MTkxNDI5LDY2OTg5NzU0XX0=
+eyJoaXN0b3J5IjpbNDgyOTU4NjY1LC0xMzU4Mzk1ODAzLC0xMT
+Q3NzMxOTY3LDE2NzU5OTU4NTUsLTE0NDA1NzQwNjksLTE4NjQx
+Njg3NDYsLTM1NjU4OTQzMCwtMTgyMjQzOTM1MSwtMTU5NTU2NT
+M2NSwtMTY5MzAwNTkzMywtMTUwMzIyNDM5OSwyMTM2MzMzOTg1
+LC01OTc3ODY0MzIsMTYwODg3MjA2MSw4MDAxMjk4NDYsLTEzND
+EyOTM4OTMsLTE2NTQ4NjY1NjMsMTczOTYwNTcxNywtMTIzODE5
+MTQyOSw2Njk4OTc1NF19
 -->

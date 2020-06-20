@@ -76,7 +76,26 @@ If you don't feel comfortable to hard-code your API key in settings.py, another 
 
 ```mermaid
 classDiagram
-	class 
+Animal <|-- Duck
+Animal <|-- Fish
+Animal <|-- Zebra
+Animal : +int age
+Animal : +String gender
+Animal: +isMammal()
+Animal: +mate()
+class Duck{
++String beakColor
++swim()
++quack()
+}
+class Fish{
+-int sizeInFeet
+-canEat()
+}
+class Zebra{
++bool is_wild
++run()
+}
 ```
 
 ## Define your items
@@ -94,11 +113,11 @@ Optionally,
  
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTkwNjIzNDAxLC01OTc3ODY0MzIsMTYwOD
-g3MjA2MSw4MDAxMjk4NDYsLTEzNDEyOTM4OTMsLTE2NTQ4NjY1
-NjMsMTczOTYwNTcxNywtMTIzODE5MTQyOSw2Njk4OTc1NCwxNz
-IxNDMzOTAwLDE0Mjc3NjQ5NDIsMTU0ODU4MTc0MiwtNjg0MDc1
-NDY5LDYxNjI0MTg3OSw1NjA5MDQ1OSwtMjAyNjk5NzU4NSwtMj
-MwMDkxODQ3LC0xMTgyMzE1OTk5LC04OTkwOTIzODgsMTAwNTkx
-OTM4Ml19
+eyJoaXN0b3J5IjpbMjEzNjMzMzk4NSwtNTk3Nzg2NDMyLDE2MD
+g4NzIwNjEsODAwMTI5ODQ2LC0xMzQxMjkzODkzLC0xNjU0ODY2
+NTYzLDE3Mzk2MDU3MTcsLTEyMzgxOTE0MjksNjY5ODk3NTQsMT
+cyMTQzMzkwMCwxNDI3NzY0OTQyLDE1NDg1ODE3NDIsLTY4NDA3
+NTQ2OSw2MTYyNDE4NzksNTYwOTA0NTksLTIwMjY5OTc1ODUsLT
+IzMDA5MTg0NywtMTE4MjMxNTk5OSwtODk5MDkyMzg4LDEwMDU5
+MTkzODJdfQ==
 -->

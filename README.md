@@ -112,7 +112,7 @@ classDiagram
   }
 ```
 ## Usage
-
+First you need to choose a middleware class and subclass it. 
 
 ## Define your items
 scrapy-auto-translation-middleware will be triggered if you set `auto_translation=True` in the item field definition:
@@ -129,11 +129,11 @@ Optionally,
  
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE4MjI0MzkzNTEsLTE1OTU1NjUzNjUsLT
-E2OTMwMDU5MzMsLTE1MDMyMjQzOTksMjEzNjMzMzk4NSwtNTk3
-Nzg2NDMyLDE2MDg4NzIwNjEsODAwMTI5ODQ2LC0xMzQxMjkzOD
-kzLC0xNjU0ODY2NTYzLDE3Mzk2MDU3MTcsLTEyMzgxOTE0Mjks
-NjY5ODk3NTQsMTcyMTQzMzkwMCwxNDI3NzY0OTQyLDE1NDg1OD
-E3NDIsLTY4NDA3NTQ2OSw2MTYyNDE4NzksNTYwOTA0NTksLTIw
-MjY5OTc1ODVdfQ==
+eyJoaXN0b3J5IjpbMjk1MDQzMTMsLTE4MjI0MzkzNTEsLTE1OT
+U1NjUzNjUsLTE2OTMwMDU5MzMsLTE1MDMyMjQzOTksMjEzNjMz
+Mzk4NSwtNTk3Nzg2NDMyLDE2MDg4NzIwNjEsODAwMTI5ODQ2LC
+0xMzQxMjkzODkzLC0xNjU0ODY2NTYzLDE3Mzk2MDU3MTcsLTEy
+MzgxOTE0MjksNjY5ODk3NTQsMTcyMTQzMzkwMCwxNDI3NzY0OT
+QyLDE1NDg1ODE3NDIsLTY4NDA3NTQ2OSw2MTYyNDE4NzksNTYw
+OTA0NTldfQ==
 -->

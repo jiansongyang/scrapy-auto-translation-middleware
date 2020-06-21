@@ -309,6 +309,8 @@ Use this option to specify to what language the field should be translated.  If 
 `language` is optional and only necessary when your translator requires it. In cases where your translator is doing things like unit-conversion, for example, it would not be needed. 
 Usually you need to specify the language for both the source and target field. The target language must be explicitly specified. The middleware use the following order to determin the source language:
 * `language` option in the source field
+* The middleware's 
+* `DEFAULT_LANGUAGE` in the project's settings
 * 
 ### source
 
@@ -320,11 +322,11 @@ Usually you need to specify the language for both the source and target field. T
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMzUzODk4MTI3LDI3MzI2Mjk2NiwxOTk0Mz
-k2NTcwLDgyNjc5OTAwOCwtNDU2MjI4OTk4LC0xNDU4MTE5NTgz
-LDM3Mjg0NDM1Nyw0MTQ2MTQ0OTMsLTEzMDI4NzMwMTUsMTcxMj
-MxNTcwNiw0Nzk1MTkxNDIsNzk1Njg3NDQzLC0xMzU4Mzk1ODAz
-LC0xMTQ3NzMxOTY3LDE2NzU5OTU4NTUsLTE0NDA1NzQwNjksLT
-E4NjQxNjg3NDYsLTM1NjU4OTQzMCwtMTgyMjQzOTM1MSwtMTU5
-NTU2NTM2NV19
+eyJoaXN0b3J5IjpbLTEwOTIyMTEwNjAsMjczMjYyOTY2LDE5OT
+QzOTY1NzAsODI2Nzk5MDA4LC00NTYyMjg5OTgsLTE0NTgxMTk1
+ODMsMzcyODQ0MzU3LDQxNDYxNDQ5MywtMTMwMjg3MzAxNSwxNz
+EyMzE1NzA2LDQ3OTUxOTE0Miw3OTU2ODc0NDMsLTEzNTgzOTU4
+MDMsLTExNDc3MzE5NjcsMTY3NTk5NTg1NSwtMTQ0MDU3NDA2OS
+wtMTg2NDE2ODc0NiwtMzU2NTg5NDMwLC0xODIyNDM5MzUxLC0x
+NTk1NTY1MzY1XX0=
 -->

@@ -124,7 +124,7 @@ The most intuitive way of using the translation middleware is to subclass `AutoT
 		    This method is called for each field with auto_translate=True.
 		    Returns either the translate result, or a (request, callback) tuple.
 		    """
-		def get_translate_result(self, response, field_name, item, **kwargs):
+	    def get_translate_result(self, response, field_name, item, **kwargs):
 		    """
 		    This method is responsible to interpret the response from the translation service website (e.g. Google Translate).
 		    Returns either the translate result, or a (request, callback) tuple.
@@ -196,11 +196,11 @@ In cases where `translate` is present, all other field options (e.g. "source") w
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNDE0NjE0NDkzLC0xMzAyODczMDE1LDE3MT
-IzMTU3MDYsNDc5NTE5MTQyLDc5NTY4NzQ0MywtMTM1ODM5NTgw
-MywtMTE0NzczMTk2NywxNjc1OTk1ODU1LC0xNDQwNTc0MDY5LC
-0xODY0MTY4NzQ2LC0zNTY1ODk0MzAsLTE4MjI0MzkzNTEsLTE1
-OTU1NjUzNjUsLTE2OTMwMDU5MzMsLTE1MDMyMjQzOTksMjEzNj
-MzMzk4NSwtNTk3Nzg2NDMyLDE2MDg4NzIwNjEsODAwMTI5ODQ2
-LC0xMzQxMjkzODkzXX0=
+eyJoaXN0b3J5IjpbMzcyODQ0MzU3LDQxNDYxNDQ5MywtMTMwMj
+g3MzAxNSwxNzEyMzE1NzA2LDQ3OTUxOTE0Miw3OTU2ODc0NDMs
+LTEzNTgzOTU4MDMsLTExNDc3MzE5NjcsMTY3NTk5NTg1NSwtMT
+Q0MDU3NDA2OSwtMTg2NDE2ODc0NiwtMzU2NTg5NDMwLC0xODIy
+NDM5MzUxLC0xNTk1NTY1MzY1LC0xNjkzMDA1OTMzLC0xNTAzMj
+I0Mzk5LDIxMzYzMzM5ODUsLTU5Nzc4NjQzMiwxNjA4ODcyMDYx
+LDgwMDEyOTg0Nl19
 -->

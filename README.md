@@ -188,6 +188,7 @@ The translator function will be called when an item is being translated for a fi
 		total_area = scrapy.Field()
 		total_area_in_sq_miles = scrapy.Field(auto_translate=True, translate=sqkm_to_sqmi, source="total_area")
 
+If
 
 ## Write your own translation middleware
 
@@ -195,11 +196,11 @@ The translator function will be called when an item is being translated for a fi
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTcxMjMxNTcwNiw0Nzk1MTkxNDIsNzk1Nj
-g3NDQzLC0xMzU4Mzk1ODAzLC0xMTQ3NzMxOTY3LDE2NzU5OTU4
-NTUsLTE0NDA1NzQwNjksLTE4NjQxNjg3NDYsLTM1NjU4OTQzMC
-wtMTgyMjQzOTM1MSwtMTU5NTU2NTM2NSwtMTY5MzAwNTkzMywt
-MTUwMzIyNDM5OSwyMTM2MzMzOTg1LC01OTc3ODY0MzIsMTYwOD
-g3MjA2MSw4MDAxMjk4NDYsLTEzNDEyOTM4OTMsLTE2NTQ4NjY1
-NjMsMTczOTYwNTcxN119
+eyJoaXN0b3J5IjpbLTEzMDI4NzMwMTUsMTcxMjMxNTcwNiw0Nz
+k1MTkxNDIsNzk1Njg3NDQzLC0xMzU4Mzk1ODAzLC0xMTQ3NzMx
+OTY3LDE2NzU5OTU4NTUsLTE0NDA1NzQwNjksLTE4NjQxNjg3ND
+YsLTM1NjU4OTQzMCwtMTgyMjQzOTM1MSwtMTU5NTU2NTM2NSwt
+MTY5MzAwNTkzMywtMTUwMzIyNDM5OSwyMTM2MzMzOTg1LC01OT
+c3ODY0MzIsMTYwODg3MjA2MSw4MDAxMjk4NDYsLTEzNDEyOTM4
+OTMsLTE2NTQ4NjY1NjNdfQ==
 -->

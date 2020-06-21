@@ -208,9 +208,9 @@ Use this option to specify to what language the field should be translated.  If 
 | Bosnian | bs |
 | Bulgarian | bg |
 | Catalan | ca |
-| Cebuano | ceb (ISO-639-2) |
-| Chinese (Simplified) | zh-CN or zh (BCP-47) |
-| Chinese (Traditional) | zh-TW (BCP-47) |
+| Cebuano | ceb (ISO-639-2) |
+| Chinese (Simplified) | zh-CN or zh (BCP-47) |
+| Chinese (Traditional) | zh-TW (BCP-47) |
 | Corsican | co |
 | Croatian | hr |
 | Czech | cs |
@@ -229,10 +229,10 @@ Use this option to specify to what language the field should be translated.  If 
 | Gujarati | gu |
 | Haitian Creole | ht |
 | Hausa | ha |
-| Hawaiian | haw (ISO-639-2) |
-| Hebrew | he or iw |
+| Hawaiian | haw (ISO-639-2) |
+| Hebrew | he or iw |
 | Hindi | hi |
-| Hmong | hmn (ISO-639-2) |
+| Hmong | hmn (ISO-639-2) |
 | Hungarian | hu |
 | Icelandic | is |
 | Igbo | ig |
@@ -306,6 +306,7 @@ Use this option to specify to what language the field should be translated.  If 
 | Yoruba | yo |
 | Zulu | zu |
 
+`language` is optional and only necessary when your transla
 
 
 ## Write your own translation middleware
@@ -314,11 +315,11 @@ Use this option to specify to what language the field should be translated.  If 
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbODI2Nzk5MDA4LC00NTYyMjg5OTgsLTE0NT
-gxMTk1ODMsMzcyODQ0MzU3LDQxNDYxNDQ5MywtMTMwMjg3MzAx
-NSwxNzEyMzE1NzA2LDQ3OTUxOTE0Miw3OTU2ODc0NDMsLTEzNT
-gzOTU4MDMsLTExNDc3MzE5NjcsMTY3NTk5NTg1NSwtMTQ0MDU3
-NDA2OSwtMTg2NDE2ODc0NiwtMzU2NTg5NDMwLC0xODIyNDM5Mz
-UxLC0xNTk1NTY1MzY1LC0xNjkzMDA1OTMzLC0xNTAzMjI0Mzk5
-LDIxMzYzMzM5ODVdfQ==
+eyJoaXN0b3J5IjpbNzg4MTk4Nzc2LDgyNjc5OTAwOCwtNDU2Mj
+I4OTk4LC0xNDU4MTE5NTgzLDM3Mjg0NDM1Nyw0MTQ2MTQ0OTMs
+LTEzMDI4NzMwMTUsMTcxMjMxNTcwNiw0Nzk1MTkxNDIsNzk1Nj
+g3NDQzLC0xMzU4Mzk1ODAzLC0xMTQ3NzMxOTY3LDE2NzU5OTU4
+NTUsLTE0NDA1NzQwNjksLTE4NjQxNjg3NDYsLTM1NjU4OTQzMC
+wtMTgyMjQzOTM1MSwtMTU5NTU2NTM2NSwtMTY5MzAwNTkzMywt
+MTUwMzIyNDM5OV19
 -->

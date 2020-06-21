@@ -145,7 +145,7 @@ scrapy-auto-translation-middleware will be triggered if you set `auto_translate=
 You must specify **source** and **language** in the field definition. They are pretty straight forward in their meanings.
 The following options are supported:
 ### auto_translate
-This is basically a tag for fields that should be translated by 
+This is basically a tag for fields that should be translated by the middleware. When your spider creates an Item, the middleware will look into all the fi
 ### on_failure
 Use this option to specify what you want to happen if a translation fails. The default action is REPORT_IN_FIELD.
 * RAISE: raise the failure and let the exception handler to handle it.
@@ -198,11 +198,11 @@ In cases where `translate` is present, all other field options (e.g. "source") w
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTI2NDI4MzAyLDM3Mjg0NDM1Nyw0MTQ2MT
-Q0OTMsLTEzMDI4NzMwMTUsMTcxMjMxNTcwNiw0Nzk1MTkxNDIs
-Nzk1Njg3NDQzLC0xMzU4Mzk1ODAzLC0xMTQ3NzMxOTY3LDE2Nz
-U5OTU4NTUsLTE0NDA1NzQwNjksLTE4NjQxNjg3NDYsLTM1NjU4
-OTQzMCwtMTgyMjQzOTM1MSwtMTU5NTU2NTM2NSwtMTY5MzAwNT
-kzMywtMTUwMzIyNDM5OSwyMTM2MzMzOTg1LC01OTc3ODY0MzIs
-MTYwODg3MjA2MV19
+eyJoaXN0b3J5IjpbLTE2NTY0MDQxMywzNzI4NDQzNTcsNDE0Nj
+E0NDkzLC0xMzAyODczMDE1LDE3MTIzMTU3MDYsNDc5NTE5MTQy
+LDc5NTY4NzQ0MywtMTM1ODM5NTgwMywtMTE0NzczMTk2NywxNj
+c1OTk1ODU1LC0xNDQwNTc0MDY5LC0xODY0MTY4NzQ2LC0zNTY1
+ODk0MzAsLTE4MjI0MzkzNTEsLTE1OTU1NjUzNjUsLTE2OTMwMD
+U5MzMsLTE1MDMyMjQzOTksMjEzNjMzMzk4NSwtNTk3Nzg2NDMy
+LDE2MDg4NzIwNjFdfQ==
 -->

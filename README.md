@@ -196,7 +196,116 @@ Use this option to specify to what language the field should be translated.  If 
 | **Language name** | **Language code** |
 |--|--|
 | Afrikaans | af |
-|aa|--|
+| Afrikaans | af |
+| Albanian | sq |
+| Amharic | am |
+| Arabic | ar |
+| Armenian | hy |
+| Azerbaijani | az |
+| Basque | eu |
+| Belarusian | be |
+| Bengali | bn |
+| Bosnian | bs |
+| Bulgarian | bg |
+| Catalan | ca |
+| Cebuano | ceb (ISO-639-2) |
+| Chinese (Simplified) | zh-CN or zh (BCP-47) |
+| Chinese (Traditional) | zh-TW (BCP-47) |
+| Corsican | co |
+| Croatian | hr |
+| Czech | cs |
+| Danish | da |
+| Dutch | nl |
+| English | en |
+| Esperanto | eo |
+| Estonian | et |
+| Finnish | fi |
+| French | fr |
+| Frisian | fy |
+| Galician | gl |
+| Georgian | ka |
+| German | de |
+| Greek | el |
+| Gujarati | gu |
+| Haitian Creole | ht |
+| Hausa | ha |
+| Hawaiian | haw (ISO-639-2) |
+| Hebrew | he or iw |
+| Hindi | hi |
+| Hmong | hmn (ISO-639-2) |
+| Hungarian | hu |
+| Icelandic | is |
+| Igbo | ig |
+| Indonesian | id |
+| Irish | ga |
+| Italian | it |
+| Japanese | ja |
+| Javanese | jv |
+| Kannada | kn |
+| Kazakh | kk |
+| Khmer | km |
+| Kinyarwanda | rw |
+| Korean | ko |
+| Kurdish | ku |
+| Kyrgyz | ky |
+| Lao | lo |
+| Latin | la |
+| Latvian | lv |
+| Lithuanian | lt |
+| Luxembourgish | lb |
+| Macedonian | mk |
+| Malagasy | mg |
+| Malay | ms |
+| Malayalam | ml |
+| Maltese | mt |
+| Maori | mi |
+| Marathi | mr |
+| Mongolian | mn |
+| Myanmar (Burmese) | my |
+| Nepali | ne |
+| Norwegian | no |
+| Nyanja (Chichewa) | ny |
+| Odia (Oriya) | or |
+| Pashto | ps |
+| Persian | fa |
+| Polish | pl |
+| Portuguese (Portugal, Brazil) | pt |
+| Punjabi | pa |
+| Romanian | ro |
+| Russian | ru |
+| Samoan | sm |
+| Scots Gaelic | gd |
+| Serbian | sr |
+| Sesotho | st |
+| Shona | sn |
+| Sindhi | sd |
+| Sinhala (Sinhalese) | si |
+| Slovak | sk |
+| Slovenian | sl |
+| Somali | so |
+| Spanish | es |
+| Sundanese | su |
+| Swahili | sw |
+| Swedish | sv |
+| Tagalog (Filipino) | tl |
+| Tajik | tg |
+| Tamil | ta |
+| Tatar | tt |
+| Telugu | te |
+| Thai | th |
+| Turkish | tr |
+| Turkmen | tk |
+| Ukrainian | uk |
+| Urdu | ur |
+| Uyghur | ug |
+| Uzbek | uz |
+| Vietnamese | vi |
+| Welsh | cy |
+| Xhosa | xh |
+| Yiddish | yi |
+| Yoruba | yo |
+| Zulu | zu |
+
 
 
 ## Write your own translation middleware
@@ -205,11 +314,11 @@ Use this option to specify to what language the field should be translated.  If 
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTQ1NjIyODk5OCwtMTQ1ODExOTU4MywzNz
-I4NDQzNTcsNDE0NjE0NDkzLC0xMzAyODczMDE1LDE3MTIzMTU3
-MDYsNDc5NTE5MTQyLDc5NTY4NzQ0MywtMTM1ODM5NTgwMywtMT
-E0NzczMTk2NywxNjc1OTk1ODU1LC0xNDQwNTc0MDY5LC0xODY0
-MTY4NzQ2LC0zNTY1ODk0MzAsLTE4MjI0MzkzNTEsLTE1OTU1Nj
-UzNjUsLTE2OTMwMDU5MzMsLTE1MDMyMjQzOTksMjEzNjMzMzk4
-NSwtNTk3Nzg2NDMyXX0=
+eyJoaXN0b3J5IjpbODI2Nzk5MDA4LC00NTYyMjg5OTgsLTE0NT
+gxMTk1ODMsMzcyODQ0MzU3LDQxNDYxNDQ5MywtMTMwMjg3MzAx
+NSwxNzEyMzE1NzA2LDQ3OTUxOTE0Miw3OTU2ODc0NDMsLTEzNT
+gzOTU4MDMsLTExNDc3MzE5NjcsMTY3NTk5NTg1NSwtMTQ0MDU3
+NDA2OSwtMTg2NDE2ODc0NiwtMzU2NTg5NDMwLC0xODIyNDM5Mz
+UxLC0xNTk1NTY1MzY1LC0xNjkzMDA1OTMzLC0xNTAzMjI0Mzk5
+LDIxMzYzMzM5ODVdfQ==
 -->

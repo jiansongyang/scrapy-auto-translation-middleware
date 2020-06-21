@@ -181,6 +181,8 @@ The translator function will be called when an item is being translated for a fi
 		return scrapy.Request(url="http://some.translation.service/?text=%s"%item[source_field]), callback
 	
 	class MyItem(scrapy.Item):
+		name = scrapy.Field()
+		name_zh = scrapy.Field(auto_translate=True, translat=a_alow_translator, language="zh")
 		
 
 
@@ -190,11 +192,11 @@ The translator function will be called when an item is being translated for a fi
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTE0OTA3NTExNSw3OTU2ODc0NDMsLTEzNT
-gzOTU4MDMsLTExNDc3MzE5NjcsMTY3NTk5NTg1NSwtMTQ0MDU3
-NDA2OSwtMTg2NDE2ODc0NiwtMzU2NTg5NDMwLC0xODIyNDM5Mz
-UxLC0xNTk1NTY1MzY1LC0xNjkzMDA1OTMzLC0xNTAzMjI0Mzk5
-LDIxMzYzMzM5ODUsLTU5Nzc4NjQzMiwxNjA4ODcyMDYxLDgwMD
-EyOTg0NiwtMTM0MTI5Mzg5MywtMTY1NDg2NjU2MywxNzM5NjA1
-NzE3LC0xMjM4MTkxNDI5XX0=
+eyJoaXN0b3J5IjpbODQ4NDMwNzU0LDc5NTY4NzQ0MywtMTM1OD
+M5NTgwMywtMTE0NzczMTk2NywxNjc1OTk1ODU1LC0xNDQwNTc0
+MDY5LC0xODY0MTY4NzQ2LC0zNTY1ODk0MzAsLTE4MjI0MzkzNT
+EsLTE1OTU1NjUzNjUsLTE2OTMwMDU5MzMsLTE1MDMyMjQzOTks
+MjEzNjMzMzk4NSwtNTk3Nzg2NDMyLDE2MDg4NzIwNjEsODAwMT
+I5ODQ2LC0xMzQxMjkzODkzLC0xNjU0ODY2NTYzLDE3Mzk2MDU3
+MTcsLTEyMzgxOTE0MjldfQ==
 -->

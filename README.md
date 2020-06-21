@@ -170,9 +170,8 @@ Example:
 Use this option to specify a **translator function**. If specified, it will override the middleware's `translate()` method. 
 The translator function will be called when an item is being translated for a field. For example:
 
-    def a_very_quick_translator(field_name, item, **kwargs):
-	    source_field = kwargs["source"]
-	    return "this is a quick translation for %s"%source_field
+    def sqkm2sqmi(field_name, item, **kwargs):
+	    return "this is a quick translation"
 
 	def a_slow_translator(field_name, item, **kwargs):
 		def callback(response, _field_name, _item, **cb_kwargs):
@@ -193,11 +192,11 @@ The translator function will be called when an item is being translated for a fi
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIwNTAxODU0NzAsNzk1Njg3NDQzLC0xMz
-U4Mzk1ODAzLC0xMTQ3NzMxOTY3LDE2NzU5OTU4NTUsLTE0NDA1
-NzQwNjksLTE4NjQxNjg3NDYsLTM1NjU4OTQzMCwtMTgyMjQzOT
-M1MSwtMTU5NTU2NTM2NSwtMTY5MzAwNTkzMywtMTUwMzIyNDM5
-OSwyMTM2MzMzOTg1LC01OTc3ODY0MzIsMTYwODg3MjA2MSw4MD
-AxMjk4NDYsLTEzNDEyOTM4OTMsLTE2NTQ4NjY1NjMsMTczOTYw
-NTcxNywtMTIzODE5MTQyOV19
+eyJoaXN0b3J5IjpbMTgxMTcwMTI1MCw3OTU2ODc0NDMsLTEzNT
+gzOTU4MDMsLTExNDc3MzE5NjcsMTY3NTk5NTg1NSwtMTQ0MDU3
+NDA2OSwtMTg2NDE2ODc0NiwtMzU2NTg5NDMwLC0xODIyNDM5Mz
+UxLC0xNTk1NTY1MzY1LC0xNjkzMDA1OTMzLC0xNTAzMjI0Mzk5
+LDIxMzYzMzM5ODUsLTU5Nzc4NjQzMiwxNjA4ODcyMDYxLDgwMD
+EyOTg0NiwtMTM0MTI5Mzg5MywtMTY1NDg2NjU2MywxNzM5NjA1
+NzE3LC0xMjM4MTkxNDI5XX0=
 -->

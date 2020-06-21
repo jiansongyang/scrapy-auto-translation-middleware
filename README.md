@@ -137,7 +137,7 @@ Add the following in the file `settings.py`:
 
 
 ## Define your items
-scrapy-auto-translation-middleware will be triggered if you set `auto_translation=True` in the item field definition:
+scrapy-auto-translation-middleware will be triggered if you set `auto_translate=True` in the item field definition:
 
     class CityItem(scrapy.Item):
         name = scrapy.Field()
@@ -145,7 +145,7 @@ scrapy-auto-translation-middleware will be triggered if you set `auto_translatio
 You must specify **source** and **language** in the field definition. They are pretty straight forward in their meanings.
 The following options are supported:
 ### auto_translate
-This is basically a tag 
+This is basically a tag for 
 ### on_failure
 Use this option to specify what you want to happen if a translation fails. The default action is REPORT_IN_FIELD.
 * RAISE: raise the failure and let the exception handler to handle it.
@@ -198,11 +198,11 @@ In cases where `translate` is present, all other field options (e.g. "source") w
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTAzNDkxNTY5MywzNzI4NDQzNTcsNDE0Nj
-E0NDkzLC0xMzAyODczMDE1LDE3MTIzMTU3MDYsNDc5NTE5MTQy
-LDc5NTY4NzQ0MywtMTM1ODM5NTgwMywtMTE0NzczMTk2NywxNj
-c1OTk1ODU1LC0xNDQwNTc0MDY5LC0xODY0MTY4NzQ2LC0zNTY1
-ODk0MzAsLTE4MjI0MzkzNTEsLTE1OTU1NjUzNjUsLTE2OTMwMD
-U5MzMsLTE1MDMyMjQzOTksMjEzNjMzMzk4NSwtNTk3Nzg2NDMy
-LDE2MDg4NzIwNjFdfQ==
+eyJoaXN0b3J5IjpbLTE1OTg2NTkwMjEsMzcyODQ0MzU3LDQxND
+YxNDQ5MywtMTMwMjg3MzAxNSwxNzEyMzE1NzA2LDQ3OTUxOTE0
+Miw3OTU2ODc0NDMsLTEzNTgzOTU4MDMsLTExNDc3MzE5NjcsMT
+Y3NTk5NTg1NSwtMTQ0MDU3NDA2OSwtMTg2NDE2ODc0NiwtMzU2
+NTg5NDMwLC0xODIyNDM5MzUxLC0xNTk1NTY1MzY1LC0xNjkzMD
+A1OTMzLC0xNTAzMjI0Mzk5LDIxMzYzMzM5ODUsLTU5Nzc4NjQz
+MiwxNjA4ODcyMDYxXX0=
 -->

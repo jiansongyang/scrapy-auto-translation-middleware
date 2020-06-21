@@ -192,18 +192,22 @@ The translator function will be called when an item is being translated for a fi
 
 In cases where `translate` is present, all other field options (e.g. "source") will be provided to the translator function (and the callback function, if returned) in `kwargs`. 
 ### language
-Use this option to specify to what language the field should be translated. 
+Use this option to specify to what language the field should be translated.  If you are using Google Translate, the supported languages and the corresponding ISO language code are listed below
+| language |  |
+|--|--|
+|  |  |
+
 ## Write your own translation middleware
 
  
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE0NTgxMTk1ODMsMzcyODQ0MzU3LDQxND
-YxNDQ5MywtMTMwMjg3MzAxNSwxNzEyMzE1NzA2LDQ3OTUxOTE0
-Miw3OTU2ODc0NDMsLTEzNTgzOTU4MDMsLTExNDc3MzE5NjcsMT
-Y3NTk5NTg1NSwtMTQ0MDU3NDA2OSwtMTg2NDE2ODc0NiwtMzU2
-NTg5NDMwLC0xODIyNDM5MzUxLC0xNTk1NTY1MzY1LC0xNjkzMD
-A1OTMzLC0xNTAzMjI0Mzk5LDIxMzYzMzM5ODUsLTU5Nzc4NjQz
-MiwxNjA4ODcyMDYxXX0=
+eyJoaXN0b3J5IjpbLTIzODI0NDA3MywtMTQ1ODExOTU4MywzNz
+I4NDQzNTcsNDE0NjE0NDkzLC0xMzAyODczMDE1LDE3MTIzMTU3
+MDYsNDc5NTE5MTQyLDc5NTY4NzQ0MywtMTM1ODM5NTgwMywtMT
+E0NzczMTk2NywxNjc1OTk1ODU1LC0xNDQwNTc0MDY5LC0xODY0
+MTY4NzQ2LC0zNTY1ODk0MzAsLTE4MjI0MzkzNTEsLTE1OTU1Nj
+UzNjUsLTE2OTMwMDU5MzMsLTE1MDMyMjQzOTksMjEzNjMzMzk4
+NSwtNTk3Nzg2NDMyXX0=
 -->

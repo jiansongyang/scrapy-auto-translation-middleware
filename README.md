@@ -176,7 +176,7 @@ The translator function will be called when an item is being translated for a fi
 	    return float(item[source]) * 0.3861
 
 	def language_translator(field_name, item, **kwargs):
-	    "this 
+	    "this will send a translation request to some website so 
 		def callback(response, _field_name, _item, **cb_kwargs):
 			return response.xpath("xpath.to.translation.result").get()
 		source_field = kwargs["source"]
@@ -195,11 +195,11 @@ The translator function will be called when an item is being translated for a fi
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTExNjA5NTU2OTEsNzk1Njg3NDQzLC0xMz
-U4Mzk1ODAzLC0xMTQ3NzMxOTY3LDE2NzU5OTU4NTUsLTE0NDA1
-NzQwNjksLTE4NjQxNjg3NDYsLTM1NjU4OTQzMCwtMTgyMjQzOT
-M1MSwtMTU5NTU2NTM2NSwtMTY5MzAwNTkzMywtMTUwMzIyNDM5
-OSwyMTM2MzMzOTg1LC01OTc3ODY0MzIsMTYwODg3MjA2MSw4MD
-AxMjk4NDYsLTEzNDEyOTM4OTMsLTE2NTQ4NjY1NjMsMTczOTYw
-NTcxNywtMTIzODE5MTQyOV19
+eyJoaXN0b3J5IjpbMzIyNzExMjMwLDc5NTY4NzQ0MywtMTM1OD
+M5NTgwMywtMTE0NzczMTk2NywxNjc1OTk1ODU1LC0xNDQwNTc0
+MDY5LC0xODY0MTY4NzQ2LC0zNTY1ODk0MzAsLTE4MjI0MzkzNT
+EsLTE1OTU1NjUzNjUsLTE2OTMwMDU5MzMsLTE1MDMyMjQzOTks
+MjEzNjMzMzk4NSwtNTk3Nzg2NDMyLDE2MDg4NzIwNjEsODAwMT
+I5ODQ2LC0xMzQxMjkzODkzLC0xNjU0ODY2NTYzLDE3Mzk2MDU3
+MTcsLTEyMzgxOTE0MjldfQ==
 -->

@@ -171,7 +171,7 @@ Use this option to specify a **translator function**. If specified, it will over
 The translator function will be called when an item is being translated for a field. For example:
 
     def sqkm_to_sqmi(field_name, item, **kwargs):
-	    "this is a very quick translation"
+	    “unit conversion from sqkm to sq miles. this is a very quick translation"
 	    source = kwargs["source"]
 	    return float(item[source]) * 0.3861
 
@@ -185,7 +185,7 @@ The translator function will be called when an item is being translated for a fi
 		name = scrapy.Field()
 		name_zh = scrapy.Field(auto_translate=True, translat=a_alow_translator, language="zh")
 		total_area = scrapy.Field()
-		total_area_in_sq_miles = scrapy.Field(auto_translate=True, translate=a_very_quick_translator, source="total_area")
+		total_area_in_sq_miles = scrapy.Field(auto_translate=True, translate=sqkm_to_, source="total_area")
 
 
 ## Write your own translation middleware
@@ -194,11 +194,11 @@ The translator function will be called when an item is being translated for a fi
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE0NDU4MTkxMDgsNzk1Njg3NDQzLC0xMz
-U4Mzk1ODAzLC0xMTQ3NzMxOTY3LDE2NzU5OTU4NTUsLTE0NDA1
-NzQwNjksLTE4NjQxNjg3NDYsLTM1NjU4OTQzMCwtMTgyMjQzOT
-M1MSwtMTU5NTU2NTM2NSwtMTY5MzAwNTkzMywtMTUwMzIyNDM5
-OSwyMTM2MzMzOTg1LC01OTc3ODY0MzIsMTYwODg3MjA2MSw4MD
-AxMjk4NDYsLTEzNDEyOTM4OTMsLTE2NTQ4NjY1NjMsMTczOTYw
-NTcxNywtMTIzODE5MTQyOV19
+eyJoaXN0b3J5IjpbMTU0MTczNjUsNzk1Njg3NDQzLC0xMzU4Mz
+k1ODAzLC0xMTQ3NzMxOTY3LDE2NzU5OTU4NTUsLTE0NDA1NzQw
+NjksLTE4NjQxNjg3NDYsLTM1NjU4OTQzMCwtMTgyMjQzOTM1MS
+wtMTU5NTU2NTM2NSwtMTY5MzAwNTkzMywtMTUwMzIyNDM5OSwy
+MTM2MzMzOTg1LC01OTc3ODY0MzIsMTYwODg3MjA2MSw4MDAxMj
+k4NDYsLTEzNDEyOTM4OTMsLTE2NTQ4NjY1NjMsMTczOTYwNTcx
+NywtMTIzODE5MTQyOV19
 -->

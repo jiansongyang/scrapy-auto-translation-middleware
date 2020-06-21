@@ -180,10 +180,11 @@ The translator function will be called when an item is being translated for a fi
 		source_field = kwargs["source"]
 		return scrapy.Request(url="http://some.translation.service/?text=%s"%item[source_field]), callback
 	
-	class MyItem(scrapy.Item):
+	class CityItem(scrapy.Item):
 		name = scrapy.Field()
 		name_zh = scrapy.Field(auto_translate=True, translat=a_alow_translator, language="zh")
-		
+		total_area = scrapy.Field()
+		total_area_in_sq_miles = scrapy.Field(auto_translate=True, translate=a_very_quick_translator)
 
 
 ## Write your own translation middleware
@@ -192,11 +193,11 @@ The translator function will be called when an item is being translated for a fi
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbODQ4NDMwNzU0LDc5NTY4NzQ0MywtMTM1OD
-M5NTgwMywtMTE0NzczMTk2NywxNjc1OTk1ODU1LC0xNDQwNTc0
-MDY5LC0xODY0MTY4NzQ2LC0zNTY1ODk0MzAsLTE4MjI0MzkzNT
-EsLTE1OTU1NjUzNjUsLTE2OTMwMDU5MzMsLTE1MDMyMjQzOTks
-MjEzNjMzMzk4NSwtNTk3Nzg2NDMyLDE2MDg4NzIwNjEsODAwMT
-I5ODQ2LC0xMzQxMjkzODkzLC0xNjU0ODY2NTYzLDE3Mzk2MDU3
-MTcsLTEyMzgxOTE0MjldfQ==
+eyJoaXN0b3J5IjpbLTIwNTAxODU0NzAsNzk1Njg3NDQzLC0xMz
+U4Mzk1ODAzLC0xMTQ3NzMxOTY3LDE2NzU5OTU4NTUsLTE0NDA1
+NzQwNjksLTE4NjQxNjg3NDYsLTM1NjU4OTQzMCwtMTgyMjQzOT
+M1MSwtMTU5NTU2NTM2NSwtMTY5MzAwNTkzMywtMTUwMzIyNDM5
+OSwyMTM2MzMzOTg1LC01OTc3ODY0MzIsMTYwODg3MjA2MSw4MD
+AxMjk4NDYsLTEzNDEyOTM4OTMsLTE2NTQ4NjY1NjMsMTczOTYw
+NTcxNywtMTIzODE5MTQyOV19
 -->

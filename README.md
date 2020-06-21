@@ -192,14 +192,14 @@ The translator function will be called when an item is being translated for a fi
 
 In cases where `translate` is present, all other field options (e.g. "source") will be provided to the translator function (and the callback function, if returned) in `kwargs`. 
 ### language
-I
+Use this option to specify to what language the field should be translated. 
 ## Write your own translation middleware
 
  
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE3MTk4NzU1NDIsMzcyODQ0MzU3LDQxND
+eyJoaXN0b3J5IjpbLTE0NTgxMTk1ODMsMzcyODQ0MzU3LDQxND
 YxNDQ5MywtMTMwMjg3MzAxNSwxNzEyMzE1NzA2LDQ3OTUxOTE0
 Miw3OTU2ODc0NDMsLTEzNTgzOTU4MDMsLTExNDc3MzE5NjcsMT
 Y3NTk5NTg1NSwtMTQ0MDU3NDA2OSwtMTg2NDE2ODc0NiwtMzU2

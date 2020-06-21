@@ -1,5 +1,5 @@
 # scrapy-auto-translation-middleware
-## Overview: why you need a middleware to do t
+## Overview: why you need a middleware to do the translation work
 In many circumstances you may want to automatically translate an Item field into another language, and write it into another field. For example, you have defined an Item:
 
     class City(scrapy.Item):
@@ -195,7 +195,7 @@ The translator function will be called when an item is being translated for a fi
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTAyOTM5OTIxMyw0Nzk1MTkxNDIsNzk1Nj
+eyJoaXN0b3J5IjpbMTcxMjMxNTcwNiw0Nzk1MTkxNDIsNzk1Nj
 g3NDQzLC0xMzU4Mzk1ODAzLC0xMTQ3NzMxOTY3LDE2NzU5OTU4
 NTUsLTE0NDA1NzQwNjksLTE4NjQxNjg3NDYsLTM1NjU4OTQzMC
 wtMTgyMjQzOTM1MSwtMTU5NTU2NTM2NSwtMTY5MzAwNTkzMywt

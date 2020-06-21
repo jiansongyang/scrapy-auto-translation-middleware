@@ -181,7 +181,7 @@ The translator function will be called when an item is being translated for a fi
 		return scrapy.Request(url="http://some.translation.service/?text=%s"%item[source_field]), callback
 	
 	class MyItem(scrapy.Item):
-	
+		
 
 
 ## Write your own translation middleware
@@ -190,11 +190,11 @@ The translator function will be called when an item is being translated for a fi
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNzk1Njg3NDQzLC0xMzU4Mzk1ODAzLC0xMT
-Q3NzMxOTY3LDE2NzU5OTU4NTUsLTE0NDA1NzQwNjksLTE4NjQx
-Njg3NDYsLTM1NjU4OTQzMCwtMTgyMjQzOTM1MSwtMTU5NTU2NT
-M2NSwtMTY5MzAwNTkzMywtMTUwMzIyNDM5OSwyMTM2MzMzOTg1
-LC01OTc3ODY0MzIsMTYwODg3MjA2MSw4MDAxMjk4NDYsLTEzND
-EyOTM4OTMsLTE2NTQ4NjY1NjMsMTczOTYwNTcxNywtMTIzODE5
-MTQyOSw2Njk4OTc1NF19
+eyJoaXN0b3J5IjpbMTE0OTA3NTExNSw3OTU2ODc0NDMsLTEzNT
+gzOTU4MDMsLTExNDc3MzE5NjcsMTY3NTk5NTg1NSwtMTQ0MDU3
+NDA2OSwtMTg2NDE2ODc0NiwtMzU2NTg5NDMwLC0xODIyNDM5Mz
+UxLC0xNTk1NTY1MzY1LC0xNjkzMDA1OTMzLC0xNTAzMjI0Mzk5
+LDIxMzYzMzM5ODUsLTU5Nzc4NjQzMiwxNjA4ODcyMDYxLDgwMD
+EyOTg0NiwtMTM0MTI5Mzg5MywtMTY1NDg2NjU2MywxNzM5NjA1
+NzE3LC0xMjM4MTkxNDI5XX0=
 -->

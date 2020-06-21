@@ -188,7 +188,7 @@ The translator function will be called when an item is being translated for a fi
 		total_area = scrapy.Field()
 		total_area_in_sq_miles = scrapy.Field(auto_translate=True, translate=sqkm_to_sqmi, source="total_area")
 
-If 
+In cases where `translate` is present, all other field options (e.g. "source") will be provided to 
 
 ## Write your own translation middleware
 
@@ -196,7 +196,7 @@ If
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNTQ0MjYzMTA1LC0xMzAyODczMDE1LDE3MT
+eyJoaXN0b3J5IjpbMTg0OTE3NTQ2LC0xMzAyODczMDE1LDE3MT
 IzMTU3MDYsNDc5NTE5MTQyLDc5NTY4NzQ0MywtMTM1ODM5NTgw
 MywtMTE0NzczMTk2NywxNjc1OTk1ODU1LC0xNDQwNTc0MDY5LC
 0xODY0MTY4NzQ2LC0zNTY1ODk0MzAsLTE4MjI0MzkzNTEsLTE1

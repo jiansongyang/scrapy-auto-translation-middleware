@@ -315,7 +315,7 @@ Usually you need to specify the language for both the source and target field. T
 
 
 ### source
-This could be used to specified the field from which the translation is conducted. 
+This could be used to specified the field from which the translation is conducted. `source` is optional and only necessary when your translator requires it. In cases where your translator is doing things like unit-conversion, for example, it would not be needed. 
 
 
 ## Write your own translation middleware
@@ -324,11 +324,11 @@ This could be used to specified the field from which the translation is conducte
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE2ODMzNDA1OTUsODM3MjY5NDYwLDI3Mz
-I2Mjk2NiwxOTk0Mzk2NTcwLDgyNjc5OTAwOCwtNDU2MjI4OTk4
-LC0xNDU4MTE5NTgzLDM3Mjg0NDM1Nyw0MTQ2MTQ0OTMsLTEzMD
-I4NzMwMTUsMTcxMjMxNTcwNiw0Nzk1MTkxNDIsNzk1Njg3NDQz
-LC0xMzU4Mzk1ODAzLC0xMTQ3NzMxOTY3LDE2NzU5OTU4NTUsLT
-E0NDA1NzQwNjksLTE4NjQxNjg3NDYsLTM1NjU4OTQzMCwtMTgy
-MjQzOTM1MV19
+eyJoaXN0b3J5IjpbNTA4NTIwMDk4LDgzNzI2OTQ2MCwyNzMyNj
+I5NjYsMTk5NDM5NjU3MCw4MjY3OTkwMDgsLTQ1NjIyODk5OCwt
+MTQ1ODExOTU4MywzNzI4NDQzNTcsNDE0NjE0NDkzLC0xMzAyOD
+czMDE1LDE3MTIzMTU3MDYsNDc5NTE5MTQyLDc5NTY4NzQ0Mywt
+MTM1ODM5NTgwMywtMTE0NzczMTk2NywxNjc1OTk1ODU1LC0xND
+QwNTc0MDY5LC0xODY0MTY4NzQ2LC0zNTY1ODk0MzAsLTE4MjI0
+MzkzNTFdfQ==
 -->

@@ -188,7 +188,7 @@ The translator function will be called when an item is being translated for a fi
 		total_area = scrapy.Field()
 		total_area_in_sq_miles = scrapy.Field(auto_translate=True, translate=sqkm_to_sqmi, source="total_area")
 
-In cases where `translate` is present, all other field options (e.g. "source") will be provided to 
+In cases where `translate` is present, all other field options (e.g. "source") will be provided to the translator function (and the callback function, if returned) in k
 
 ## Write your own translation middleware
 
@@ -196,11 +196,11 @@ In cases where `translate` is present, all other field options (e.g. "source") w
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTg0OTE3NTQ2LC0xMzAyODczMDE1LDE3MT
-IzMTU3MDYsNDc5NTE5MTQyLDc5NTY4NzQ0MywtMTM1ODM5NTgw
-MywtMTE0NzczMTk2NywxNjc1OTk1ODU1LC0xNDQwNTc0MDY5LC
-0xODY0MTY4NzQ2LC0zNTY1ODk0MzAsLTE4MjI0MzkzNTEsLTE1
-OTU1NjUzNjUsLTE2OTMwMDU5MzMsLTE1MDMyMjQzOTksMjEzNj
-MzMzk4NSwtNTk3Nzg2NDMyLDE2MDg4NzIwNjEsODAwMTI5ODQ2
-LC0xMzQxMjkzODkzXX0=
+eyJoaXN0b3J5IjpbLTE1NDc0NDk2MzEsLTEzMDI4NzMwMTUsMT
+cxMjMxNTcwNiw0Nzk1MTkxNDIsNzk1Njg3NDQzLC0xMzU4Mzk1
+ODAzLC0xMTQ3NzMxOTY3LDE2NzU5OTU4NTUsLTE0NDA1NzQwNj
+ksLTE4NjQxNjg3NDYsLTM1NjU4OTQzMCwtMTgyMjQzOTM1MSwt
+MTU5NTU2NTM2NSwtMTY5MzAwNTkzMywtMTUwMzIyNDM5OSwyMT
+M2MzMzOTg1LC01OTc3ODY0MzIsMTYwODg3MjA2MSw4MDAxMjk4
+NDYsLTEzNDEyOTM4OTNdfQ==
 -->

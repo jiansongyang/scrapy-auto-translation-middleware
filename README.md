@@ -171,7 +171,8 @@ Use this option to specify a **translator function**. If specified, it will over
 The translator function will be called when an item is being translated for a field. For example:
 
     def sqkm2sqmi(field_name, item, **kwargs):
-	    return "this is a quick translation"
+	    source = kwargs["source"]
+	    r
 
 	def a_slow_translator(field_name, item, **kwargs):
 		def callback(response, _field_name, _item, **cb_kwargs):
@@ -183,7 +184,7 @@ The translator function will be called when an item is being translated for a fi
 		name = scrapy.Field()
 		name_zh = scrapy.Field(auto_translate=True, translat=a_alow_translator, language="zh")
 		total_area = scrapy.Field()
-		total_area_in_sq_miles = scrapy.Field(auto_translate=True, translate=a_very_quick_translator)
+		total_area_in_sq_miles = scrapy.Field(auto_translate=True, translate=a_very_quick_translator, source="total_area")
 
 
 ## Write your own translation middleware
@@ -192,7 +193,7 @@ The translator function will be called when an item is being translated for a fi
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTgxMTcwMTI1MCw3OTU2ODc0NDMsLTEzNT
+eyJoaXN0b3J5IjpbMTU2MjY2NzYxMSw3OTU2ODc0NDMsLTEzNT
 gzOTU4MDMsLTExNDc3MzE5NjcsMTY3NTk5NTg1NSwtMTQ0MDU3
 NDA2OSwtMTg2NDE2ODc0NiwtMzU2NTg5NDMwLC0xODIyNDM5Mz
 UxLC0xNTk1NTY1MzY1LC0xNjkzMDA1OTMzLC0xNTAzMjI0Mzk5

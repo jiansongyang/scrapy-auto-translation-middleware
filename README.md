@@ -176,11 +176,11 @@ The translator function will be called when an item is being translated for a fi
 	    return float(item[source]) * 0.3861
 
 	def language_translator(field_name, item, **kwargs):
-	    "this will send a translation request to some website so 
+	    "this will send a translation request to some website so we provide a callback to avoid taking too long time here"
 		def callback(response, _field_name, _item, **cb_kwargs):
 			return response.xpath("xpath.to.translation.result").get()
-		source_field = kwargs["source"]
-		return scrapy.Request(url="http://some.translation.service/?text=%s"%item[source_field]), callback
+		source = kwargs["source"]
+		return scrapy.Request(url="http://some.translation.service/?text=%s"%item[source]), callback
 	
 	class CityItem(scrapy.Item):
 		name = scrapy.Field()
@@ -195,7 +195,7 @@ The translator function will be called when an item is being translated for a fi
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMzIyNzExMjMwLDc5NTY4NzQ0MywtMTM1OD
+eyJoaXN0b3J5IjpbNDc5NTE5MTQyLDc5NTY4NzQ0MywtMTM1OD
 M5NTgwMywtMTE0NzczMTk2NywxNjc1OTk1ODU1LC0xNDQwNTc0
 MDY5LC0xODY0MTY4NzQ2LC0zNTY1ODk0MzAsLTE4MjI0MzkzNT
 EsLTE1OTU1NjUzNjUsLTE2OTMwMDU5MzMsLTE1MDMyMjQzOTks

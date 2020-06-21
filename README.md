@@ -307,7 +307,7 @@ Use this option to specify to what language the field should be translated.  If 
 | Zulu | zu |
 
 `language` is optional and only necessary when your translator requires it. In cases where your translator is doing things like unit-conversion, for example, it would not be needed. 
-> note th
+Usually you need to specify the language for both the source and target field. The middleware is 
 ### source
 
 
@@ -318,7 +318,7 @@ Use this option to specify to what language the field should be translated.  If 
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTA0ODc0NTMyNiwxOTk0Mzk2NTcwLDgyNj
+eyJoaXN0b3J5IjpbLTIzODg4MzczOCwxOTk0Mzk2NTcwLDgyNj
 c5OTAwOCwtNDU2MjI4OTk4LC0xNDU4MTE5NTgzLDM3Mjg0NDM1
 Nyw0MTQ2MTQ0OTMsLTEzMDI4NzMwMTUsMTcxMjMxNTcwNiw0Nz
 k1MTkxNDIsNzk1Njg3NDQzLC0xMzU4Mzk1ODAzLC0xMTQ3NzMx

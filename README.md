@@ -307,7 +307,7 @@ Use this option to specify to what language the field should be translated.  If 
 | Zulu | zu |
 
 `language` is optional and only necessary when your translator requires it. In cases where your translator is doing things like unit-conversion, for example, it would not be needed. 
-Usually you need to specify the language for both the source and target field. The middleware is 
+Usually you need to specify the language for both the source and target field. The middleware 
 ### source
 
 
@@ -318,11 +318,11 @@ Usually you need to specify the language for both the source and target field. T
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIzODg4MzczOCwxOTk0Mzk2NTcwLDgyNj
-c5OTAwOCwtNDU2MjI4OTk4LC0xNDU4MTE5NTgzLDM3Mjg0NDM1
-Nyw0MTQ2MTQ0OTMsLTEzMDI4NzMwMTUsMTcxMjMxNTcwNiw0Nz
-k1MTkxNDIsNzk1Njg3NDQzLC0xMzU4Mzk1ODAzLC0xMTQ3NzMx
-OTY3LDE2NzU5OTU4NTUsLTE0NDA1NzQwNjksLTE4NjQxNjg3ND
-YsLTM1NjU4OTQzMCwtMTgyMjQzOTM1MSwtMTU5NTU2NTM2NSwt
-MTY5MzAwNTkzM119
+eyJoaXN0b3J5IjpbMjczMjYyOTY2LDE5OTQzOTY1NzAsODI2Nz
+k5MDA4LC00NTYyMjg5OTgsLTE0NTgxMTk1ODMsMzcyODQ0MzU3
+LDQxNDYxNDQ5MywtMTMwMjg3MzAxNSwxNzEyMzE1NzA2LDQ3OT
+UxOTE0Miw3OTU2ODc0NDMsLTEzNTgzOTU4MDMsLTExNDc3MzE5
+NjcsMTY3NTk5NTg1NSwtMTQ0MDU3NDA2OSwtMTg2NDE2ODc0Ni
+wtMzU2NTg5NDMwLC0xODIyNDM5MzUxLC0xNTk1NTY1MzY1LC0x
+NjkzMDA1OTMzXX0=
 -->

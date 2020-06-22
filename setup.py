@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="scrapy-auto-translation-middleware",
-    version="0.0.3",
+    version="0.0.4",
     author="Jiansong Yang",
     author_email="yangjiansong@gmail.com",
     description="A Scrapy spider-middleware that performs automatic translation when the spider is working",

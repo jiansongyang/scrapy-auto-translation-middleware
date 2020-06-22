@@ -5,13 +5,13 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="scrapy-auto-translation-middleware",
-    version="1.0.1",
+    version="0.0.1",
     author="Jiansong Yang",
     author_email="yangjiansong@gmail.com",
     description="A Scrapy spider-middleware that performs automatic translation when the spider is working",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/pypa/autotranslatemiddleware",
+    url="https://github.com/jiansongyang/scrapy-auto-translation-middleware",
     license='MIT',
     packages=setuptools.find_packages(exclude=('examples',)),
     zip_safe=False,

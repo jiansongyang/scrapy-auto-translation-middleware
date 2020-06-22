@@ -95,7 +95,6 @@ class AutoTranslationMiddlewareBase:
                         "Translation error, the 'translate()' method returns an unknown type: %s"%str(type(field_translation))
                     )
 
-        print(new_item)
         # all fields are translated, now it's time to send the item to the engine (and more precesely, the exporter)
         return new_item
 

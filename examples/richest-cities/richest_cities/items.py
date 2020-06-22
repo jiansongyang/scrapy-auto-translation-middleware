@@ -9,15 +9,12 @@ import scrapy
 from scrapy_auto_trans import FailureAction
 
 def usd2foreign(currency):
-    def _usd(source_field_name, target_field_name, item):
-        def callback(response, source_field_name, target_field_name, item):
+    def _usd(field_name, item, **kwargs):
+        def callback(response, _field_name, _item, **cb_kwargs):
             rate_str = response.xpath("//td[re:test(a/@href,'.*%s$')]/a/text()"%currency).get()
-            target_field = item.fields[target_field_name]
-            source_field_name = target_field['source']
-            source_value = item[source_field_name]
-            return '%d'%int(float(source_value)*float(rate_str))
-
-        source_field = item.fields[source_field_name]
+            _source_field_name = cb_kwargs['source']
+            _source_value = _item[_source_field_name]
+            return '%d'%int(float(_source_value)*float(rate_str))
 
         return scrapy.Request(
             url = 'https://www.x-rates.com/table/?from=USD&amount=1',

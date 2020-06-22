@@ -57,11 +57,14 @@ class AutoTranslationMiddlewareBase:
                 """
                 target_field = item.fields[field_name]
                 source_field_name = target_field['source']
-                if 'translate' in target_field or 1==2:
+                kwargs = target_field.copy()
+                kwargs.pop(self.TAG)
+                if 'translate' in target_field:
+                    kwargs.pop('translate')
                     translate_func = target_field['translate']
-                    field_translation = translate_func(source_field_name, field_name, item)
                 else:
-                    field_translation = self.translate(source_field_name, field_name, item)
+                    translate_func = self.translate
+                field_translation = translate_func(field_name, item, **kwargs)
                 if (
                     isinstance(field_translation, (list, tuple)) 
                     and len(field_translation)==2 
@@ -96,7 +99,7 @@ class AutoTranslationMiddlewareBase:
         # all fields are translated, now it's time to send the item to the engine (and more precesely, the exporter)
         return new_item
 
-    def translate(self, source_field_name, target_field_name, item):
+    def translate(self, field_name, item, **kwargs):
         raise NotImplementedError
         
     def process_spider_input(self, response, spider):
@@ -117,13 +120,15 @@ class AutoTranslationMiddlewareBase:
             target_field = item.fields[target_field_name]
             source_field_name = target_field['source']
 
+            kwargs = target_field.copy()
+            kwargs.pop(self.TAG)
             if callback:
-                trans_result = callback(response, source_field_name, target_field_name, item)
+                trans_result_callback = callback
             else:
-                trans_result = self.get_translate_result(response, source_field_name, target_field_name, item)
+                trans_result_callback = self.get_translate_result
+            trans_result = trans_result_callback(response, target_field_name, item, **kwargs)
             item[target_field_name] = trans_result
-            trans_result = self.handle_untranslated_item(item)
-            return [trans_result]
+            return [self.handle_untranslated_item(item)]
 
         elif isinstance(exception, excs.TranslationError):
             item = response.request.meta[self.META_KEY]['item']
@@ -156,7 +161,7 @@ class AutoTranslationMiddlewareBase:
                 return [trans_result]
                     
 
-    def get_translate_result(self, response, source_field_name, target_field_name, item):
+    def get_translate_result(self, response, field_name, item, **kwargs):
         """
         Default translation callback
         """
@@ -181,7 +186,9 @@ class LanguageTranslationMiddleware(AutoTranslationMiddlewareBase):
 
         return 'en'
 
-    def translate(self, source_field_name, target_field_name, item):
+    def translate(self, field_name, item, **kwargs):
+        source_field_name = kwargs['source']
+        target_field_name = field_name
         source_language = self.get_source_language_code(item.fields[source_field_name])
         target_field = item.fields[target_field_name]
         return self.language_translate(source_language, target_field['language'], item[source_field_name])
@@ -210,7 +217,7 @@ class AsyncAutoTranslationMiddleware(LanguageTranslationMiddleware):
     def get_translate_url(self, source_lang_code, target_lang_code, text, **kwargs):
         raise NotImplementedError
 
-    def get_translate_result(self, response, source_field_name, target_field_name, item):
+    def get_translate_result(self, response, field_name, item, **kwargs):
         raise NotImplementedError
 
 class GoogleAutoTranslationMiddleware(AsyncAutoTranslationMiddleware):
@@ -240,7 +247,7 @@ class GoogleAutoTranslationMiddleware(AsyncAutoTranslationMiddleware):
                 source_lang_code=source_lang_code
             )
 
-    def get_translate_result(self, response, source_field_name, target_field_name, item):
+    def get_translate_result(self, response, field_name, item, **kwargs):
         return urlunquote(json.loads(response.text)['data']['translations'][0]['translatedText'])
 
     def get_api_key(self):

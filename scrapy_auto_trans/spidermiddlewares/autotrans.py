@@ -39,9 +39,13 @@ class AutoTranslationMiddlewareBase:
                     It's a brand new item but no fields are to be translated, let's yield it
                     """
                     yield item
-                trans_result = self.handle_untranslated_item(item)
-                # hopefully trans_result is a new request containing item in its meta data
-                yield trans_result
+                else:
+                    """
+                    It's time for us to play on the stage
+                    """
+                    trans_result = self.handle_untranslated_item(item)
+                    # hopefully trans_result is a new request containing item in its meta data
+                    yield trans_result
             else:
                 yield x
 
